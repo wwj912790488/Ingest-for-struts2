@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+	<bean id="sysAlertService"
+		class="com.arcsoft.commander.service.alert.impl.SysAlertServiceImpl"
+		parent="baseService"
+		p:alertDao-ref="sysAlertDao" 
+		p:systemDao-ref="systemDao"
+		init-method="init"
+		destroy-method="destroy"
+		/>
+
+	<bean id="alertIntegrationSupport"
+		abstract="true"
+		class="com.arcsoft.commander.service.alert.impl.AlertIntegrationSupport"
+		p:configFile="${alert.config}"
+		/>
+
+	<bean id="alertCommandClient"
+		class="com.arcsoft.commander.service.alert.impl.AlertCommandClientImpl"
+		parent="alertIntegrationSupport"
+		init-method="init"
+		destroy-method="destroy"
+		/>
+
+	<bean id="emailSettingService"
+		class="com.arcsoft.commander.service.alert.impl.EmailSettingServiceImpl"
+		parent="alertIntegrationSupport"
+		/>
+
+	<bean id="serverAlertDataSource"
+		class="com.arcsoft.commander.service.alert.impl.ServerAlertDataSource"
+		p:alertCommandClient-ref="alertCommandClient"
+		/>
+
+	<bean id="agentAlertDataSource" class="com.arcsoft.commander.service.alert.impl.AgentAlertDataSource"
+		p:errorcodeMap-ref="errorcodeMap"
+		p:defaultTaskError="task_error"
+		p:defaultTaskWarning="task_warning"
+		p:alertCommandClient-ref="alertCommandClient"
+		p:taskService-ref="taskService"
+		/>
+
+	<util:map id="errorcodeMap">
+		<!-- commander -->
+		<entry key="0x02000001" value="task_auto_restart"></entry>
+
+		<!-- ArcDemux(TS/PS) -->
+		<entry key="0x80021001" value="task_open_file_failed"></entry>
+		<entry key="0x80021005" value="task_read_file_failed"></entry>
+		<entry key="0x80021006" value="task_file_illegal"></entry>
+		<entry key="0x80021007" value="task_file_error"></entry>
+		<entry key="0x80021008" value="task_file_error"></entry>
+		<entry key="0x80021009" value="task_file_encrypted"></entry>
+		<!-- MP4Splitter(MP4/MOV/3GP) -->
+		<entry key="0x80022001" value="task_open_file_failed"></entry>
+		<entry key="0x80022005" value="task_read_file_failed"></entry>
+		<entry key="0x80022006" value="task_file_illegal"></entry>
+		<entry key="0x80022009" value="task_file_error"></entry>
+		<entry key="0x8002200A" value="task_file_error"></entry>
+		<entry key="0x8002200B" value="task_file_error"></entry>
+		<entry key="0x8002200C" value="task_file_error"></entry>
+		<entry key="0x8002200D" value="task_file_error"></entry>
+		<entry key="0x8002200E" value="task_file_error"></entry>
+		<entry key="0x8002200F" value="task_file_error"></entry>
+		<entry key="0x80022010" value="task_file_error"></entry>
+		<entry key="0x80022011" value="task_file_error"></entry>
+		<entry key="0x80022012" value="task_file_error"></entry>
+		<entry key="0x80022013" value="task_file_error"></entry>
+		<entry key="0x80022014" value="task_file_illegal"></entry>
+		<entry key="0x80022015" value="task_file_illegal"></entry>
+		<entry key="0x80022016" value="task_file_illegal"></entry>
+		<entry key="0x80022017" value="task_file_illegal"></entry>
+		<!-- MKVSplitter -->
+		<entry key="0x80023001" value="task_open_file_failed"></entry>
+		<entry key="0x80023005" value="task_read_file_failed"></entry>
+		<entry key="0x80023006" value="task_file_illegal"></entry>
+		<entry key="0x80023007" value="task_file_error"></entry>
+		<entry key="0x80023008" value="task_file_illegal"></entry>
+		<entry key="0x80023009" value="task_file_error"></entry>
+		<!-- ASFSplitter -->
+		<entry key="0x80024001" value="task_open_file_failed"></entry>
+		<entry key="0x80024005" value="task_read_file_failed"></entry>
+		<entry key="0x80024006" value="task_file_illegal"></entry>
+		<entry key="0x80024007" value="task_file_encrypted"></entry>
+		<entry key="0x80024008" value="task_file_illegal"></entry>
+		<!-- FLVSplitter -->
+		<entry key="0x80025001" value="task_open_file_failed"></entry>
+		<entry key="0x80025005" value="task_read_file_failed"></entry>
+		<entry key="0x80025006" value="task_file_illegal"></entry>
+		<entry key="0x80025008" value="task_file_error"></entry>
+		<!-- MediaSplitter -->
+		<entry key="0x80020006" value="task_open_file_failed"></entry>
+		<!-- TSMuxer -->
+		<entry key="0x80071001" value="task_open_file_failed"></entry>
+		<entry key="0x80071005" value="task_write_file_failed"></entry>
+		<!-- MP4Muxer -->
+		<entry key="0x80072001" value="task_open_file_failed"></entry>
+		<entry key="0x80072005" value="task_write_file_failed"></entry>
+		<!-- FLVMuxer -->
+		<entry key="0x80073001" value="task_open_file_failed"></entry>
+		<entry key="0x80073005" value="task_write_file_failed"></entry>
+		<!-- AVIMuxer -->
+		<entry key="0x80074001" value="task_open_file_failed"></entry>
+		<entry key="0x80074005" value="task_write_file_failed"></entry>
+		<!-- MKVMuxer -->
+		<entry key="0x80075001" value="task_open_file_failed"></entry>
+		<entry key="0x80075005" value="task_write_file_failed"></entry>
+		<!-- PSMuxer -->
+		<entry key="0x80076001" value="task_open_file_failed"></entry>
+		<entry key="0x80076005" value="task_write_file_failed"></entry>
+		<!-- ASFMuxer -->
+		<entry key="0x80077001" value="task_open_file_failed"></entry>
+		<entry key="0x80077005" value="task_write_file_failed"></entry>
+		<entry key="0x80080001" value="task_write_disc_full"></entry>
+		<!-- HLS -->
+		<entry key="0x80091001" value="task_open_file_failed"></entry>
+		<!-- GraphTransDump -->
+		<!-- compatibility for old transcoder  -->
+		<entry key="0x00081001" value="source_interrupt"></entry>
+		<entry key="0x00081002" value="source_interrupt"></entry>
+		<entry key="0x00081003" value="source_no_video"></entry>
+		<entry key="0x00081004" value="source_no_video"></entry>
+		<entry key="0x00081005" value="source_no_audio"></entry>
+		<entry key="0x00081006" value="source_no_audio"></entry>
+		<entry key="0x00081007" value="source_resume"></entry>
+		<entry key="0x00020006" value="source_switch"></entry>
+		<entry key="0x00020009" value="source_interrupt"></entry>
+		<entry key="0x0002000a" value="source_switch"></entry>
+
+		<!-- HLS put error -->
+		<entry key="0x00085001" value="hls_server_connection_failed"></entry>
+		<entry key="0x00085002" value="hls_put_failed"></entry>
+		<entry key="0x00085003" value="hls_put_timeout"></entry>
+		<entry key="0x00085004" value="hls_delete_file_failed"></entry>
+
+		<!-- Dump_null_time -->
+		<entry key="0x00080001" value="output_broken"></entry>
+		<entry key="0x00080002" value="output_broken_persistent"></entry>
+
+		<!-- new source signal -->
+		<entry key="0x000210A0" value="signal_resume"></entry>
+		<entry key="0x00021EA0" value="signal_resume"></entry>
+		<entry key="0x00021FA0" value="signal_resume"></entry>
+
+		<entry key="0x000210A1" value="signal_broken"></entry>
+		<entry key="0x00021EA1" value="signal_broken"></entry>
+		<entry key="0x00021FA1" value="signal_broken"></entry>
+
+		<entry key="0x000210A2" value="signal_broken_persistent"></entry>
+		<entry key="0x00021EA2" value="signal_broken_persistent"></entry>
+		<entry key="0x00021FA2" value="signal_broken_persistent"></entry>
+		
+		<entry key="0x000210A3" value="signal_broken_switch"></entry>
+		<entry key="0x00021EA3" value="signal_broken_switch"></entry>
+		<entry key="0x00021FA3" value="signal_broken_switch"></entry>
+
+		<entry key="0x000210A4" value="signal_patloss"></entry>
+		<entry key="0x00021EA4" value="signal_patloss"></entry>
+		<entry key="0x00021FA4" value="signal_patloss"></entry>
+		
+		<entry key="0x000210A5" value="signal_patloss_persistent"></entry>
+		<entry key="0x00021EA5" value="signal_patloss_persistent"></entry>
+		<entry key="0x00021FA5" value="signal_patloss_persistent"></entry>
+		
+		<entry key="0x000210A6" value="signal_patloss_switch"></entry>
+		<entry key="0x00021EA6" value="signal_patloss_switch"></entry>
+		<entry key="0x00021FA6" value="signal_patloss_switch"></entry>
+
+		<entry key="0x000210A7" value="signal_progidloss"></entry>
+		<entry key="0x00021EA7" value="signal_progidloss"></entry>
+		<entry key="0x00021FA7" value="signal_progidloss"></entry>
+
+		<entry key="0x000210A8" value="signal_progidloss_persistent"></entry>
+		<entry key="0x00021EA8" value="signal_progidloss_persistent"></entry>
+		<entry key="0x00021FA8" value="signal_progidloss_persistent"></entry>
+		
+		<entry key="0x000210A9" value="signal_progidloss_switch"></entry>
+		<entry key="0x00021EA9" value="signal_progidloss_switch"></entry>
+		<entry key="0x00021FA9" value="signal_progidloss_switch"></entry>
+
+		<entry key="0x000210AA" value="signal_pmtloss"></entry>
+		<entry key="0x00021EAA" value="signal_pmtloss"></entry>
+		<entry key="0x00021FAA" value="signal_pmtloss"></entry>
+		
+		<entry key="0x000210AB" value="signal_pmtloss_persistent"></entry>
+		<entry key="0x00021EAB" value="signal_pmtloss_persistent"></entry>
+		<entry key="0x00021FAB" value="signal_pmtloss_persistent"></entry>
+		
+		<entry key="0x000210AC" value="signal_pmtloss_switch"></entry>
+		<entry key="0x00021EAC" value="signal_pmtloss_switch"></entry>
+		<entry key="0x00021FAC" value="signal_pmtloss_switch"></entry>
+
+		<entry key="0x000210AD" value="signal_videoloss"></entry>
+		<entry key="0x00021EAD" value="signal_videoloss"></entry>
+		<entry key="0x00021FAD" value="signal_videoloss"></entry>
+		
+		<entry key="0x000210AE" value="signal_videoloss_persistent"></entry>
+		<entry key="0x00021EAE" value="signal_videoloss_persistent"></entry>
+		<entry key="0x00021FAE" value="signal_videoloss_persistent"></entry>
+		
+		<entry key="0x000210AF" value="signal_videoloss_switch"></entry>
+		<entry key="0x00021EAF" value="signal_videoloss_switch"></entry>
+		<entry key="0x00021FAF" value="signal_videoloss_switch"></entry>
+		
+		<entry key="0x000210B0" value="signal_audioloss"></entry>
+		<entry key="0x00021EB0" value="signal_audioloss"></entry>
+		<entry key="0x00021FB0" value="signal_audioloss"></entry>
+		
+		<entry key="0x000210B1" value="signal_audioloss_persistent"></entry>
+		<entry key="0x00021EB1" value="signal_audioloss_persistent"></entry>
+		<entry key="0x00021FB1" value="signal_audioloss_persistent"></entry>
+		
+		<entry key="0x000210B2" value="signal_audioloss_switch"></entry>
+		<entry key="0x00021EB2" value="signal_audioloss_switch"></entry>
+		<entry key="0x00021FB2" value="signal_audioloss_switch"></entry>
+
+		<entry key="0x000210B3" value="signal_ccerror"></entry>
+		<entry key="0x00021EB3" value="signal_ccerror"></entry>
+		<entry key="0x00021FB3" value="signal_ccerror"></entry>
+		
+		<entry key="0x000210B4" value="signal_ccerror_persistent"></entry>
+		<entry key="0x00021EB4" value="signal_ccerror_persistent"></entry>
+		<entry key="0x00021FB4" value="signal_ccerror_persistent"></entry>
+
+		<entry key="0x000210B5" value="signal_ccerror_switch"></entry>
+		<entry key="0x00021EB5" value="signal_ccerror_switch"></entry>
+		<entry key="0x00021FB5" value="signal_ccerror_switch"></entry>
+
+		<entry key="0x00090103" value="signal_switch_success"></entry>
+		<entry key="0x00090104" value="signal_switch_success"></entry>
+		<entry key="0x00090105" value="signal_switch_success"></entry>
+
+		<entry key="0x0002100E" value="signal_video_queue_full"></entry>
+		<entry key="0x0002100F" value="signal_video_queue_normal"></entry>
+		<entry key="0x00021010" value="signal_audio_queue_full"></entry>
+		<entry key="0x00021011" value="signal_audio_queue_normal"></entry>
+
+		<entry key="0x00021012" value="signal_progid_changed"></entry>
+		<entry key="0x00021E12" value="signal_progid_changed"></entry>
+		<entry key="0x00021F12" value="signal_progid_changed"></entry>
+
+		<entry key="0x00021013" value="signal_pmtid_changed"></entry>
+		<entry key="0x00021E13" value="signal_pmtid_changed"></entry>
+		<entry key="0x00021F13" value="signal_pmtid_changed"></entry>
+
+		<entry key="0x00021014" value="signal_vid_changed"></entry>
+		<entry key="0x00021E14" value="signal_vid_changed"></entry>
+		<entry key="0x00021F14" value="signal_vid_changed"></entry>
+
+		<entry key="0x00021015" value="signal_aid_changed"></entry>
+		<entry key="0x00021E15" value="signal_aid_changed"></entry>
+		<entry key="0x00021F15" value="signal_aid_changed"></entry>
+
+		<entry key="0x00021016" value="signal_vtype_changed"></entry>
+		<entry key="0x00021E16" value="signal_vtype_changed"></entry>
+		<entry key="0x00021F16" value="signal_vtype_changed"></entry>
+
+		<entry key="0x00021017" value="signal_atype_changed"></entry>
+		<entry key="0x00021E17" value="signal_atype_changed"></entry>
+		<entry key="0x00021F17" value="signal_atype_changed"></entry>
+
+		<entry key="0x00090106" value="padding_image_no_file"></entry>
+		<entry key="0x00090107" value="padding_image_error_file"></entry>
+
+		<entry key="0x00061AE6" value="task_write_file_failed"></entry>
+	</util:map>
+
+</beans>

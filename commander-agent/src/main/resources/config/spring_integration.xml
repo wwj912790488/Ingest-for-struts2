@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<!-- beans modified -->
+	<bean class="com.arcsoft.arcvideo.spring.utils.ExcludeBeanDefinitionPostProcessor">
+		<property name="excludeBeanProperties">
+			<map>
+				<entry key="transformableObjectStreamElementParser" value="presetService" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- replace the default implementation -->
+	<bean id="xmlFileBuilder"
+		class="com.arcsoft.commander.agent.service.builder.AgentXmlFileBuilder"
+		p:templateEngine-ref="templateEngine"
+		p:httpGroupSettingAccessor-ref="httpGroupSettingAccessor"
+		p:networkConfigService-ref="networkConfigService"
+		p:localEthService-ref="localEthService"
+		p:licenseService-ref="licenseService"
+		p:sourceSignalSettingsService-ref="agentSourceSignalSettingService"
+		p:taskXmlProcessFilters-ref="taskXmlProcessFilters"
+		/>
+
+	<bean id="licenseService" class="com.arcsoft.web4transcoder.service.license.LicenseServiceImpl" init-method="init">
+		<property name="licenseFileName" value="${license.file}"/>
+		<property name="libPath" value="${license.libpath}"/> 
+	</bean>
+
+	<bean id="taskFactory"
+		class="com.arcsoft.commander.agent.service.task.factory.CustomTaskFactoryImpl"/>
+
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mediaInfo name="SDI_PortID1">
+    <container>SDI</container>
+    <video>
+        <codec>YUV</codec>
+        <bitrate>6000</bitrate>
+        <framerate>25.00</framerate>
+        <resolution>720x576</resolution>
+        <aspect_ratio>N/A</aspect_ratio>
+    </video>
+    <audio>
+        <codec>PCM</codec>
+        <bitrate>64</bitrate>
+        <channel>2</channel>
+        <samplerate>48.0 kHz</samplerate>
+        <bitdepth>16</bitdepth>
+    </audio>
+</mediaInfo>

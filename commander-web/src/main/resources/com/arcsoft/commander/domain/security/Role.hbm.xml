@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-8-29 17:15:03 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+	<class name="com.arcsoft.commander.domain.security.Role" table="tbl_roles">
+		<id name="id" type="java.lang.Integer">
+			<column name="role_id" />
+			<generator class="native" />
+		</id>
+		<property generated="never" lazy="false" name="name" type="string">
+			<column name="name" />
+		</property>
+
+		<property generated="never" lazy="false" name="createTime"
+			type="timestamp">
+			<column name="createtime" />
+		</property>
+		<property generated="never" lazy="false" name="cancelTime"
+			type="timestamp">
+			<column name="canceltime" />
+		</property>
+		<property generated="never" lazy="false" name="remarks" type="string">
+			<column name="remarks" />
+		</property>
+
+		<property generated="never" lazy="false" name="isEnabled" type="boolean">
+			<column name="isEnabled" />
+		</property>
+		<set name="roleOperators" table="role_operator"  inverse="true" cascade="all-delete-orphan" lazy="false" fetch="select">
+            <key>
+                <column name="role_id" not-null="true" />
+            </key>
+            <one-to-many class="com.arcsoft.commander.domain.security.RoleOperator" />
+        </set>
+        
+         <set name="useres" table="tbl_users" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="role_id" not-null="true" />
+            </key>
+            <one-to-many class="com.arcsoft.commander.domain.security.Account" />
+        </set>
+        
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,404 @@
+@CHARSET "UTF-8";
+
+.taskListContainer{	
+}
+.taskListContainer .Task{	
+	width:100%;
+}
+
+.RowLine{
+	border-bottom:1px solid #cdcdcd;
+}
+
+.TaskListCol_0 {
+	width:25px;
+	text-align:center;		
+}
+
+.TaskListCol_Exp {
+	width:30px;
+	text-align:left;	
+}
+
+.TaskListCol_Id {
+	width:40px;
+	text-align:center;	
+}
+
+.TaskListCol_Icon{
+	display:none;
+	width:84px;
+	text-align:left;
+}
+
+.TaskListCol_Name {
+	width:260px;min-width:230px;max-width:260px;
+	text-overflow:ellipsis;overflow:hidden;
+	text-align:left;work-wrap:break-word;word-break:break-all;
+}
+
+.TaskListCol_Outputs {
+	width:60px;
+	text-align:center;
+}
+
+
+.TaskListCol_Status {
+	width:80px;
+	text-align:left;	
+}
+
+.TaskListCol_Progress {
+	width:120px;
+	text-align:center;	
+}
+
+.TaskListCol_StartTime {
+	width:95px;
+	text-align:center;	
+}
+
+.TaskListCol_EndTime {
+	display:none;
+	width:95px;
+	text-align:left;
+}
+
+.TaskListCol_Duration {	
+	width:80px;
+	text-align:center;
+}
+
+.TaskListCol_Power {
+	text-align:center;
+}
+
+.TaskListCol_Signal {
+	width: 80px;
+	text-align:center;
+}
+
+.TaskListTableHead{
+	display:inline-block;
+	width:100%; height:40px;
+	background:url("../images/bar/titlebar_bg.png") repeat-x scroll 0px 0px;	
+}
+
+.TaskActionPanel{
+	display:inline-block; text-align:right;
+	width:100%; height:40px;
+	background:url("../images/bar/actionbar_bg.png") repeat-x scroll 0px 0px;	
+}
+
+.TaskActionBar{
+	display:inline-block;
+	border:0px;
+	border-top:1px solid #b0e0e6;	
+	border-bottom:1px solid #b0e0e6;
+	width:100%;height:40px;line-height:40px;	
+}
+
+.TaskActionBarItem {	
+	display:inline-block; cursor:pointer; 	
+    padding-left:30px;
+    margin-left:6px;margin-right:6px;
+    left:0px;top:0px;height:44px;
+    min-width:30px;line-height:44px;
+    vertical-align:middle;   
+    
+}
+.TaskActionBarItem:active{
+	background-position:0px 8px;
+	line-height:46px;
+}
+
+.ActionItemStart{
+	 background: url("../images/icons/start.png") no-repeat scroll 0px 7px;
+}
+.ActionItemStart:hover{
+	 background: url("../images/icons/start_hover.png") no-repeat scroll 0px 7px;
+}
+.ActionItemStart:active{
+	 background: url("../images/icons/start_hover.png") no-repeat scroll 0px 8px;
+}
+.ActionItemStop{
+	 background: url("../images/icons/stop.png") no-repeat scroll 0px 7px;
+}
+.ActionItemStop:hover{
+	 background: url("../images/icons/stop_hover.png") no-repeat scroll 0px 7px;
+}
+.ActionItemStop:active{
+	 background: url("../images/icons/stop_hover.png") no-repeat scroll 0px 8px;
+}
+
+.ActionItemTransInfo{
+	 background: url("../images/icons/transinfo.png") no-repeat scroll 0px 7px;
+}
+.ActionItemTransInfo:hover{
+	 background: url("../images/icons/transinfo_hover.png") no-repeat scroll 0px 7px;
+}
+.ActionItemTransInfo:active{
+	 background: url("../images/icons/transinfo_hover.png") no-repeat scroll 0px 8px;
+}
+
+.ActionItemSwitchMode{
+	 background: url("../images/icons/icon_apply.png") no-repeat scroll 0px 7px;
+}
+
+.ActionBarDropDown{
+	display:inline-block;position:relative;
+	border:1px none #666666;
+	width:16px;
+	vertical-align:middle;
+}
+.ActionBarDropDown .DropMenu{
+	display:none;	
+}
+.ActionBarDropDown:hover{
+	border:1px solid #666666;
+}
+.ActionBarDropDown:hover .DropMenu{
+	display:block;position:absolute;
+	left:-36px;top:17px;width:240px;
+	background-color:#1b84a9;
+}
+
+.DropMenuItem{
+	display:block;
+	border-bottom:1px solid #cccccc;
+	padding-left:30px;
+	text-align:left;
+}
+
+.FilterPanelItem {
+	display:inline-block; position:relative;
+	margin-left:10px;
+	vertical-align:middle;	
+}
+
+.TaskImg{
+	border-radius:2px;
+}
+
+.ProgressBarN {
+	display:block;position:relative;overflow:visible;z-index:0;
+	left:0px;top:0px;width:94px;height:18px;
+	border:0px;margin:0px;margin-left:6px;margin-right:6px;	border-radius:4px;
+	/*background:url("../images/index_element/Normal_bar_middle.png") repeat-x scroll 0px 0px;*/
+}
+.ProgressBarR {
+	display:block;position:relative;overflow:visible;z-index:0;
+	left:0px;top:0px;width:94px;height:18px;
+	border:0px;margin:0px;margin-left:6px;margin-right:6px;	border-radius:4px;
+	background:url("../images/index_element/Normal_bar_middle.png") repeat-x scroll 0px 0px;
+}
+
+.ProgressBarP {
+	display:block;position:relative;overflow:visible;z-index:0;
+	left:0px;top:0px;width:94px;height:18px;
+	border:0px;margin:0px;margin-left:6px;margin-right:6px;	border-radius:4px;
+	/*background:url("../images/index_element/Pending_bar_middle.png") repeat-x scroll 0px 0px;*/
+}
+
+.ProgressBarW {
+	display:block;position:relative;overflow:visible;z-index:0;
+	left:0px;top:0px;width:94px;height:18px;
+	border:0px;margin:0px;margin-left:6px;margin-right:6px;	border-radius:4px;
+	/*background:url("../images/index_element/Standby_bar_middle.png") repeat-x scroll 0px 0px;*/
+}
+
+.ProgressBarE {
+	display:block;position:relative;overflow:visible;z-index:0;
+	left:0px;top:0px;width:94px;height:18px;
+	border:0px;margin:0px;margin-left:6px;margin-right:6px;	border-radius:4px;
+	/*background:url("../images/index_element/Error_bar_middle.png") repeat-x scroll 0px 0px;	*/
+}
+
+.ProgressBarC {
+	display:block;position:relative;overflow:visible;z-index:0;
+	left:0px;top:0px;width:94px;height:18px;
+	border:0px;margin:0px;margin-left:6px;margin-right:6px;	border-radius:4px;
+	/*background:url("../images/index_element/Process_bar_middle.png") repeat-x scroll 0px 0px;	*/
+}
+
+.ProgressBarProgress{
+	display:block;position:relative;overflow:hidden;z-index:2;border-radius:4px;
+	left:0px;top:0px;width:0px;height:18px;	
+	background:url("../images/index_element/Process_bar_middle.png") repeat-x scroll 0px 0px;	
+}
+
+.ProgressBarStreaming{
+	display:block;position:absolute;z-index:2;
+	border-radius:4px;
+	left:-6px;top:0px;right:-6px;height:18px;
+	background:url("../images/icons/streaming.gif") no-repeat scroll 0px 0px;	
+}
+
+.ProgressBarCaption{
+	display:block;position:absolute;z-index:3;
+	top:0px;right:0px;width:100%;height:18px;
+	line-height:18px;	
+	vertical-align:middle;
+	text-align:center;
+}
+
+.ProgressBarText {
+	font-family: "msyh","Arial", "宋体";
+	font-size: 9pt;
+	font-style: normal;
+	color: #000000;
+	text-align:center;
+}
+
+.TaskBodyContainer{	
+	padding:0px;
+	padding-left:65px;	
+	background-color:#ffffff;
+}
+
+.TaskBody{
+	display:block;
+	width:100%;	
+}
+.TaskBody .HeadTitle{
+	display:block;	
+	height:25px;
+	line-height:25px;
+	width:auto;	
+}
+
+.TaskBody .Content{
+	display:block;
+	min-height:30px;
+	width:100%;	
+}
+
+.TaskBody .Content .Row{
+	display:table-row;
+	border:0px;
+	border-top:0px solid #679998;
+	border-bottom:0px solid #016565;
+	left:0px;top:0px;width:100%;min-width:600px;min-height:20px;		
+}
+
+.TaskBody .Content .ThumbCol{
+	display:table-cell; 
+	width:5%;min-width:120px;max-width:160px;min-height:70px;	
+}
+.TaskBody .Content .InputDetail{
+	display:table-cell; 
+	width:95%;
+	vertical-align:top;
+}
+
+.InputDetail .Item{
+	min-width:100px;
+}
+
+.InputDetail .Lbl{
+	display:inline-block; 
+	padding-right:6px;
+	width:80px;
+	text-align:right;
+}
+.InputDetail .Val{
+	display:inline-block;
+	vertical-align:middle;	
+	max-width:720px;
+	text-overflow:ellipsis;overflow:hidden;work-wrap:break-word;word-break:break-all;
+}
+
+.InputDetail .row{
+	min-width:100px;
+}
+.InputDetail .row .lbl{
+	display:inline-block; 
+	padding-right:6px;
+	width:80px;
+	text-align:right;
+}
+.InputDetail .row .val{
+	display:inline-block;
+	vertical-align:middle;	
+	max-width:720px;
+	text-overflow:ellipsis;overflow:hidden;work-wrap:break-word;word-break:break-all;
+}
+
+.TaskBody .Content .Other{	
+	min-width:165px;
+	text-align:left;
+}
+
+.TaskBody .Content .OutputTableV{
+	border-collapse:separate;
+}
+.TaskBody .Content .OutputTableV tr{
+	margin:2px;
+}
+.TaskBody .Content .OutputTableV td{
+	margin:2px;
+	padding:2px;
+}
+
+.TaskBody .Content .Val{
+	display:inline-block;	
+	min-width:40px;max-width:720px;
+	/*text-overflow:ellipsis;overflow:hidden;*/
+	word-wrap:break-word;word-break:break-all;
+}
+
+.IdOutputGroup{
+	display:none;
+}
+
+.TaskPower{
+	/*color:#cccccc;*/
+}
+
+.TaskErrorDetailDrop{
+	display:none;
+	overflow:hidden;
+	vertical-align:middle;
+}
+.TaskErrorDetailDrop:hover{
+	border:1px solid #666666;
+}
+
+.TaskErrorDetail{
+	display:none;
+	margin-left:16px;
+	width:400px;
+	height:36px;
+	background-color:yellow;
+}
+
+.SearchItem{
+	display:inline-block;
+	margin-left:10px;
+	margin-top:1px;
+	margin-bottom:1px;
+	font-size:9pt;
+}
+.SearchItem .inputid{	
+	width:35px;
+}
+.SearchItem .inputkeyword{	
+	width:64px;
+}
+.SearchItem .inputname{	
+	width:40px;
+}
+.SearchItem .inputdate{	
+	width:160px;
+}
+
+.OutputConnectedYes {
+	background:url("../images/icons/light_green.png") no-repeat scroll center right 5px;
+	background-size:12px;
+}
+.OutputConnectedNo {
+	background:url("../images/icons/light_red.png") no-repeat scroll center right 5px;
+	background-size:12px;
+}
+.OutputConnectedNA {	
+}

@@ -1,0 +1,97 @@
+#key_search{
+	position:absolute;
+	background-color:transparent;
+}
+
+
+.searchBtn{
+	margin-left: 2px;
+	border:0px;
+	width:26px;
+	height:24px;
+	background: url("../../images/security/search_n.png");
+	display:block;
+}
+
+a.searchBtn:hover{
+	background: url("../../images/security/search_h.png");
+}
+
+
+.div_input_search{
+	background: url('../../images/security/search_bg.png') no-repeat;
+	padding: 1px 1px 1px 2px;
+	height: 28px;
+	width: 170px;
+}
+
+.input_search{
+	font-size: 9pt;
+	border:0px;
+	margin:0px;
+	width:140px;
+	height:22px;
+	line-height:22px;
+}
+
+.div_operate{
+	display:none;
+}
+
+label{
+	font-size: 12pt;
+	margin:0px 10px 0px 5px;
+}
+
+.userName{
+	width:160px;
+}
+
+.realName{
+	width:160px;
+}
+
+.roleName{
+	width: 160px;
+}
+
+.remarks{
+	max-width: 270px;
+	text-align: left;
+}
+
+.registerTime{
+	width:120px;
+}
+
+.unRigisterTime{
+	width:120px;
+}
+
+.tab_list td {
+	text-align: center;
+}
+
+.role_remarks {
+	max-width: 830px;
+	text-align: left;
+}
+
+.ellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.max_height{
+	height:46px;
+}
+
+body {
+	background: url("../../images/BG.png") repeat;
+}
+
+#disabledText {
+	padding-left: 20px;
+	display: none;
+}

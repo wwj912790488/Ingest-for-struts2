@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="alert" extends="json-default, default">
+		<action name="listAlert" class="com.arcsoft.commander.action.alert.AlertAction" method="list">
+			<result>/jsp/logandalert/alertlist.jsp</result>
+		</action>
+		<action name="deleteAlert" class="com.arcsoft.commander.action.alert.AlertAction" method="delete">
+			<result type="chain">
+				<param name="actionName">listAlert</param>
+			</result>	
+		</action>
+		<action name="exportAlert" class="com.arcsoft.commander.action.alert.AlertAction" method="export" />
+
+		<action name="frameListAlert" class="com.arcsoft.commander.action.alert.FrameAlertAction" method="list">
+			<result>/jsp/logandalert/framealertlist.jsp</result>
+		</action>
+		<action name="frameDeleteAlert" class="com.arcsoft.commander.action.alert.FrameAlertAction" method="delete">
+			<result type="chain">
+				<param name="actionName">frameListAlert</param>
+			</result>
+		</action>
+		<action name="frameExportAlert" class="com.arcsoft.commander.action.alert.FrameAlertAction" method="export" />
+
+		<action name="loadAlertSetting" class="com.arcsoft.commander.action.alert.AlertSettingAction" method="load">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		<action name="saveAlertSetting" class="com.arcsoft.commander.action.alert.AlertSettingAction" method="save">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>
+
+		<action name="frameLoadAlertSetting" class="com.arcsoft.commander.action.alert.AlertSettingAction" method="load">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		<action name="frameSaveAlertSetting" class="com.arcsoft.commander.action.alert.AlertSettingAction" method="save">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>
+		<action name="sendTestEmail" class="com.arcsoft.commander.action.alert.AlertSettingAction" method="sendTestEmail">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>		
+	</package>
+</struts>

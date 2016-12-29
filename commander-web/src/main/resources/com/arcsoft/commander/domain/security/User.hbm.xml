@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-8-29 17:15:03 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+ <class name="com.arcsoft.commander.domain.security.Account" table="tbl_users">
+  <id name="id" type="java.lang.Integer">
+   <column name="id"/>
+   <generator class="native"/>
+  </id>
+  <property generated="never" lazy="false" name="name" type="string">
+   <column name="name"/>
+  </property>
+  <property generated="never" lazy="false" name="password" type="string">
+   <column name="password"/>
+  </property>
+  <property generated="never" lazy="false" name="realName" type="string">
+   <column name="real_name"/>
+  </property>
+  <property generated="never" lazy="false" name="registerTime" type="timestamp">
+   <column name="register_time"/>
+  </property>
+  <property generated="never" lazy="false" name="unRegisterTime" type="timestamp">
+   <column name="unregister_time"/>
+  </property>
+  <property generated="never" lazy="false" name="remarks" type="string">
+   <column name="remarks"/>
+  </property>
+  <property generated="never" lazy="false" name="isEnabled" type="boolean">
+   <column name="isEnabled"/>
+  </property>
+   <many-to-one name="role" column="role_id" fetch="select"
+  	class="com.arcsoft.commander.domain.security.Role"
+  	cascade="delete"
+  	lazy="false"/>
+  <!-- set name="roles" table="user_role" inverse="false" lazy="false" fetch="select">
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.arcsoft.commander.domain.security.Role">
+                <column name="role_id" not-null="true" />
+            </many-to-many>
+        </set-->
+        
+ </class>
+</hibernate-mapping>

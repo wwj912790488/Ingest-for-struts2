@@ -1,0 +1,282 @@
+@CHARSET "UTF-8";
+
+#header{
+	color:#000;
+	line-height:50px;
+	padding-left: 12px;
+	padding-right: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.BottomBar {
+	height: 40px;
+}
+
+.ContentPackagePos {
+	position: relative;
+	margin:0px;
+	margin-left:auto;
+	margin-right:auto;	
+	width:1065px;
+	background-color: #fff;
+}
+
+#content{
+	width:500px;
+	float:left;
+}
+
+#content_inner{
+	width: 100%;
+	height: 480px;
+}
+
+.content_left_padding {
+	padding-left: 12px;
+}
+
+#side{
+	width:503px;
+	color:#000;
+	float:right;
+}
+
+#ContentParamsLeft {
+	width:300px;
+	float:left;
+}
+
+#ContentParamsRight {
+	float:right;
+	width:202px;
+	color:#000;
+}
+
+.ContentInput {
+	width: 196px;
+}
+
+.ContentSelect {
+	width: 200px;
+}
+
+.ContentTab:hover{
+	background:#10c0ee;
+	cursor:pointer;
+}
+
+#ContentTabList {
+	height: 100%;
+}
+
+#footer{
+	height:50px;
+	color:#000;
+}  
+
+.clear{clear:both}
+
+.player_container {
+	width: 624px;
+	height: 358px;
+	border: 1px solid #ddd;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.iconLeft {
+	width: 30px;
+	height: 30px;
+	background-image: url("../images/icons/arrow_left.png");
+}
+
+.DefaultLeftMargin {
+	margin-left:14px;
+}
+
+.ContentParamBtn {
+	width: 80px;
+}
+
+.ContentTabCol1 {
+	width: 30px;
+}
+
+.ContentTabCol2 {
+	width: 130px;
+}
+
+.ContentParamCol1 {
+	width: 90px;
+}
+
+.ContentParamCol2 {
+	width: 110px;
+}
+
+.ContentParamCol3 {
+	width: 50px;
+}
+
+.ContentInfoCol1 {
+	width: 100px;
+}
+
+.ContentInfoCol2 {
+	width: 200px;
+}
+
+.ContentInfoColBtn {
+	width: 70px;
+}
+
+.ContentParamText {
+	width: 196px;
+}
+
+.ContentParamText2 {
+	width: 96px;
+}
+
+.ContentParamSelect {
+	height: 20px;
+	width: 200px;
+}
+
+.ContentParamSelect2 {
+	height: 20px;
+	width: 100px;
+}
+
+.selected_tab {
+	background: #fff;
+	border-bottom: 1px solid #aaa;
+	border-right: 3px solid #1bb9f2;
+}
+
+.unselected_tab {
+	background-color:#ebeef3;
+	border-bottom: 1px solid #aaa;
+	padding-right: 3px;
+}
+
+.DefaultButton {
+	color : #333;
+	box-sizing: border-box;
+	border: 1px solid #aaa;
+	border-radius: 3.01px;
+	text-align: center;
+	height: 30px;
+	line-height:30px;
+	cursor: pointer;
+}
+
+.DefaultButton:hover {
+	border: 1px solid #333;
+}
+
+.DefaultButtonDown {
+	border: 1px solid #333;
+	background-color: #44aaf6;
+}
+
+.ContentButton1 {
+	color: #fff;
+	background-color: #179dce;
+	text-align: center;
+	height: 26px;
+	line-height:26px;
+	cursor: pointer;
+}
+
+.ContentButton2 {
+	background-color: #f7f7f7;
+	box-sizing: border-box;
+	border: 1px solid #aaa;
+	text-align: center;
+	height: 26px;
+	line-height:26px;
+	cursor: pointer;
+}
+
+.ContentButton3 {
+	background-color: #f7f7f7;
+	box-sizing: border-box;
+	border: 1px solid #aaa;
+	text-align: center;
+	height: 24px;
+	line-height:24px;
+	cursor: pointer;
+}
+
+.TabContentButton {
+	width: 80px;
+}
+
+.table_left_margin {
+	width: 12px;
+}
+
+.ContentPackagingList {
+	border-collapse:collapse;
+}
+
+.ContentPackagingListHead {
+	background-color: #f5f6fa;
+	height: 30px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.ContentPackagingListItem {
+	border-bottom: 1px solid #bfbdbd;
+}
+
+.ContentPackagingRow {
+	background-color: #fff;
+	height: 30px;
+}
+
+.cpl_col1 {
+	width: 20px;
+	text-align: center;
+}
+
+.cpl_col2 {
+	width: 40px;
+}
+
+.cpl_col3 {
+	width: 50px;
+	padding-left: 4px;
+	border-left: 1px solid #ddd;
+}
+
+.cpl_col4 {
+	width: 120px;
+	padding-left: 4px;
+	border-left: 1px solid #ddd;
+	word-break:break-all;
+}
+
+.cpl_col5 {
+	padding-left: 4px;
+	border-left: 1px solid #ddd;
+	word-break:break-all;
+}
+
+.cpl_col6 {
+	width: 14px;
+	padding-left: 4px;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+
+.DynamicTextLabel {
+	width: 130px;
+}
+
+.DynamicTextLabelDisp {
+	color: #002dfa;
+}

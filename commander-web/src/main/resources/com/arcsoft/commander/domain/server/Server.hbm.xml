@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-24 11:15:36 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="com.arcsoft.commander.domain.server.Server" table="tbl_servers">
+  <id name="id" type="java.lang.String">
+   <column name="server_id" not-null="true" unique="true"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="type" type="java.lang.Integer">
+   <column name="server_type"/>
+  </property>
+  <property generated="never" lazy="false" name="name" type="java.lang.String">
+   <column name="server_name" not-null="true" unique="true"/>
+  </property>
+  <property generated="never" lazy="false" name="ip" type="java.lang.String">
+   <column name="server_ip"/>
+  </property>
+  <property generated="never" lazy="false" name="port" type="java.lang.Integer">
+   <column name="server_port"/>
+  </property>
+  <property generated="never" lazy="false" name="state" type="java.lang.Integer">
+   <column name="server_state"/>
+  </property>
+  <property generated="never" lazy="false" name="backup" type="java.lang.Boolean">
+   <column length="1" name="server_isbackup" sql-type="INTEGER"/>
+  </property>
+  <property generated="never" lazy="false" name="alive" type="java.lang.Boolean">
+   <column length="1" name="server_isalive" sql-type="INTEGER"/>
+  </property>
+   <property generated="never" lazy="false" name="faultDisabled" type="java.lang.Boolean">
+   <column length="1" name="fault_disabled" sql-type="INTEGER"/>
+  </property>  
+  <component name="capabilities" class="com.arcsoft.commander.domain.server.ServerCapabilities">
+   <property generated="never" lazy="false" name="maxTasks" type="java.lang.Integer">
+    <column name="max_tasks_count"/>
+   </property>
+   <property generated="never" lazy="false" name="maxOutputGroups" type="java.lang.Integer">
+    <column name="max_output_count"/>
+   </property>
+   <property generated="never" lazy="false" name="maxSDCount" type="java.lang.Integer">
+    <column name="max_sd_count"/>
+   </property>
+   <property generated="never" lazy="false" name="maxHDCount" type="java.lang.Integer">
+    <column name="max_hd_count"/>
+   </property>
+  </component>
+  <many-to-one lazy="false" class="com.arcsoft.commander.domain.server.ServerGroup"
+   fetch="join" name="group">
+   <column name="group_id"/>
+  </many-to-one>
+  	<list name="matrixSettings" inverse="true" cascade="delete" lazy="false" fetch="select" >
+            <key>
+                <column name="server_id" not-null="true" />
+            </key>
+            <index column="id"></index>
+            <one-to-many class="com.arcsoft.commander.domain.matrix.MatrixSetting" />
+        </list>
+   
+ </class>
+</hibernate-mapping>

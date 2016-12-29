@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<alert>
+	<version>1.0</version>
+	<description>ArcVideo Alert</description>
+	<resource>${alert.home}/conf/resource.xml</resource>
+	<rules>
+		<!-- hardware rules -->
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>net_use_rate</code>
+			<op><![CDATA[>=]]></op>
+			<floatValue>70</floatValue>
+			<level>WARNING</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>net_use_rate</code>
+			<op><![CDATA[>=]]></op>
+			<floatValue>98</floatValue>
+			<level>ERROR</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>cpu_use_rate</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>85</intValue>
+			<level>WARNING</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>cpu_use_rate</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>98</intValue>
+			<level>ERROR</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>gpu_use_rate</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>70</intValue>
+			<level>WARNING</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>gpu_use_rate</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>98</intValue>
+			<level>ERROR</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>gpu_mem_use_rate</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>70</intValue>
+			<level>WARNING</level>
+			<persistent>true</persistent>
+			<disabled>true</disabled>
+		</thresholdRule>
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>gpu_mem_use_rate</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>98</intValue>
+			<level>ERROR</level>
+			<persistent>true</persistent>
+			<disabled>true</disabled>
+		</thresholdRule>
+
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>mem_use_rate</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>70</intValue>
+			<level>WARNING</level>
+			<persistent>true</persistent>
+			<disabled>true</disabled>
+		</thresholdRule>
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>mem_use_rate</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>90</intValue>
+			<level>ERROR</level>
+			<persistent>true</persistent>
+			<disabled>true</disabled>
+		</thresholdRule>
+
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>disk_use_rate</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>70</intValue>
+			<level>WARNING</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>disk_use_rate</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>98</intValue>
+			<level>ERROR</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>cpu_temp</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>70</intValue>
+			<level>WARNING</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>cpu_temp</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>90</intValue>
+			<level>ERROR</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>gpu_temp</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>70</intValue>
+			<level>WARNING</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>gpu_temp</code>
+			<op><![CDATA[>=]]></op>
+			<intValue>90</intValue>
+			<level>ERROR</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>fan_speed</code>
+			<op><![CDATA[<=]]></op>
+			<intValue>100</intValue>
+			<level>WARNING</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+		<thresholdRule>
+			<type>HARDWARE</type>
+			<code>fan_speed</code>
+			<op><![CDATA[<=]]></op>
+			<intValue>1</intValue>
+			<level>ERROR</level>
+			<persistent>true</persistent>
+		</thresholdRule>
+
+		<!-- device rules -->
+		<rule>
+			<type>DEVICE</type>
+			<code>device_offline</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>DEVICE</type>
+			<code>device_no_backup</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>DEVICE</type>
+			<code>device_take_over</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>DEVICE</type>
+			<code>device_switch_role</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>DEVICE</type>
+			<code>device_network_broken</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>DEVICE</type>
+			<code>device_gpu_broken</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>DEVICE</type>
+			<code>fault_monitor_failed</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>DEVICE</type>
+			<code>fault_detected</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>		
+		<rule>
+			<type>DEVICE</type>
+			<code>fault_reboot_failed</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>DEVICE</type>
+			<code>fault_switch_failed</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		
+		<!-- source rules -->
+		<rule>
+			<type>SOURCE</type>
+			<code>source_interrupt</code>
+			<level>ERROR</level>
+			<persistent>true</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>source_no_video</code>
+			<level>ERROR</level>
+			<persistent>true</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>source_no_audio</code>
+			<level>ERROR</level>
+			<persistent>true</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>source_resume</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>source_switch</code>
+			<level>WARNING</level>
+			<persistent>true</persistent>
+		</rule>
+
+		<!-- new source signal rules -->
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_resume</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_broken</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_broken_persistent</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_broken_switch</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_patloss</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_patloss_persistent</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_patloss_switch</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_progidloss</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_progidloss_persistent</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_progidloss_switch</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_pmtloss</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_pmtloss_persistent</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_pmtloss_switch</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_videoloss</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_videoloss_persistent</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_videoloss_switch</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_audioloss</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_audioloss_persistent</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_audioloss_switch</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_ccerror</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_ccerror_persistent</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_ccerror_switch</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_packetloss</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_switch_success</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_progid_changed</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_pmtid_changed</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_vid_changed</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_aid_changed</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_vtype_changed</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>SOURCE</type>
+			<code>signal_atype_changed</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+
+		<!-- task rules -->
+		<rule>
+			<type>TASK</type>
+			<code>signal_video_queue_full</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>signal_video_queue_normal</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>signal_audio_queue_full</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>signal_audio_queue_normal</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>task_open_file_failed</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>task_read_file_failed</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>task_write_file_failed</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>task_write_disc_full</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>task_file_error</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>task_file_illegal</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>task_file_encrypted</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>task_warning</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>task_error</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>task_auto_restart</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>hls_server_connection_failed</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>hls_put_failed</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>hls_put_timeout</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>hls_delete_file_failed</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>output_broken</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>output_broken_persistent</code>
+			<level>WARNING</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>padding_image_no_file</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+		<rule>
+			<type>TASK</type>
+			<code>padding_image_error_file</code>
+			<level>ERROR</level>
+			<persistent>false</persistent>
+		</rule>
+	</rules>
+	<servers>
+		<server>
+			<name>TcpCommandDataServer</name>
+			<class>com.arcsoft.arcvideo.alert.server.TcpCommandDataServer</class>
+			<params>
+				<param name="ip">0.0.0.0</param>
+				<param name="port">7203</param>
+				<param name="charset">utf-8</param>
+				<param name="command">send</param>
+				<param name="timestamp">-t</param>
+				<param name="host">-h</param>
+				<param name="code">-c</param>
+				<param name="index">-i</param>
+				<param name="data">-d</param>
+				<param name="attr">-D</param>
+			</params>
+		</server>
+	</servers>
+	<senders>
+		<sender>
+			<name>DatabaseSender</name>
+			<class>com.arcsoft.arcvideo.alert.sender.DatabaseAlertEventSender</class>
+			<params>
+				<param name="featureEnabled">true</param>
+				<param name="notifyOnLevelChanged">true</param>
+				<param name="errorAlertEnabled">true</param>
+				<param name="warningAlertEnabled">true</param>
+				<param name="errorAlertInterval">1</param>
+				<param name="warningAlertInterval">10</param>
+				<param name="jdbc.url"><![CDATA[jdbc:mysql://localhost/ingestdb?useUnicode=yes&characterEncoding=UTF-8]]></param>
+				<param name="jdbc.driverClass">com.mysql.jdbc.Driver</param>
+				<param name="jdbc.username">root</param>
+				<param name="jdbc.password">root</param>
+				<param name="jdbc.insert.sql">
+					<![CDATA[
+					insert into alerts (
+						ip, type, created_at, time_stamp, level, description, task_id, error_code
+					) values (
+						'#{alert.ip}',
+						'#{alert.type.id}',
+						'#{alert.date|yyyy-MM-dd HH:mm:ss}',
+						#{alert.date},
+						'#{alert.level.id}',
+						'#{alert.description}',
+						#{task_id},
+						'#{error_code}'
+					)
+					]]>
+				</param>
+			</params>
+		</sender>
+		<sender>
+			<name>MailSender</name>
+			<class>com.arcsoft.arcvideo.alert.sender.MailAlertEventSender</class>
+			<params>
+				<param name="featureEnabled">false</param>
+				<param name="notifyOnLevelChanged">true</param>
+				<param name="errorAlertEnabled">true</param>
+				<param name="warningAlertEnabled">false</param>
+				<param name="errorAlertInterval">60</param>
+				<param name="warningAlertInterval">120</param>
+				<param name="mail.smtp.host"></param>
+				<param name="mail.smtp.port">25</param>
+				<param name="mail.smtp.user"></param>
+				<param name="mail.smtp.password"></param>
+				<param name="mail.receivers"></param>
+				<param name="mail.subject">ArcVideo告警系统: #{alert.type.text} #{alert.level.text} #{alert.description}</param>
+				<param name="mail.content">
+					<![CDATA[
+					[时间]: #{alert.date}
+					[类型]: #{alert.type.text}
+					[级别]: #{alert.level.text}
+					[设备]: #{alert.ip}
+					[描述]: #{alert.description}
+					]]>
+				</param>
+			</params>
+		</sender>
+	</senders>
+</alert>

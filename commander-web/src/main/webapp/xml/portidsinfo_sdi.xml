@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PortIDs type="SDI">
+    <Ports Count="2">
+        <Port idx="1">
+        </Port>
+        <Port idx="3">
+        </Port>
+    </Ports>
+</PortIDs>

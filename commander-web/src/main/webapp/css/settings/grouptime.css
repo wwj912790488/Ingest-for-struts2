@@ -1,0 +1,61 @@
+#time_update_panel {
+	border: 1px solid lightgray;
+	padding: 10px;
+}
+
+#time_update_panel table {
+	width: 350px;
+}
+
+#time_update_panel td {
+	padding: 5px;
+}
+
+#time_update_panel .field_label {
+	width: 100px;
+	text-align: right;
+}
+
+.group_title .time_list {
+	max-width: 600px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#calander {
+	width: 150px;
+}
+
+#ntpServerInput {
+	width: 120px;
+}
+
+#btnAddNtpServer {
+	width: 40px;
+}
+
+#serverList {
+	width:200px;
+	height:85px;
+	overflow:scroll;
+	overflow-x:hidden;
+	border:lightgray 1px solid;
+	cursor:default";
+}
+
+#serverList table{
+	border:none;
+	width:100%;
+}
+
+#serverList .ntpServerName {
+	height:17px;
+	padding:0px;
+}
+
+#serverList .ntpServerPrefer {
+	height:17px;
+	width:23px;
+	padding:0px;
+}

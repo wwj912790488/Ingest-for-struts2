@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-6-6 10:22:29 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.arcsoft.commander.domain.security.RoleOperator" table="role_operator">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="role" class="com.arcsoft.commander.domain.security.Role" lazy="false" fetch="select">
+            <column name="role_id" not-null="true" />
+        </many-to-one>
+        <property name="operatorId" generated="never" type="int">
+            <column name="operator_id" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

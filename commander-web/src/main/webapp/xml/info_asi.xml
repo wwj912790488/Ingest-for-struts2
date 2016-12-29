@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mediaInfo name="ASI_PortID1">
+    <container>MPEG-TS</container>
+    <programs count="2">
+        <program idx="0">
+            <name>Program 1</name>
+            <used>1</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>4113</pid>
+                    <name>Video</name>
+                    <used>1</used>
+                    <codec>VC1</codec>
+                    <duration>59917</duration>
+                    <bitrate>16660.5 kbps</bitrate>
+                    <framerate>24.00</framerate>
+                    <resolution>1920x1080</resolution>
+                    <aspect_ratio>16:9</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>4352</pid>
+                    <name>Audio 1</name>
+                    <used>1</used>
+                    <codec>AC3</codec>
+                    <duration>61056</duration>
+                    <bitrate>448.0 kbps</bitrate>
+                    <channel>2</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+            <subtitles count="1">
+                <subtitle idx="0">
+                    <pid>4608</pid>
+                    <name>Subtitle 1</name>
+                    <used>0</used>
+                </subtitle>
+            </subtitles>
+        </program>
+        <program idx="1">
+            <name>Program 2</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="1">
+                    <pid>4213</pid>
+                    <name>Video</name>
+                    <used>1</used>
+                    <codec>VC1</codec>
+                    <duration>33333</duration>
+                    <bitrate>155550.5 kbps</bitrate>
+                    <framerate>32.00</framerate>
+                    <resolution>1920x1080</resolution>
+                    <aspect_ratio>16:9</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="2">
+                <audio idx="0">
+                    <pid>4452</pid>
+                    <name>Audio 21</name>
+                    <used>1</used>
+                    <codec>AC3</codec>
+                    <duration>61056</duration>
+                    <bitrate>448.0 kbps</bitrate>
+                    <channel>2</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+                <audio idx="1">
+                    <pid>4454</pid>
+                    <name>Audio 22</name>
+                    <used>0</used>
+                    <codec>AC3</codec>
+                    <duration>61056</duration>
+                    <bitrate>666.0 kbps</bitrate>
+                    <channel>5</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+            <subtitles count="2">
+                <subtitle idx="0">
+                    <pid>5608</pid>
+                    <name>Subtitle 21</name>
+                    <used>1</used>
+                </subtitle>
+                <subtitle idx="1">
+                    <pid>5609</pid>
+                    <name>Subtitle 22</name>
+                    <used>0</used>
+                </subtitle>
+            </subtitles>
+        </program>
+    </programs>
+</mediaInfo>

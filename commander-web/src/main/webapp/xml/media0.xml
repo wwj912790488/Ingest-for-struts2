@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mediaInfo name="/mnt/testsample/1.3g2">
+    <container>3GP</container>
+    <size>606042</size>
+    <duration>7467</duration>
+    <video>
+        <codec>H263</codec>
+        <bitrate>632.4 kbps</bitrate>
+        <framerate>15.0</framerate>
+        <resolution>128x96</resolution>
+        <aspect_ratio>4:3</aspect_ratio>
+    </video>
+    <audio>
+        <codec>AMR</codec>
+        <bitrate>12.8 kbps</bitrate>
+        <channel>1</channel>
+        <samplerate>8.0 kHz</samplerate>
+        <bitdepth>13</bitdepth>
+    </audio>
+</mediaInfo>

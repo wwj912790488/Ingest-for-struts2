@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+      "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="system" extends="json-default, default">
+		<action name="sysinit" class="com.arcsoft.commander.action.system.SysInitAction" method="init">
+			<result name="success">/jsp/system/sysinit.jsp</result>
+		</action>
+		<action name="syssave" class="com.arcsoft.commander.action.system.SysInitAction" method="save">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">success,fieldErrors\..+$</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">success,fieldErrors\..+$</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

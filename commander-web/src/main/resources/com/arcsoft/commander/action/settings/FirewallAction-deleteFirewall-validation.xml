@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN"
+	"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="rule.dport">
+		<field-validator type="required" short-circuit="true">
+			<param name="trim">true</param>
+			<message key="settings.err.invalid.port" />
+		</field-validator>
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message key="settings.err.invalid.port" />
+		</field-validator>
+		<field-validator type="regex" short-circuit="true">
+			<param name="regex"><![CDATA[^(\d|[1-9]\d{1,})[:-](\d|[1-9]\d{1,})$|^\d$|^[1-9]\d{1,}$]]></param>
+			<message key="settings.err.format.dport" />
+		</field-validator>
+		<field-validator type="dportRange">
+			<param name="separators">":","-"</param>
+			<message key="settings.err.rangeError.dport" />
+		</field-validator>
+	</field>
+	<field name="rule.protocol">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message key="settings.err.unsupported.protocol" />
+		</field-validator>
+		<field-validator type="regex">
+			<param name="regex"><![CDATA[^[Tt]cp|TCP|[Uu]dp|UDP$]]></param>
+			<message key="settings.err.unsupported.protocol" />
+		</field-validator>
+	</field>
+</validators>

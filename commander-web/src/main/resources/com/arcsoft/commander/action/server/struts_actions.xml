@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+      "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="server" extends="json-default, default">
+		<action name="addGroup" class="com.arcsoft.commander.action.server.AddGroupAction">
+			<result name="success">/jsp/server/addgroup.jsp</result>
+		</action>
+		<action name="saveGroup" class="com.arcsoft.commander.action.server.AddGroupAction" method="save">
+			<result name="success">/jsp/server/addsuccess.jsp</result>
+			<result name="error">/jsp/server/addgroup.jsp</result>
+		</action>
+		<action name="addServer" class="com.arcsoft.commander.action.server.AddServerAction">
+			<result name="success">/jsp/server/addgroup.jsp</result>
+		</action>
+		<action name="saveServer" class="com.arcsoft.commander.action.server.AddServerAction" method="save">
+			<result name="success">/jsp/server/addsuccess.jsp</result>
+			<result name="error">/jsp/server/addgroup.jsp</result>
+		</action>
+		<action name="scanServers" class="com.arcsoft.commander.action.server.ScanAction">
+			<result name="success">/jsp/server/scanservers.jsp</result>
+		</action>
+		<action name="listServer" class="com.arcsoft.commander.action.server.ListServerAction" method="list">
+			<result name="success">/jsp/server/servergrouplist.jsp</result>
+		</action>
+		<action name="renameGroup" class="com.arcsoft.commander.action.server.RenameGroupAction">	
+			<result type="json"></result>
+		</action>
+		<action name="renameServer" class="com.arcsoft.commander.action.server.RenameServerAction">			
+			<result type="json"></result>
+		</action>
+		<action name="deleteGroup" class="com.arcsoft.commander.action.server.DeleteGroupAction">			
+			<result type="json"></result>
+		</action>
+		<action name="deleteServer" class="com.arcsoft.commander.action.server.DeleteServerAction">			
+			<result type="json"></result>
+		</action>		
+	</package>
+</struts>

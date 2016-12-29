@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClass}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="minPoolSize" value="${c3p0.minPoolSize}" />
+		<property name="maxPoolSize" value="${c3p0.maxPoolSize}" />
+		<property name="initialPoolSize" value="${c3p0.initialPoolSize}" />
+		<property name="maxIdleTime" value="${c3p0.maxIdleTime}" />
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingLocations" value="#{hibernateMappingResources.resources}"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.query.substitutions">true=1 false=0</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="hibernateMappingResources" class="com.arcsoft.arcvideo.spring.utils.ResourcesManager">
+		<property name="resources">
+			<list>
+				<value>classpath:/com/arcsoft/commander/domain/system/SystemSettingEntity.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="daoTemplate"
+		abstract="true"
+		lazy-init="true"
+		p:sessionFactory-ref="sessionFactory"
+		/>
+
+	<bean id="systemDao"
+		class="com.arcsoft.commander.dao.system.impl.SystemDaoImpl"
+		parent="daoTemplate"
+		/>
+
+	<bean id="upgradeDao"
+		class="com.arcsoft.commander.dao.upgrade.impl.UpgradeDaoImpl"
+		parent="daoTemplate"
+		/>
+
+	<bean id="recorddbHandlerLoader"
+		class="com.arcsoft.commander.service.upgrade.PackageUpgradeHanderLoader"
+		p:packageName="com.arcsoft.commander.service.upgrade.impl.record"
+		/>
+
+	<bean id="recorddbVersionUpgradeHandler"
+		class="com.arcsoft.commander.service.upgrade.impl.DatabaseVersionUpgradeHandler"
+		init-method="loadHandlers"
+		p:upgradeHandlerLoader-ref="recorddbHandlerLoader"
+		p:systemDao-ref="systemDao"
+		p:upgradeDao-ref="upgradeDao"
+		p:versionKey="recorddb.version"
+		/>
+
+	<bean id="transcoderdbHandlerLoader"
+		class="com.arcsoft.commander.service.upgrade.PackageUpgradeHanderLoader"
+		p:packageName="com.arcsoft.commander.service.upgrade.impl.transcoder"
+		/>
+
+	<bean id="transcoderdbVersionUpgradeHandler"
+		class="com.arcsoft.commander.service.upgrade.impl.DatabaseVersionUpgradeHandler"
+		init-method="loadHandlers"
+		p:upgradeHandlerLoader-ref="transcoderdbHandlerLoader"
+		p:systemDao-ref="systemDao"
+		p:upgradeDao-ref="upgradeDao"
+		p:versionKey="transcoderdb.version"
+		/>
+
+	<bean id="commanderdbHandlerLoader"
+		class="com.arcsoft.commander.service.upgrade.PackageUpgradeHanderLoader"
+		p:packageName="com.arcsoft.commander.service.upgrade.impl.commander"
+		/>
+
+	<bean id="commanderdbVersionUpgradeHandler"
+		class="com.arcsoft.commander.service.upgrade.impl.DatabaseVersionUpgradeHandler"
+		init-method="loadHandlers"
+		p:upgradeHandlerLoader-ref="commanderdbHandlerLoader"
+		p:systemDao-ref="systemDao"
+		p:upgradeDao-ref="upgradeDao"
+		p:versionKey="db.version"
+		/>
+
+</beans>

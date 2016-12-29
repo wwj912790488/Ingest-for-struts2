@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<IOTask>
+    <EncoderPolicy>
+ 	   <Input>
+			<VideoSetting>				<CodecType>H264</CodecType>				<Encoding>BestQuality</Encoding>				<Width>640</Width>				<Height>480</Height>				<FrameRate>-1</FrameRate>				<RC>VBR</RC>				<BitRate>36000</BitRate>				<Interlace>0</Interlace>		//0:Progressive;1/2:interlace auto;3:MBAFF;4:PAFF
+			</VideoSetting> 	   </Input>
+ 	   <Output>
+            <Policy>
+	 			<TwoPass>1</TwoPass>            //0:disable 1: enable
+	 			<DeviceID>2</DeviceID>            //0:cpu 1: hardware 2: GPU
+	            <QualityLevel>3</QualityLevel>   //0-4
+            </Policy>
+ 	   </Output>
+    </EncoderPolicy>
+</IOTask>

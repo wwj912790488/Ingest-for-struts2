@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator Definition 1.0//EN"
+        "http://struts.apache.org/dtds/xwork-validator-definition-1.0.dtd">
+
+<!-- START SNIPPET -->
+<validators>
+
+	<validator name="discInputTitlesValidator" class="com.arcsoft.web4transcoder.validator.input.DiscInputTitlesValidator"/>
+	<validator name="discPathValidator" class="com.arcsoft.web4transcoder.validator.input.DiscPathValidator"/>
+
+	<validator name="numOfInputs" class="com.arcsoft.web4transcoder.validator.NumOfInputsValidator"/>
+	<validator name="numOfOutputGroups" class="com.arcsoft.web4transcoder.validator.NumOfOutputGroupsValidator"/>
+	<validator name="numOfOutputs" class="com.arcsoft.web4transcoder.validator.NumOfOutputsValidator"/>
+	<validator name="streamAssemblyValidator" class="com.arcsoft.web4transcoder.validator.StreamAssemblyValidator"/>
+    <validator name="targetFullPath" class="com.arcsoft.web4transcoder.validator.TargetFullPathValidator"/>
+    <validator name="targetExitsValidator" class="com.arcsoft.web4transcoder.validator.TargetExistsValidator"/>
+    <validator name="cqModeValidator" class="com.arcsoft.web4transcoder.validator.CqModeValidator"/>
+    <validator name="abrModeValidator" class="com.arcsoft.web4transcoder.validator.AbrModeValidator"/>
+    <validator name="cbrModeValidator" class="com.arcsoft.web4transcoder.validator.CbrModeValidator"/>
+    <validator name="vbrModeValidator" class="com.arcsoft.web4transcoder.validator.VbrModeValidator"/>
+    <validator name="containerModeValidator" class="com.arcsoft.web4transcoder.validator.ContainerValidator"/>
+    <validator name="h263ResolutionValidator" class="com.arcsoft.web4transcoder.validator.H263ResolutionValidator"/>
+  
+    <validator name="gopNumBFramesValidator" class="com.arcsoft.web4transcoder.validator.GopNumBFramesValidator"/>
+    <validator name="numOfRefFramesValidator" class="com.arcsoft.web4transcoder.validator.NumOfRefFramesValidator"/>
+    <validator name="filePathValidator" class="com.arcsoft.web4transcoder.validator.FilePathValidator"/>
+    <validator name="appleLiveUriValidator" class="com.arcsoft.web4transcoder.validator.AppleLiveUriValidator"/>
+    <validator name="fileValidator" class="com.arcsoft.web4transcoder.validator.FileValidator"/>
+    <validator name="parValidator" class="com.arcsoft.web4transcoder.validator.ParValidator"/>
+    <validator name="framerateValidator" class="com.arcsoft.web4transcoder.validator.FramerateValidator"/>
+	<validator name="fileNameValidator" class="com.arcsoft.web4transcoder.validator.FileNameValidator"/>
+	<validator name="psContainerVideoEncoderValidator" class="com.arcsoft.web4transcoder.validator.PsContainerVideoEncoderValidator"/>
+	<validator name="psContainerAudioEncoderValidator" class="com.arcsoft.web4transcoder.validator.PsContainerAudioEncoderValidator"/>	
+	<validator name="hlsContainerValidator" class="com.arcsoft.web4transcoder.validator.HlsContainerValidator"/>
+	<validator name="segmentLengthValidator" class="com.arcsoft.web4transcoder.validator.SegmentLengthValidator"/>
+	<validator name="mxfContainerValidator" class="com.arcsoft.web4transcoder.validator.MxfContainerValidator"/>
+	<!-- <validator name="aacCompatibilityValidator" class="com.arcsoft.web4transcoder.validator.AacCompatibilityValidator"/> -->
+	<validator name="subtitleFileValidator" class="com.arcsoft.web4transcoder.validator.SubtitleFileValidator"/>
+	<validator name="subtitleVirticalPositionValidator" class="com.arcsoft.web4transcoder.validator.SubtitleVirticalPositionValidator"/>
+	<validator name="subtitleLimitationValidator" class="com.arcsoft.web4transcoder.validator.SubtitleLimitationValidator"/>	
+    <validator name="logoFileValidator" class="com.arcsoft.web4transcoder.validator.LogoFileValidator"/>
+    <validator name="logoPositionValidator" class="com.arcsoft.web4transcoder.validator.LogoPositionValidator"/>
+	<validator name="logoOpacityValidator" class="com.arcsoft.web4transcoder.validator.LogoOpacityValidator"/>
+	
+	<!-- TEMP: BUG129230 -->
+	<validator name="tsContainerValidator" class="com.arcsoft.web4transcoder.validator.TsContainerValidator"/>
+	
+	<validator name="ftpUploadingLimitationValidator" class="com.arcsoft.web4transcoder.validator.outputgroup.FtpUploadingLimitationValidator"/>
+	<validator name="httpUploadingLimitationValidator" class="com.arcsoft.web4transcoder.validator.outputgroup.HttpUploadingLimitationValidator"/>	
+	<validator name="segmentNameValidator" class="com.arcsoft.web4transcoder.validator.outputgroup.SegmentNameValidator"/>
+	<validator name="playlistNameValidator" class="com.arcsoft.web4transcoder.validator.outputgroup.PlaylistNameValidator"/>
+	<validator name="archiveGroupUriValidator" class="com.arcsoft.web4transcoder.validator.outputgroup.ArchiveGroupUriValidator"/>
+
+    <validator name="passthroughPresetValidator" class="com.arcsoft.web4transcoder.validator.PassthroughPresetValidator"/>
+    <validator name="tsIdsValidator" class="com.arcsoft.web4transcoder.validator.TsIdsValidator"/>
+    <validator name="tsIdsAudioCountValidator" class="com.arcsoft.web4transcoder.validator.TsIdsAudioCountValidator"/>
+    <validator name="tsIdsRangeValidator" class="com.arcsoft.web4transcoder.validator.TsIdsRangeValidator"/>    
+    <validator name="ipValidator" class="com.arcsoft.web4transcoder.validator.drm.IpValidator"/>
+    <validator name="portValidator" class="com.arcsoft.web4transcoder.validator.drm.PortValidator"/>
+    <validator name="contentIdValidator" class="com.arcsoft.web4transcoder.validator.drm.ContentIdValidator"/>
+    <validator name="deleteLinkedPresetValidator" class="com.arcsoft.web4transcoder.validator.DeleteLinkedPresetValidator"/>
+    <validator name="presetAVCountValidator" class="com.arcsoft.web4transcoder.validator.PresetAVCountValidator"/>
+    <validator name="watchfolderLimitationValidator" class="com.arcsoft.web4transcoder.validator.WatchfolderLimitationValidator"/>
+    <!-- <validator name="framerateInputValidator" class="com.arcsoft.web4transcoder.validator.FramerateInputValidator"/> -->
+    <!-- <validator name="inputAdvertisementValidator" class="com.arcsoft.web4transcoder.validator.input.InputAdvertisementValidator"/> -->
+    
+    <validator name="strutsValidatorAdapter" class="com.arcsoft.web4transcoder.validator.StrutsValidationAdapter"/>
+</validators>
+<!--  END SNIPPET -->

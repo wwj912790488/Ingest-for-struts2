@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>com.arcsoft</groupId>
+		<artifactId>commander</artifactId>
+		<version>2.7.0.34</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>commander-common</artifactId>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.arcsoft</groupId>
+			<artifactId>arcvideo-cluster-core</artifactId>
+			<version>1.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.arcsoft</groupId>
+			<artifactId>arcvideo-common-net</artifactId>
+			<version>1.0.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.arcsoft</groupId>
+			<artifactId>arcvideo-common-utils</artifactId>
+			<version>1.0.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.20</version>
+		</dependency>
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.arcsoft</groupId>
+			<artifactId>transcoder-core</artifactId>
+			<version>${transcoder.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.arcsoft</groupId>
+			<artifactId>transcoder-snmp</artifactId>
+			<version>${transcoder.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.arcsoft</groupId>
+			<artifactId>commons-utils</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.arcsoft</groupId>
+			<artifactId>commons-utils</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>

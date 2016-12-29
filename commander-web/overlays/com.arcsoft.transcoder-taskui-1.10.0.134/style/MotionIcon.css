@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+.TaskEntry{
+	
+}
+.TaskEntry .TaskTitle{	
+	border-bottom: 1px solid #CDCDCD;
+}
+.TaskEntry .TaskTitle .TaskId{	
+	min-width:20px;
+}
+.TaskEntry .TaskTitle .TaskName{	
+	margin-left:5px;
+}
+.TaskEntry .TaskMotionIconPanel{
+	margin-left:46px;
+}
+.TaskEntry .TaskMotionIconPanel .MotionIcon{
+	margin-left:30px;
+}
+
+.MotionIconOn {
+	background:url("../images/icons/light_green.png") no-repeat scroll center right;
+	background-size:12px;
+}
+.MotionIconOff {
+	background:url("../images/icons/light_red.png") no-repeat scroll center right;
+	background-size:12px;
+}

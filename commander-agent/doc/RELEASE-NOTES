@@ -1,0 +1,36 @@
+                     ArcSoft Commander Agent Version 1.0.0
+                            Release Notes
+
+============================================================
+CONTENTS:
+============================================================
+* Dependency
+* Feature List
+* Viewing the Change Log
+
+============================================================
+Dependency:
+============================================================
+This software is designed to run on Java SE 7 and later.
+
+============================================================
+Feature List:
+============================================================
+Support switch role.
+Support input/output network monitor.
+Support task transcoding.
+Support mount remote storage.
+Support startup and shutdown agent by command line.
+Support agent configuration.
+Support date time and time zone settings.
+Support reboot / shutdown server.
+Support DNS settings.
+Support firewall settings.
+Support route settings.
+Support network settings.
+Support cluster discovery protocol.
+
+============================================================
+Viewing the Change Log:
+============================================================
+See CHANGELOG in this directory.

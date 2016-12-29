@@ -1,0 +1,704 @@
+/* Define default font style. */
+* {
+	font-family: "Microsoft YaHei", "SimHei", "Arial";
+	font-size: 10pt;
+	color: #000000;
+}
+
+body{margin: 0px;}
+
+a {
+	cursor: hand;
+	text-decoration:none;
+}
+
+input:disabled, select:disabled {
+	background-color: lightgray;
+}
+
+.pointer{
+	cursor:pointer;
+}
+
+.left{
+	float:left;
+}
+
+.right{
+	float:right;
+}
+
+.hidden{
+	display:none;
+}
+
+.clear{
+	clear:both;
+}
+
+.error{
+	color:red;
+}
+
+.field_input_error {
+	border: 1px solid red;
+}
+
+.field_space {
+	width: 20px;
+	min-height: 1px;
+}
+
+.div_space {
+ height:1px;
+ width:100%;
+ background-color:#D1D1D1;
+ overflow:hidden;
+}
+
+.white_mask{
+	position:absolute; 
+	left:0px; 
+	top:0px; 
+	z-index:999; 
+	background-color:#fff; 
+	filter: Alpha(opacity=60); 
+	-moz-opacity:.6; 
+	opacity:0.6; 
+	text-align:center;
+}
+
+.white_mask_loading{ 
+	position:absolute; 
+	width:60px; 
+	height:60px;
+	line-height:60px; 
+}
+
+.white_mask_loading span{
+	background:url(../images/icons/waitting_60x60.gif) no-repeat left 0px; 
+	line-height:60px; 
+	height:60px; 
+	display:block;
+}
+
+/* action bar */
+.cm_actionbar {
+	background-color: #5d6772;
+	height: 46px;
+	line-height: 46px;
+}
+
+/*set action bar font color*/
+.cm_actionbar *{
+	color: #FFFFFF;
+}
+
+/**action bar item*/
+.cm_actionbar .item{
+	display : inline-block;
+	cursor: pointer;
+	padding-left: 30px;
+	margin-left: 20px;
+	left: 0px;
+	top: 0px;
+	min-width: 30px;
+	vertical-align: middle;
+}
+
+/**action bar images*/
+.cm_actionbar .img_copy{
+	background: url("../images/icons/copy.png") no-repeat 0 8px;
+}
+
+.cm_actionbar .img_copy:hover{
+	background: url("../images/icons/copy_hover.png") no-repeat 0 8px;
+}
+
+.cm_actionbar .img_edit{
+	background: url("../images/icons/edit.png") no-repeat 0 8px;
+}
+
+.cm_actionbar .img_edit:hover{
+	background: url("../images/icons/edit_hover.png") no-repeat 0 8px;
+}
+
+.cm_actionbar .img_change_pwd{
+	background: url("../images/icons/change_pwd.png") no-repeat 0 8px;
+}
+
+.cm_actionbar .img_change_pwd:hover{
+	background: url("../images/icons/change_pwd_hover.png") no-repeat 0 8px;
+}
+
+.cm_actionbar .img_del{
+	background: url("../images/icons/delete.png") no-repeat 0 8px;
+}
+
+.cm_actionbar .img_del:hover{
+	background: url("../images/icons/delete_hover.png") no-repeat 0 8px;
+}
+
+.cm_actionbar .img_export{
+	background: url("../images/icons/export.png") no-repeat 0 8px;
+}
+
+.cm_actionbar .img_export:hover{
+	background: url("../images/icons/export_hover.png") no-repeat 0 8px;
+}
+
+.cm_actionbardropdown{
+	display:inline-block;position:relative;
+	border:1px none #666666;
+	width:16px;
+	vertical-align:middle;
+}
+.cm_actionbardropdown .dropmenu{
+	display:none;	
+}
+.cm_actionbardropdown:hover{
+	border:1px solid #666666;
+}
+.cm_actionbardropdown:hover .dropmenu{
+	display:block;position:absolute;
+	left:-36px;top:17px;width:120px;
+	background-color:#5d6772;
+}
+
+.dropmenuitem{
+	display:block;
+	border-bottom:1px solid #cccccc;
+	height:35px;
+	line-height:35px;
+	padding-left:30px;
+	text-align:left;
+}
+
+.dropmenuitem:hover{
+	background-color:#7b8693;
+}
+
+/**operate bar on top of action bar */
+.cm_operatebar{
+	display : table-cell;
+	vertical-align : middle;
+	height : 40px;
+	width : 1024px;
+	background: url("../images/BG.png") repeat;
+}
+
+.cm_operatebar .left{
+	float: left;
+}
+
+.cm_operatebar .right{
+	float: right;
+
+}
+
+/* for right action btn*/
+.action_btns, .action_btns *{
+	display : inline-block;
+	height : 26px;
+	line-height: 26px;
+	overflow: hidden;
+}
+
+.action_btns{
+	word-spacing: -5px;
+	height : 28px;
+	line-height: 28px;
+}
+
+
+.action_btns a{
+	cursor: pointer;
+	min-width: 106px;
+}
+
+
+.action_btns a .btn_left{
+	width : 3px;
+	background: url("../images/icons/action_left.png");
+	
+}
+
+.action_btns a .btn_middle{
+	background: url("../images/icons/action_middle.png") repeat-x;
+	text-align: center;
+	min-width: 100px;
+}
+
+.action_btns a .btn_middle span{
+	color: #fff;
+}
+
+.action_btns a .btn_middle .left{
+	padding-left: 7px;
+}
+
+.action_btns a .btn_middle .right{
+	width : 28px;
+	background: url("../images/icons/add.png") no-repeat center;
+}
+
+.action_btns a .btn_right{
+	width : 3px;
+	background: url("../images/icons/action_right.png");
+	
+}
+
+.action_btns a .cntv_btn_left{
+	width : 3px;
+	background: url("../images/icons/cntv_action_left.png");
+
+}
+
+.action_btns a .cntv_btn_middle{
+	background: url("../images/icons/cntv_action_middle.png") repeat-x;
+	text-align: center;
+	min-width: 100px;
+}
+
+.action_btns a .cntv_btn_middle span{
+	color: #fff;
+}
+
+.action_btns a .cntv_btn_middle .left{
+	padding-left: 7px;
+}
+
+.action_btns a .cntv_btn_middle .right{
+	width : 28px;
+	background: url("../images/icons/add.png") no-repeat center;
+}
+
+.action_btns a .cntv_btn_right{
+	width : 3px;
+	background: url("../images/icons/cntv_action_right.png");
+}
+
+.action_btns a:hover{
+	text-decoration: none;
+}
+
+.action_btns a:hover .btn_left{
+	background: url("../images/icons/hover_left.png");
+}
+
+.action_btns a:hover .btn_middle{
+	background: url("../images/icons/hover_middle.png") repeat-x;
+}
+
+.action_btns a:hover .btn_right{
+	background: url("../images/icons/hover_right.png");
+}
+
+.action_btns a:hover .btn_middle .right{
+	background: url("../images/icons/add_hover.png") no-repeat center;
+}
+
+.action_btns a:hover .cntv_btn_left{
+	background: url("../images/icons/hover_left.png");
+}
+
+.action_btns a:hover .cntv_btn_middle{
+	background: url("../images/icons/hover_middle.png") repeat-x;
+}
+
+.action_btns a:hover .cntv_btn_right{
+	background: url("../images/icons/hover_right.png");
+}
+
+.action_btns a:hover .cntv_btn_middle .right{
+	background: url("../images/icons/add_hover.png") no-repeat center;
+}
+
+/**for normal btns*/
+.action_normal_btns, .action_normal_btns *{
+	display : inline-block;
+	height : 28px;
+	line-height: 28px;
+	overflow: hidden;
+}
+
+.action_normal_btns{
+	word-spacing: -5px;
+}
+
+.action_normal_btns a{
+	cursor: pointer;
+	text-decoration: none;
+	min-width: 106px;
+}
+
+.action_normal_btns a .btn_left{
+	width : 3px;
+	background: url("../images/icons/action_left.png");
+}
+
+.action_normal_btns a .btn_middle{
+	min-width : 100px;
+	background: url("../images/icons/action_middle.png") repeat-x;
+	text-align: center;
+}
+
+.action_normal_btns a .btn_middle p{
+	display : inline;
+	position : relative;
+	color: #fff;
+	bottom: 1px;
+	bottom: 2px\0; /* hack for ie8+*/
+}
+
+.action_normal_btns a .btn_right{
+	width : 3px;
+	background: url("../images/icons/action_right.png");
+}
+
+.action_normal_btns a .cntv_btn_left{
+	width : 3px;
+	background: url("../images/icons/cntv_action_left.png");
+}
+
+.action_normal_btns a .cntv_btn_middle{
+	min-width : 100px;
+	background: url("../images/icons/cntv_action_middle.png") repeat-x;
+	text-align: center;
+}
+
+.action_normal_btns a .cntv_btn_middle p{
+	display : inline;
+	position : relative;
+	color: #fff;
+	bottom: 1px;
+	bottom: 2px\0; /* hack for ie8+*/
+}
+
+.action_normal_btns a .cntv_btn_right{
+	width : 3px;
+	background: url("../images/icons/cntv_action_right.png");
+
+}
+
+.action_normal_btns a:hover{
+	text-decoration: none;
+}
+
+.action_normal_btns a:hover .btn_left{
+	background: url("../images/icons/hover_left.png");
+}
+
+.action_normal_btns a:hover .btn_middle{
+	background: url("../images/icons/hover_middle.png") repeat-x;
+}
+
+.action_normal_btns a:hover .btn_right{
+	background: url("../images/icons/hover_right.png");
+}
+
+.action_normal_btns a:hover .cntv_btn_left{
+	background: url("../images/icons/hover_left.png");
+}
+
+.action_normal_btns a:hover .cntv_btn_middle{
+	background: url("../images/icons/hover_middle.png") repeat-x;
+}
+
+.action_normal_btns a:hover .cntv_btn_right{
+	background: url("../images/icons/hover_right.png");
+}
+
+/*Hack for FireFox*/
+@-moz-document url-prefix() {
+	.action_normal_btns a{
+		float : left;
+	}
+    .action_normal_btns a .btn_middle p{
+    	bottom: 2px;
+    }
+}
+
+/** for table list*/
+.tab_list{
+	width: 100%;
+	border-collapse:collapse;
+	text-align: center;
+	table-layout: fixed;
+	word-wrap: break-word;
+}
+
+.tab_list .tab_header{
+	height : 36px;
+	background: url("../images/bar/titlebar_bg.png") repeat;
+}
+
+.tab_list .tab_content{
+	height : 46px;
+	border-bottom: 1px solid #cdcdcd;
+	line-height: 46px;
+}
+
+.tab_list .tab_content_odd {
+	background-color: #f4f4f4;
+}
+
+.tab_list .tab_content_even {
+	background-color: #ffffff;
+}
+
+.tab_list .tab_content_selected {
+	background-color: #c0d6ee;
+}
+
+.tab_list .tab_content_hover {
+	background-color: #21a4d1;
+}
+
+.tab_list .tab_content_hover td,
+.tab_list .tab_content_hover th,
+.tab_list .tab_content_hover span,
+.tab_list .tab_content_hover div {
+	color: white;
+}
+
+/* for pagination */
+.pagination{
+	text-align: center;
+	margin: 15px 0;
+	line-height: 30px;
+}
+
+.pagination a{
+	margin-left: 5px;
+	padding: 0px 2px;
+	min-width: 30px;
+	height: 30px;
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: top;
+}
+
+.pagination span {
+	vertical-align: top;
+}
+
+.pagination a:hover{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.pagination .nav_page{
+	background: #eeeeee;
+}
+
+.pagination .nav_page_hover{
+	background: lightgray;
+}
+
+.pagination .nav_pre{
+	background: url("../images/pager/previous.png") repeat-x;
+}
+
+.pagination .nav_pre_disable{
+	background: url("../images/pager/previous_dis.png") repeat-x;
+}
+
+.pagination .nav_next{
+	background: url("../images/pager/next.png") repeat-x;
+}
+
+.pagination .nav_next_disable{
+	background: url("../images/pager/next_dis.png") repeat-x;
+}
+
+.pagination #nav_pageindex, .pagination #nav_pagesize {
+	width: 40px;
+	text-align: center;
+}
+
+.pagination .input_error {
+	border: 1px solid red;
+}
+
+.pagination span{
+	width : 30px;
+	line-height : 30px;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.pagination .active{
+	background-color: #21A4D1;
+	color: white;
+}
+
+/* high light background color */
+.cm_hightlight_bg {
+	background-color: #21A4D1;
+}
+/* for fake select */
+.fake-select{
+	position: relative;
+	border: 1px solid #ccc;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.select-list{
+	margin: 0;
+	padding: 0;
+	max-height : 300px;
+	position: absolute;
+	overflow-y : auto;
+	border: 1px solid #ccc;
+	top:100%;
+	right: 0;
+	left: 0;
+	display: none;
+	-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.2);
+  	-moz-box-shadow:0 1px 2px rgba(0,0,0,0.2);
+  	box-shadow:0 1px 2px rgba(0,0,0,0.2);
+  	background-color: white;
+  	z-index: 10;
+}
+
+.select-list ul{
+	padding: 0px;
+	margin: 0px;
+}
+
+.select-list > ul li{
+	list-style: none;
+	padding: 0px;
+}
+
+.select-list > ul > li li{
+	padding-left : 10px;
+}
+
+.select-list > ul > li > span{
+	display: block;
+}
+
+.select-list .parent{
+	font-weight: bold;
+}
+
+.style-select{
+	color: black;
+	position: absolute;
+	padding-left : 5px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.style-select:after{
+	content: "";
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-color: black transparent transparent transparent;
+	position: absolute;
+	top: 7px;
+	right: 6px;
+}
+
+.selectbox{
+	visibility: hidden;
+	padding-right: 10px;
+}
+
+.list_view_header {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 122px;
+	background: url("../images/bg/body.png");
+}
+
+.list_view_content {
+	position: absolute;
+	top: 122px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: white;
+}
+
+.list_view_header_with_submenu {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 130px;
+	padding-top: 30px;
+	background: url("../images/bg/body.png");
+}
+
+.list_view_content_with_submenu {
+	position: absolute;
+	top: 154px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: white;
+}
+
+.form_input_label {
+	text-align: right;
+	padding-right: 5px;
+	line-height: 24px;
+}
+
+.form_input_field {
+	padding-left: 5px;
+	line-height: 24px;
+}
+
+.app_text_ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.app_panel_shadow  {
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#909090, direction=120, strength=3); /*ie*/
+	-moz-box-shadow: 2px 2px 10px #909090; /*firefox*/
+	-webkit-box-shadow: 2px 2px 10px #909090; /*safari/chrome*/
+	box-shadow: 2px 2px 10px #909090; /*opera/ie9*/
+}
+
+.app_popupmenu {
+	display: none;
+	z-index: 999;
+	border: 1px solid lightgray;
+	background-color: #f5f5f5;
+	cursor: default;
+}
+
+.app_popupmenu span {
+	line-height: 30px;
+	display: block;
+	padding: 0px 20px;
+}
+
+.app_menu_line {
+	padding: 2px;
+	height: 0px;
+	border-top: 1px solid darkgray;
+	border-bottom: 1px solid white;
+	color: #000000;
+}
+
+.app_menu_mouseover {
+	color: #ffffff;
+	background-color: #205081;
+}

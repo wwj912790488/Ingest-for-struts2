@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SimpleProfile>
+    <VideoCodec>${simpleProfile.videoCodec}</VideoCodec>
+    <VideoResolution>${simpleProfile.videoResolution}</VideoResolution>
+    <VideoPARDisp>${simpleProfile.videoPARDisp}</VideoPARDisp>
+    <VideoFrameRateDisp>${simpleProfile.videoFrameRateDisp}</VideoFrameRateDisp>
+    <VideoRateControl>${simpleProfile.videoRateControl}</VideoRateControl>
+    <VideoBitrate>${simpleProfile.videoBitrate}</VideoBitrate>
+    <VideoMaxBitrate>${simpleProfile.videoMaxBitrate}</VideoMaxBitrate>
+    <VideoGopSize>${simpleProfile.videoGopSize}</VideoGopSize>
+    <VideoBFrame>${simpleProfile.videoBFrame}</VideoBFrame>
+    <VideoReferenceFrame>${simpleProfile.videoReferenceFrame}</VideoReferenceFrame>
+    <QualityLevelDisp>${simpleProfile.qualityLevelDisp}</QualityLevelDisp>
+    <AudioCodec>${simpleProfile.audioCodec}</AudioCodec>
+    <AudioChannel>${simpleProfile.audioChannel}</AudioChannel>
+    <AudioSampleRate>${simpleProfile.audioSampleRate}</AudioSampleRate>
+    <AudioVolumeMode>${simpleProfile.audioVolumeMode}</AudioVolumeMode>
+    <AudioBitrateKbps>${simpleProfile.audioBitrateKbps}</AudioBitrateKbps>
+    <AudioBoostLevel>${simpleProfile.audioBoostLevel}</AudioBoostLevel>
+    <AudioChannelProcessing>${simpleProfile.audioChannelProcessing}</AudioChannelProcessing>
+    <AudioCodecProfile>${simpleProfile.audioCodecProfile}</AudioCodecProfile>
+    <AudioDenoise>${simpleProfile.audioDenoise}</AudioDenoise>
+</SimpleProfile>

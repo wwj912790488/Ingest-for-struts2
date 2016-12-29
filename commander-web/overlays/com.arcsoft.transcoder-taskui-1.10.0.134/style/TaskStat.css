@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+.WaingView{
+	display:block;
+	margin:50px;
+	height:120px;	
+	background:url("../images/icons/waitting_60x60.gif") no-repeat scroll center center;	
+}
+.WaingViewSm{
+	display:block;
+	width:120px;height:120px;
+	background:url("../images/icons/waitting.gif") no-repeat scroll 0px 0px;	
+}
+.WaingViewMini{
+	display:block;
+	width:14px;height:14px;
+	background:url("../images/icons/waitting.gif") no-repeat scroll 0px 0px;	
+}

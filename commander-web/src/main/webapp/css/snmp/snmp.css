@@ -1,0 +1,39 @@
+#snmp_content {
+	width: 500px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#snmp_content table {
+	width: 100%;
+}
+
+#snmp_content fieldset {
+	padding-bottom: 10px
+}
+
+#snmp_content .line_space {
+	height: 10px;
+}
+
+#snmp_content .view_label {
+	width: 100px;
+	padding: 0px 5px;
+	text-align: right;
+}
+
+#snmp_content .view_data {
+	width: 100px;
+	padding: 0px 5px;
+}
+
+#snmp_content .view_error {
+	color: red;
+	padding: 0px 5px;
+}
+
+#snmp_content #btnSaveSnmp {
+	margin-top: 10px;
+	width: 80px;
+	height: 24px;
+}

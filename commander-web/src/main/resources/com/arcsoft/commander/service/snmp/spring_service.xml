@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<util:list id="snmpEventListeners">
+		<ref bean="commanderSnmpService" />
+	</util:list>
+
+	<bean id="snmpService" class="com.arcsoft.transcoder.snmp.SnmpService"
+		p:snmpAgentHost="localhost"
+		p:enableArcVideoSnmp="${snmp.arcvideo.enabled}"
+		p:snmpClientName="commander"
+		p:snmpEventListeners-ref="snmpEventListeners"
+		init-method="init"
+		/>
+
+	<bean id="remoteSnmpService"
+		class="com.arcsoft.commander.service.snmp.impl.RemoteSnmpServiceImpl"
+		parent="remoteExecutorServiceSupport"/>
+
+	<bean id="commanderSnmpService"
+		class="com.arcsoft.commander.service.snmp.impl.CommanderSnmpServiceImpl"
+		parent="baseService"
+		p:snmpService-ref="snmpService"
+		p:taskExecuteService-ref="taskExecuteService"
+		p:customTaskService-ref="customTaskService"
+		init-method="init"
+		destroy-method="destroy"/>
+
+</beans>

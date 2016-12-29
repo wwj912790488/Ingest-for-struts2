@@ -1,0 +1,83 @@
+@CHARSET "UTF-8";
+
+
+.ListContainer{
+	width:100%;
+}
+
+.TblRow{
+	display:block;
+	margin-top:1px;margin-bottom:1px;
+	width:100%;
+}
+
+.TblRowSel{
+	display:block;
+	margin-top:1px;margin-bottom:1px;
+	width:100%;
+	border-top:1px solid #c1dddb;
+	border-bottom:1px solid #97cccb;
+	background-color:#d9fffe;
+}
+
+.ShName{
+	width:110px;
+	text-overflow:ellipsis;	
+}
+
+.CL{
+	border:2px solid #9adddc;
+	empty-cells: show;
+	border-collapse:collapse;	
+}
+.CL tr{
+	border-bottom:2px solid #99dddb;
+	height:90px;
+	vertical-align:top;
+}
+.CL td{
+	border-right:2px solid #9fdedd;
+}
+.CL .TrWeekCap{
+	vertical-align:middle;
+	height:40px;
+	border-bottom:1px solid #d8f2ef;
+}
+.CL .TdDay{
+	width:127px;
+}
+.CL .Weekend{
+	background-color:#eaf6f5;
+}
+.CL .TdDay .DayDesc{
+	padding:5px;
+	font-weight:bold;	
+}
+
+.YearInput{	
+	border:0px solid;
+	width:36px;
+	background:transparent;	
+}
+.MonthInput{
+	border:0px solid;
+	width:22px;
+	text-align:right;
+	background:transparent;	
+}
+.PrevMonth{	
+	display:inline-block;
+	margin:10px;
+	height:18px;	
+}
+.PrevMonth:hover{
+	cursor:pointer;
+} 
+.NextMonth{
+	display:inline-block;
+	margin:10px;
+	height:18px;	
+}
+.NextMonth:hover{
+	cursor:pointer;
+} 

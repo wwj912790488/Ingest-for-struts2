@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mediaInfo name="/mnt/testsample/CH-ABC_4-TVs_2-Radios_AC3_EPG_Teletext-Subtitle.ts">
+    <container>MPEG-TS</container>
+    <size>224444928</size>
+    <programs count="6">
+        <program idx="0">
+        <name>Program 1</name>
+        <used>1</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>2314</pid>
+                    <name>Video</name>
+                    <used>1</used>
+                    <codec>H264</codec>
+                    <duration>7724000</duration>
+                    <bitrate>8500.0 kbps</bitrate>
+                    <framerate>50.0</framerate>
+                    <resolution>720x576</resolution>
+                    <aspect_ratio>16:9</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>2315</pid>
+                    <name>Audio 1(eng)</name>
+                    <used>1</used>
+                    <codec>AAC</codec>
+                    <duration>77632</duration>
+                    <bitrate>448.0 kbps</bitrate>
+                    <channel>2</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+            <subtitles count="1">
+                <subtitle idx="0">
+                    <pid>2316</pid>
+                    <name>Subtitle 1(eng)</name>
+                    <used>0</used>
+                </subtitle>
+            </subtitles>
+        </program>
+        <program idx="1">
+        <name>Program 2</name>
+        <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>512</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                    <codec>H263</codec>
+                    <duration>77640</duration>
+                    <bitrate>15000.0 kbps</bitrate>
+                    <framerate>25.0</framerate>
+                    <resolution>720x576</resolution>
+                    <aspect_ratio>16:9</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="2">
+                <audio idx="0">
+                    <pid>650</pid>
+                    <name>Audio 1(eng)</name>
+                    <used>0</used>
+                    <codec>MPEG Audio</codec>
+                    <duration>77568</duration>
+                    <bitrate>256.0 kbps</bitrate>
+                    <channel>2</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+                <audio idx="1">
+                    <pid>660</pid>
+                    <name>Audio 2(eng)</name>
+                    <used>0</used>
+                    <codec>AC3</codec>
+                    <duration>77440</duration>
+                    <bitrate>448.0 kbps</bitrate>
+                    <channel>1</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+            <subtitles count="1">
+                <subtitle idx="0">
+                    <pid>576</pid>
+                    <name>Subtitle 1(eng)</name>
+                    <used>0</used>
+                </subtitle>
+            </subtitles>
+        </program>
+        <program idx="2">
+        <name>Program 3</name>
+        <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>2307</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                    <codec>MPEG2</codec>
+                    <duration>77640</duration>
+                    <bitrate>15000.0 kbps</bitrate>
+                    <framerate>25.0</framerate>
+                    <resolution>720x576</resolution>
+                    <aspect_ratio>16:9</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>2308</pid>
+                    <name>Audio 1(eng)</name>
+                    <used>0</used>
+                    <codec>AAC</codec>
+                    <duration>77544</duration>
+                    <bitrate>256.0 kbps</bitrate>
+                    <channel>5</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+            <subtitles count="1">
+                <subtitle idx="0">
+                    <pid>2310</pid>
+                    <name>Subtitle 1(eng)</name>
+                    <used>0</used>
+                </subtitle>
+            </subtitles>
+        </program>
+        <program idx="3">
+        <name>Program 4</name>
+        <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>512</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                    <codec>MPEG2</codec>
+                    <duration>77640</duration>
+                    <bitrate>15000.0 kbps</bitrate>
+                    <framerate>25.0</framerate>
+                    <resolution>720x576</resolution>
+                    <aspect_ratio>16:9</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>650</pid>
+                    <name>Audio 1(eng)</name>
+                    <used>0</used>
+                    <codec>MPEG Audio</codec>
+                    <duration>77568</duration>
+                    <bitrate>256.0 kbps</bitrate>
+                    <channel>2</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+            <subtitles count="1">
+                <subtitle idx="0">
+                    <pid>576</pid>
+                    <name>Subtitle 1(eng)</name>
+                    <used>0</used>
+                </subtitle>
+            </subtitles>
+        </program>
+        <program idx="4">
+        <name>Program 5</name>
+        <used>0</used>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>2317</pid>
+                    <name>Audio 1(eng)</name>
+                    <used>0</used>
+                    <codec>MPEG Audio</codec>
+                    <duration>77568</duration>
+                    <bitrate>256.0 kbps</bitrate>
+                    <channel>2</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+        </program>
+        <program idx="5">
+        <name>Program 6</name>
+        <used>0</used>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>2318</pid>
+                    <name>Audio 1(eng)</name>
+                    <used>0</used>
+                    <codec>MPEG Audio</codec>
+                    <duration>77520</duration>
+                    <bitrate>256.0 kbps</bitrate>
+                    <channel>2</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+        </program>
+    </programs>
+</mediaInfo>

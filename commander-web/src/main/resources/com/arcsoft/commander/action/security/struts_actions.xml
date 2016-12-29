@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+      "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="security" extends="json-default,default">
+		<action name="changePassword"
+			class="com.arcsoft.commander.action.security.ChangePasswordAction" method="changePassword">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>
+		<action name="changePasswordByAdmin"
+			class="com.arcsoft.commander.action.security.ChangePasswordAction" method="changePasswordByAdmin">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>
+		<action name="listSecurity" class="com.arcsoft.commander.action.security.SecurityAction" method="forward">
+			<result name="success">/jsp/security/security.jsp</result>
+		</action>
+		<action name="listUsers" class="com.arcsoft.commander.action.security.SecurityAction" method="listUsers">
+			<result name="success">/jsp/security/userList.jsp</result>
+		</action>
+		<action name="listRoles" class="com.arcsoft.commander.action.security.RoleAction" method="list">
+			<result name="success">/jsp/security/roleList.jsp</result>
+		</action>
+		<action name="roleIndex" class="com.arcsoft.commander.action.security.RoleAction" method="forward">
+			<result name="success">/jsp/security/roleindex.jsp</result>
+		</action>
+		
+		<action name="addUser"
+			class="com.arcsoft.commander.action.security.UserAction" method="addUser">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>
+		<action name="unRegisterUser"
+			class="com.arcsoft.commander.action.security.UserAction" method="unRegisterUser">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>
+		<action name="updateUser"
+			class="com.arcsoft.commander.action.security.UserAction" method="updateUser">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>
+		
+		<action name="addRole"
+			class="com.arcsoft.commander.action.security.RoleAction" method="save">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>
+		<action name="updateRole"
+			class="com.arcsoft.commander.action.security.RoleAction" method="update">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>
+		<action name="deleteRole"
+			class="com.arcsoft.commander.action.security.RoleAction" method="delete">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>
+	</package>
+</struts>

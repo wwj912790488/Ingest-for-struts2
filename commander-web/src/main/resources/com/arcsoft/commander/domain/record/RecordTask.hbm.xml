@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-24 11:15:36 by Hibernate Tools 3.4.0.CR1 -->
+
+<hibernate-mapping>
+	<joined-subclass name="com.arcsoft.commander.domain.record.RecordTask" table="tbl_record_tasks" extends="com.arcsoft.web4transcoder.domain.Task">
+		<key column="task_id"></key>
+		<property name="type" column="task_type" type="int"/>
+		<property name="groupId" column="group_id" type="int"/>
+		<property name="curServerId" column="server_id" type="string"/>
+		<property name="recordId" column="record_id" type="int"/>
+		<property name="scheduleEventId" column="schedule_event_id" type="long"/>
+	</joined-subclass>
+</hibernate-mapping>

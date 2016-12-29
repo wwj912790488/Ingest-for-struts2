@@ -1,0 +1,33 @@
+#import_task_detail {
+	height: 100%;
+	margin: 20px 0px;
+}
+
+#import_task_detail #sourceTitle {
+	font-weight: bold;
+	height: 24px;
+}
+
+#import_task_detail #sourceContent {
+	border: 1px solid lightgray;
+	height: 340px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#import_task_detail #sourceContent td {
+	border-bottom: 1px dotted lightgray;
+}
+
+#import_task_detail #sourceContent .servers {
+	width: 240px;
+}
+
+#import_task_detail #targetTitle {
+	font-weight: bold;
+	height: 24px;
+}
+
+#import_task_detail #targetContent {
+	height: 30px;
+}

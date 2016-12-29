@@ -1,0 +1,55 @@
+#group_setting_tabs .firstClassNav {
+	width: 100px;
+}
+
+#group_setting_tabs .firstClassNavActive{	
+	width: 100px;
+}
+
+#group_setting_tabs .firstClassNav .tab_name {
+	vertical-align: bottom;	
+	font-size: 10pt;
+	font-weight: normal;
+	text-align: center;
+}
+
+#group_setting_tabs .firstClassNavActive .tab_name{	
+	color: #ffffff;
+}
+
+#group_setting_content {
+	padding: 20px;
+}
+
+#group_setting_content .button {
+	padding: 0px 5px;
+	height: 24px;
+}
+
+#group_setting_content .group_title {
+	height: 30px;
+	line-height: 30px;
+}
+
+#group_setting_content .group_title .left {
+	padding-right: 20px;
+}
+
+#group_setting_content .group_title .group_icon {
+	width: 30px;
+	height: 30px;
+	float: left;
+}
+
+.icon_detail_open {
+	background: url('../../images/servergroup/dropdown.png') no-repeat;
+}
+
+.icon_detail_close {
+	background: url('../../images/servergroup/dropdown_r.png') no-repeat;
+}
+
+#group_setting_content .group_detail {
+	padding: 10px 20px;
+	display: none;
+}

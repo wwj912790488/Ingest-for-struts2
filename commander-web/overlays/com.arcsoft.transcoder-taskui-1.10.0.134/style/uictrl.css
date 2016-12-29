@@ -1,0 +1,347 @@
+.ui-icon {
+	background-repeat: no-repeat;
+    background-image: url("../images/ui-icons.png");
+    height: 16px;
+    width: 16px;
+}
+
+.ui-icon-triangle-down {
+    background-position: -64px -16px;
+}
+
+.ui-icon-search-sm {
+    background-position: -160px -112px;
+}
+.ui-icon-arrow-ceiling {
+    background-position: -192px -32px;
+}
+.ui-icon-motionicon-sm {
+    background-position: -48px -80px;
+}
+.ui-icon-apply {
+    background-position: -64px -144px;
+}
+
+.PopDlg{
+	display:none; z-index:10001;
+	position:fixed;
+	background-color:#ffffff;
+	width:800px;height:480px;
+}
+
+.PopDlg .Frame{
+	width:100%;height:100%;
+}
+
+.PopDlg .l {
+	position:absolute;
+	left:-12px;top:0px;bottom:8px;
+	width: 12px;	
+	background:url(CtrlPopup/POP_up_Middle_Left.png) repeat-y scroll left top;
+}
+.PopDlg .t {
+	position:absolute;
+	left:0px;top:-12px;right:0px;
+	height: 12px;
+	background:url(CtrlPopup/POP_up_Top_Center.png) repeat-x scroll left top;
+}
+.PopDlg .r {
+	position:absolute;
+	right:-12px;top:0px;bottom:8px;
+	width: 12px;
+	background:url(CtrlPopup/POP_up_Middle_Right.png) repeat-y scroll left top;
+}
+.PopDlg .b {
+	position:absolute;
+	left:0px;bottom:-12px;right:0px;
+	height: 20px;
+	background:url(CtrlPopup/POP_up_Bottom_Center.png) repeat-x scroll left top;
+}
+.PopDlg .tl {
+	position:absolute;
+	left:-12px;top:-12px;
+	width: 12px;height: 12px;
+	background:url(CtrlPopup/POP_up_Top_Left.png) no-repeat scroll left top;
+}
+.PopDlg .tr {
+	position:absolute;
+	right:-12px;top:-12px;
+	width: 12px;height: 12px;
+	background:url(CtrlPopup/POP_up_Top_Right.png) no-repeat scroll left top;
+}
+.PopDlg .bl {
+	position:absolute;
+	left:-12px;bottom:-12px;
+	width: 12px;height: 20px;
+	background:url(CtrlPopup/POP_up_Bottom_Left.png) no-repeat scroll left top;
+}
+.PopDlg .br {
+	position:absolute;
+	right:-12px;bottom:-12px;
+	width: 12px;height: 20px;
+	background:url(CtrlPopup/POP_up_Bottom_Right.png) no-repeat scroll left top;
+}
+
+.PopDlgInnerFrame{
+	width:100%;
+	height:100%;
+	border:0px none;
+}
+
+.TaskEditBoxNormal {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	background-color: transparent;
+	outline:none;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 1px;
+	margin-right: 1px;
+	margin-bottom: 1px;
+	margin-left: 1px;
+}
+
+.TaskEditBoxHover {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	background-color: transparent;
+	outline:none;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 1px;
+	margin-right: 1px;
+	margin-bottom: 0px;
+	margin-left: 1px;
+}
+
+.TaskEditBoxFocus {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	background-color: #ffffff;
+	outline:none;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+.Strong {
+	font-weight:bold;
+}
+
+.TimeOutEditor {
+	width: 24px; 
+	height:17px;
+}
+
+.TaskMainFrame {
+	position:relative;
+	width:1200px;
+ 	margin-left:auto;
+ 	margin-right:auto;
+ 	margin-top:0px;
+ 	margin-bottom:0px;
+}
+
+.OptionSPanel{
+	position:relative;
+	height:49px;line-height:49px;
+	background:url('../images/bar/filterbar_bg.png') repeat-x scroll 0px 0px;
+	overflow:hidden;
+}
+
+.OptionS{
+	display:inline-block; position:relative;
+	padding:0px;padding-left:32px;
+	cursor:pointer;
+}
+.OptionSChecked{
+	display:inline-block; position:relative;
+	padding:0px;padding-left:32px;	
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.Tab{
+	min-width:100px;
+	height:45px;
+}
+.Tab .TabButton{
+	display:inline-block;position:relative;
+	left:0px;top:0px;
+	width:100px;height:45px; line-height:45px;
+	margin:0px;margin-left:8px;margin-right:8px;	
+    text-align:center;
+ 	cursor:pointer;
+ 	background:url("../images/Second_menu/Second_menu_unselect_middle.png") repeat-x scroll left top;	
+}
+.Tab .TabButton .L{
+	position:absolute;overflow:hidden;
+	left:-8px;top:0px;
+	width:8px;height:45px;		
+	background:url("../images/Second_menu/Second_menu_unselect_left.png") no-repeat scroll left top;	
+}
+.Tab .TabButton .R{
+	position:absolute;overflow:hidden;
+	right:-8px;top:0px;
+	width:8px;height:45px;		
+	background:url("../images/Second_menu/Second_menu_unselect_Right.png") no-repeat scroll left top;	
+}
+/*
+.Tab .TabButton:hover{
+ 	color:#ffff00;
+}
+*/
+.Tab .TabButtonActive{
+	display:inline-block;position:relative;
+	left:0px;top:0px;
+	width:100px;height:45px; line-height:45px;
+	margin:0px;margin-left:8px;margin-right:8px;	
+    text-align:center;
+ 	cursor:pointer;
+ 	background:url("../images/Second_menu/Second_menu_Select_middle.png") repeat-x scroll left top;
+}
+.Tab .TabButtonActive .L{
+	position:absolute;overflow:hidden;
+	left:-8px;top:0px;
+	width:8px;height:45px;		
+	background:url("../images/Second_menu/Second_menu_Select_left.png") no-repeat scroll left top;	
+}
+.Tab .TabButtonActive .R{
+	position:absolute;overflow:hidden;
+	right:-8px;top:0px;
+	width:8px;height:45px;		
+	background:url("../images/Second_menu/Second_menu_Select_Right.png") no-repeat scroll left top;	
+}
+/*
+.Tab .TabButtonActive:hover{
+ 	color:#ffff00;
+}
+*/
+.BtnNewL{
+	position:relative;
+	left:0px;top:0px;width:100px;height:30px;
+	margin:0px;margin-left:10px;margin-right:10px;	
+    line-height:30px;
+    text-align:center;
+ 	cursor:pointer;
+ 	color: #ffffff;
+ 	background:url("../images/bar/addnew_button_m.png") repeat-x scroll left top;	
+}
+
+.BtnNewL .L{
+	position:absolute;overflow:hidden;	
+	left:-4px;top:0px;width:4px;height:30px;	
+	background:url("../images/bar/addnew_button_l.png") no-repeat scroll left top;	
+}
+
+.BtnNewL .R{
+	position:absolute;overflow:hidden;	
+	top:0px;right:-4px;width:4px;height:30px;	
+	background:url("../images/bar/addnew_button_r.png") no-repeat scroll left top;	
+}
+
+.BtnNewL:hover{
+	position:relative;
+	left:0px;top:0px;width:100px;height:30px;
+	margin:0px;margin-left:10px;margin-right:10px;	
+    line-height:30px;
+    text-align:center;
+ 	cursor:pointer;
+ 	color: #ffffff;
+ 	background:url("../images/bar/addnew_button_m_hover.png") repeat-x scroll left top;	
+}
+
+.BtnNewL:hover .L{
+	position:absolute;overflow:hidden;
+	left:-4px;top:0px;width:4px;height:30px;
+	background:url("../images/bar/addnew_button_l_hover.png") no-repeat scroll left top;	
+}
+
+.BtnNewL:hover .R{
+	position:absolute;overflow:hidden;
+	top:0px;right:-4px;width:4px;height:30px;
+	background:url("../images/bar/addnew_button_r_hover.png") no-repeat scroll right top;	
+}
+
+.BtnNewL:active{
+	position:relative;
+	left:0px;top:2px;width:100px;height:30px;
+	margin:0px;margin-left:10px;margin-right:10px;	
+    line-height:30px;
+    text-align:center;
+ 	cursor:pointer;
+ 	color: #ffffff; 	
+}
+
+.PageCtrlPanel{
+	margin:16px;
+	text-align:center;	
+}
+.PageCtrlPanel .Prev{	
+	display:inline-block;
+	text-decoration:none;	
+}
+.PageCtrlPanel .Next{	
+	display:inline-block;
+	text-decoration:none;
+}
+.PageCtrlPanel .GotoPanel{
+	display:inline-block;
+	margin-left:32px;margin-right:32px;
+}
+.PageCtrlPanel .PageNum{
+	text-align:center;
+	width:32px;
+}
+
+.TblHeadContainer{
+	height:80px;	
+}
+
+.TblHeadContainer .ActionBar{
+	display:inline-block;
+	position:relative;
+	border:0px;
+	border-top:1px solid #b0e0e6;	
+	/*border-bottom:1px solid #b0e0e6;*/
+	width:100%;height:40px;line-height:40px;	
+	background:url("../images/bar/actionbar_bg.png") repeat-x scroll 0px 0px;
+	text-align:right;
+}
+
+.TblHeadContainer .TblHead{
+	display:inline-block;
+	position:relative;
+	border:0px;
+	/*border-top:1px solid #b0e0e6;*/	
+	/*border-bottom:1px solid #b0e0e6;*/
+	width:100%;height:40px;line-height:40px;	
+	background:url("../images/bar/titlebar_bg.png") repeat-x scroll 0px 0px;	
+}

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mediaInfo name="udp://238.1.1.1:1234">
+    <container>NetworkURL</container>
+    <programs count="7">
+        <program idx="301">
+            <name>Program 1</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>512</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>650</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                </audio>
+            </audios>
+        </program>
+        <program idx="302">
+            <name>Program 2</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>513</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>660</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                </audio>
+            </audios>
+        </program>
+        <program idx="303">
+            <name>Program 3</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>514</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>670</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                </audio>
+            </audios>
+        </program>
+        <program idx="304">
+            <name>Program 4</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>515</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>680</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                </audio>
+            </audios>
+        </program>
+        <program idx="305">
+            <name>Program 5</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>516</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>690</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                </audio>
+            </audios>
+        </program>
+        <program idx="306">
+            <name>Program 6</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>517</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>700</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                </audio>
+            </audios>
+        </program>
+        <program idx="307">
+            <name>Program 7</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>518</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>710</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                </audio>
+            </audios>
+        </program>
+    </programs>
+</mediaInfo>

@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<mediaInfo name="udp://237.1.1.1:1234">
+    <container>NetworkURL</container>
+    <programs count="7">
+        <program idx="102">
+            <name>CCTV-2</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>1021</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                    <codec>MPEG-2</codec>
+                    <bitrate>15000.0 kbps</bitrate>
+                    <framerate>25.00</framerate>
+                    <resolution>720x576</resolution>
+                    <aspect_ratio>4:3</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>1022</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                    <codec>MPEG Audio</codec>
+                    <bitrate>128.0 kbps</bitrate>
+                    <channel>1</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+        </program>
+        <program idx="107">
+            <name>CCTV-7</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>1071</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                    <codec>MPEG-2</codec>
+                    <bitrate>15000.0 kbps</bitrate>
+                    <framerate>25.00</framerate>
+                    <resolution>720x576</resolution>
+                    <aspect_ratio>4:3</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>1072</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                    <codec>MPEG Audio</codec>
+                    <bitrate>128.0 kbps</bitrate>
+                    <channel>1</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+        </program>
+        <program idx="104">
+            <name>CCTV-4</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>1041</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                    <codec>MPEG-2</codec>
+                    <bitrate>15000.0 kbps</bitrate>
+                    <framerate>25.00</framerate>
+                    <resolution>720x576</resolution>
+                    <aspect_ratio>4:3</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>1042</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                    <codec>MPEG Audio</codec>
+                    <bitrate>128.0 kbps</bitrate>
+                    <channel>1</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+        </program>
+        <program idx="106">
+            <name>CCTV-6</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>1061</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                    <codec>MPEG-2</codec>
+                    <bitrate>15000.0 kbps</bitrate>
+                    <framerate>25.00</framerate>
+                    <resolution>720x576</resolution>
+                    <aspect_ratio>4:3</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>1062</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                    <codec>MPEG Audio</codec>
+                    <bitrate>128.0 kbps</bitrate>
+                    <channel>1</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+        </program>
+        <program idx="105">
+            <name>CCTV-5</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>1051</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                    <codec>MPEG-2</codec>
+                    <bitrate>15000.0 kbps</bitrate>
+                    <framerate>25.00</framerate>
+                    <resolution>720x576</resolution>
+                    <aspect_ratio>4:3</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>1052</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                    <codec>MPEG Audio</codec>
+                    <bitrate>128.0 kbps</bitrate>
+                    <channel>1</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+        </program>
+        <program idx="101">
+            <name>CCTV-1</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>1011</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                    <codec>MPEG-2</codec>
+                    <bitrate>15000.0 kbps</bitrate>
+                    <framerate>25.00</framerate>
+                    <resolution>720x576</resolution>
+                    <aspect_ratio>4:3</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>1012</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                    <codec>MPEG Audio</codec>
+                    <bitrate>128.0 kbps</bitrate>
+                    <channel>1</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+        </program>
+        <program idx="103">
+            <name>CCTV-3</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <pid>1031</pid>
+                    <name>Video</name>
+                    <used>0</used>
+                    <codec>MPEG-2</codec>
+                    <bitrate>15000.0 kbps</bitrate>
+                    <framerate>25.00</framerate>
+                    <resolution>720x576</resolution>
+                    <aspect_ratio>4:3</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <pid>1032</pid>
+                    <name>Audio 1</name>
+                    <used>0</used>
+                    <codec>MPEG Audio</codec>
+                    <bitrate>128.0 kbps</bitrate>
+                    <channel>1</channel>
+                    <samplerate>48.0 kHz</samplerate>
+                    <bitdepth>16</bitdepth>
+                </audio>
+            </audios>
+        </program>
+    </programs>
+</mediaInfo>

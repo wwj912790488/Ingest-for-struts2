@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<monitor>
+	<version>1.0</version>
+	<description>ArcVideo Monitor</description>
+	<defaultInterval>30</defaultInterval>
+	<defaultPeriod>10</defaultPeriod>
+	<entries>
+		<command>
+			<code>net_use_rate</code>
+			<group>true</group>
+			<command><![CDATA[nicstat -m | grep eth | awk '{print $2, $9}']]></command>
+			<description>Monitor network use rate</description>
+		</command>
+		<command>
+			<code>cpu_use_rate</code>
+			<command><![CDATA[mpstat 10 1 | grep "Average" | awk '{print 100-$NF}']]></command>
+			<description>Monitor cpu use rate</description>
+		</command>
+		<command>
+			<code>mem_use_rate</code>
+			<command><![CDATA[free | grep Mem | awk '{printf "%.2f\n", $3*100/$2}']]></command>
+			<description>Monitor memory use rate</description>
+		</command>
+		<command>
+			<code>disk_use_rate</code>
+			<command><![CDATA[df | grep /mnt/data | awk 'gsub("%","") { print $NF,$(NF-1)}']]></command>
+			<group>true</group>
+			<description>Disk use rate</description>
+		</command>
+		<command>
+			<code>cpu_temp</code>
+			<command><![CDATA[ipmitool sensor | awk '$1 ~/CPU/ && $2=="Temp"  {print $1, int($4)}']]></command>
+			<group>true</group>
+			<description>CPU temp</description>
+		</command>
+		<command>
+			<code>fan_speed</code>
+			<group>true</group>
+			<command><![CDATA[ipmitool sensor | grep 'FAN' | awk '$3!="na" {print $1, $3}']]></command>
+			<description>Monitor fan speed</description>
+		</command>
+	</entries>
+	<services>
+		<service>
+			<name>default</name>
+			<senders>
+				<sender>
+					<name>TcpSocketDataSender</name>
+					<class>com.arcsoft.arcvideo.monitor.sender.TcpClientDataSender</class>
+					<params>
+						<param name="command">send -t #{timestamp} -h #{host} -c #{code} -i #{index} -d #{data}</param>
+						<param name="ip">localhost</param>
+						<param name="port">7203</param>
+						<param name="timeout">5000</param>
+						<param name="reconnectDelay">10000</param>
+						<param name="charset">utf-8</param>
+						<param name="keepAlive">true</param>
+					</params>
+				</sender>
+			</senders>
+		</service>
+	</services>
+</monitor>

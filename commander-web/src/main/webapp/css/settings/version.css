@@ -1,0 +1,12 @@
+#version_content {
+	padding: 20px;
+}
+
+.version_view_label {
+	text-align: right;
+	padding: 0px 5px;
+}
+
+.version_view_data {
+	padding: 0px 5px;
+}

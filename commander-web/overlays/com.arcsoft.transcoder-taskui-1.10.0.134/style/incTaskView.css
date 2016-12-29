@@ -1,0 +1,253 @@
+@CHARSET "UTF-8";
+
+.list2columns{
+	position:relative;
+	width:100%;
+	display:table;
+	margin-left:14px;
+}
+.list2columns .row{
+	display:table-row;
+}
+.list2columns .row .lbl{
+	display:table-cell;
+	margin:1px;
+	padding:2px;padding-right:4px;
+	width:10%;
+	text-align:right;
+}
+.list2columns .row .val{
+	display:table-cell;
+	margin:1px;
+	padding:2px;padding-left:4px;
+	width:90%;
+}
+
+.Advertisement .row .lbl{
+	width:14%;
+}
+.Advertisement .row .val{
+	width:86%;
+}
+
+.Advertisement .AdClip{
+	margin-top:6px;
+}
+
+.Editor{
+	margin:20px;
+	border solid 1px #ccc;
+	border-radius:3px;
+	width:96%;
+	background-color:#ffffff;
+}
+.Editor .title{	
+	height:40px;
+	line-height:40px;
+	margin-left:8px;margin-right:8px;
+	padding-left:16px;
+	border-bottom:solid 1px #ccc;
+}
+.Editor .EditorItem{
+	margin:20px;	
+}
+.Editor .EditorItem .EditorItemTitle{
+	border-bottom:dotted 1px #ccc;
+	padding-left:40px;
+	height:30px; line-height:30px;
+	background:url('../images/icons/icon_setting.png') no-repeat scroll left top;	
+}
+.Editor .EditorItem .EditorItemTitle .EditorEnabled{
+	margin-left:10px;
+}
+.Editor .EditorItem .EditorItemBody{
+	margin:4px;
+	margin-left:40px;
+}
+.Editor .EditorItem .EditorItemBody .paramlbl{	
+}
+.Editor .EditorItem .EditorItemBody .paramval{
+	margin-left: 2px;
+}
+.Editor .EditorItem .EditorItemBody .TrimParam{
+	margin:4px; margin-right:12px;
+}
+.Editor .EditorItem .EditorItemBody .TrimParam .paramlbl{	
+}
+.Editor .EditorItem .EditorItemBody .TrimParam .paramval{
+	margin-left: 2px;
+}
+.Editor .EditorItem .EditorItemBody .MosaicItems{
+	display:table;
+	width:100%;
+}
+.Editor .EditorItem .EditorItemBody .MosaicItems .MosaicItem{
+	display:table-row;
+}
+.Editor .EditorItem .EditorItemBody .MosaicItems .MosaicItem .MosaicParam{
+	display:table-cell;
+	margin:4px;
+}
+.Editor .EditorItem .EditorItemBody .TimeSlices{
+	display:table;
+	margin:4px;
+	width:30%;
+}
+.Editor .EditorItem .EditorItemBody .TimeSlices .TimeSlice{
+	display:table-row;
+}
+.Editor .EditorItem .EditorItemBody .TimeSlices .TimeSlice .TimeSliceParam{
+	display:table-cell;
+	margin:4px;
+}
+
+.OutputGroupTab{
+	width:100%;
+}
+.OutputGroupTab .Title{	
+	position:relative;
+	padding-left:40px;
+	margin:2px;
+	max-width:980px;
+	height:30px; line-height:30px;
+	vertical-align:middle;
+	/*background:url('../images/icons/arrow_down.png') no-repeat scroll left top;	*/
+}
+
+.OutputGroupTab .Title .IconExpand{
+	position:absolute;cursor:pointer;
+	left:0px;top:0px;
+	width:30px;
+	height:30px;
+	background:url('../images/icons/arrow_down.png') no-repeat scroll left top;	
+}
+.OutputGroupTab .Title .IconCollapsed{
+	position:absolute;cursor:pointer;
+	left:0px;top:0px;
+	width:30px;
+	height:30px;
+	background:url('../images/icons/arrow_right.png') no-repeat scroll left top;
+}
+
+.OutputGroupTab .Title .StreamIcon{	
+	height:30px; 
+	background-position:center;
+}
+.OutputGroupTab .Body{
+	width:100%;
+}
+
+.OutputGroup{
+	width:100%;
+}
+
+.OutputGroup .param{
+	display:inline-block;
+	width:33%;		
+}
+.OutputGroup .param .lbl{
+	display:inline-block;
+	padding:1px;
+	width:140px;
+	text-align:right;
+}
+.OutputGroup .param .val{
+	display:inline-block;
+	padding:1px;padding-left:3px;
+	max-width:160px;
+	text-align:left;
+}
+.OutputGroup .paramCol3{
+	display:inline-block;
+	width:33%;		
+}
+.OutputGroup .paramCol3 .lbl{
+	display:inline-block;
+	padding:1px;
+	width:140px;
+	text-align:right;
+}
+.OutputGroup .paramCol3 .val{
+	display:inline-block;
+	padding:1px;padding-left:3px;
+	max-width:160px;
+	text-align:left;
+}
+
+.OutputGroup .paramCol2{
+	display:inline-block;
+	width:49%;		
+}
+.OutputGroup .paramCol2 .lbl{
+	display:inline-block;
+	padding:1px;
+	width:140px;
+	text-align:right;
+}
+.OutputGroup .paramCol2 .val{
+	display:inline-block;
+	padding:1px;padding-left:3px;
+	max-width:300px;
+	text-align:left;
+}
+
+.OutputGroup .paramCol1{
+	display:block;	
+	width:100%;
+}
+.OutputGroup .paramCol1 .lbl{
+	display:inline-block;
+	margin:1px;
+	width:140px;
+	text-align:right;
+}
+.OutputGroup .paramCol1 .val{
+	display:inline-block;
+	margin:1px;padding-left:3px;
+	max-width:700px;min-width:100px;
+	text-align:left;
+}
+
+
+.OutputStreams{
+	margin:20px;
+	border solid 1px #ccc;
+	border-radius:3px;
+	width:96%;
+	background-color:#ffffff;
+}
+.OutputStreams .HeadTitle{	
+	height:40px;
+	line-height:40px;	
+	padding-left:16px;
+	border-bottom:solid 1px #ccc;
+	background-color:#D9D9D9;
+}
+
+.OutputStreams .OutputStream .Body{	
+	width:100%;
+}
+.OutputStreams .OutputStream .Body .head1{	
+	height:40px;
+	line-height:40px;
+	margin-left:8px;margin-right:8px;
+	padding-left:16px;	
+	color:#1895C1;
+}
+.OutputStreams .OutputStream .Body .ParamTableTitle{
+	border-top:solid 1px #ccc;
+	border-bottom:dotted 1px #ccc;
+	margin-top:10px;margin-bottom:5px;
+	margin-left:15px;margin-right:15px;
+	padding-left:10px;
+	height:30px; line-height:30px;
+}
+
+.OutputStreams .VideoEditing{
+	margin-left:40px;
+}
+.OutputStreams .VideoEditing .title{
+	height:30px; line-height:30px;
+}
+
+

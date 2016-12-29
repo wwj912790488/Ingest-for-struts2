@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="recordInfoService"
+		class="com.arcsoft.commander.service.record.impl.RecordInfoServiceImpl"
+		p:recordInfoDao-ref="recordInfoDao"
+		p:schedulePersistentService-ref="schedulePersistentService"
+		p:recordTaskService-ref="recordTaskService"
+		p:taskExecuteService-ref="taskExecuteService"
+		p:systemDao-ref="systemDao"
+		p:taskService-ref="taskService"
+		/>
+
+	<bean id="recordScheduleEventProcessor"
+		class="com.arcsoft.commander.service.record.impl.ScheduleEventProcessorImpl"
+		p:recordInfoService-ref="recordInfoService"
+		p:customTaskService-ref="customTaskService"
+		p:recordTaskService-ref="recordTaskService"
+		p:channelService-ref="channelService"
+		p:taskExecuteService-ref="taskExecuteService"
+		/>
+
+	<bean id="recordTaskService"
+		class="com.arcsoft.commander.service.record.impl.RecordTaskServiceImpl"
+		p:recordTaskDao-ref="recordTaskDao"
+		/>
+
+	<bean id="epgParserFactory"
+		class="com.arcsoft.commander.service.record.impl.DefaultEpgParserFactory"
+		/>
+
+	<bean id="scheduleDeleteFileService"
+		class="com.arcsoft.commander.service.record.impl.ScheduleDeleteFileServiceImpl"
+		p:scheduleDeleteFileDao-ref="scheduleDeleteFileDao"
+		/>
+
+	<bean id="scheduleDeleteFileProcessService"
+		class="com.arcsoft.commander.service.record.impl.ScheduleDeleteFileProcessService"
+		p:scheduleDeleteFileService-ref="scheduleDeleteFileService"
+		init-method="init"
+		destroy-method="destroy"
+		/>
+
+	<bean id="epgInfoService"
+		class="com.arcsoft.commander.service.record.impl.EpgInfoServiceImpl"
+		p:epgInfoDao-ref="epgInfoDao"
+		/>
+
+	<bean id="weeklyParserFactory"
+		  class="com.arcsoft.commander.service.record.impl.DefaultWeeklyParserFactory"
+			/>
+
+</beans>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+	<hosts>
+		<host>
+			<id>4201A42B-0DFC-C25E-4FDE-1B9E4E4300D7</id>
+			<name>mcpg-centos-abs</name>
+			<ip>239.239.239.1</ip>
+			<port>8901</port>
+			<networks>
+				<network>00-50-56-81-3D-FE</network>
+			</networks>
+		</host>
+		<host>
+			<id>4C4C4544-004B-4310-8034-C8C04F424D31</id>
+			<name>fjli-dev</name>
+			<ip>239.239.239.2</ip>
+			<port>8902</port>
+			<networks>
+				<network>B8-AC-6F-70-BA-83</network>
+			</networks>
+		</host>
+		<host>
+			<id>564D40A8-793F-95B0-B0CC-2938F15B5D6A</id>
+			<name>VMLinux</name>
+			<ip>239.239.239.3</ip>
+			<port>8903</port>
+			<networks>
+				<network>00-0C-29-5B-5D-6A</network>
+			</networks>
+		</host>
+		<host>
+			<id></id>
+			<name>Linux</name>
+			<ip>239.239.239.4</ip>
+			<port>8904</port>
+			<networks>
+				<network>00-E0-B0-E3-37-D5</network>
+			</networks>
+		</host>
+	</hosts>
+	<runOnRHEL>false</runOnRHEL>
+</config>

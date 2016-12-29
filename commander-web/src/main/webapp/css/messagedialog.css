@@ -1,0 +1,163 @@
+.message_dialog_mask_layer {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background-color: black;
+	filter: alpha(Opacity=80);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+	display: none;
+}
+
+.message_dialog_mask_layer_empty {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background-color: black;
+	filter: alpha(Opacity=0);
+	-moz-opacity: 0.0;
+	opacity: 0.0;
+	display: none;
+}
+
+.message_dialog_box {
+	position: absolute;
+	width: 400px;
+	height: 300px;
+	left:50%;
+	top:50%;
+	margin:-150px 0 0 -200px;
+	z-index: 200;
+	display: none;
+}
+
+.message_dialog_title {
+	height: 35px;
+	line-height: 35px;
+	background: url(../images/dialog/title.png) repeat-x;
+	color: white;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+.message_dialog_msg {
+	padding: 0px 20px;
+	background-color: white;
+}
+
+.message_dialog_buttons {
+	text-align: center;
+	height: 30px;
+	background-color: white;
+}
+
+.message_dialog_button {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.message_dialog_main {
+	background-color: white;
+}
+
+.message_dialog_lt1 {
+	width: 14px;
+	height: 14px;
+	background: url(../images/dialog/left_corner.png) no-repeat bottom;
+}
+
+.message_dialog_lt2 {
+	width: 10px;
+	height: 14px;
+	background: url(../images/dialog/left_corner_top.png) no-repeat;
+}
+
+.message_dialog_tc {
+	height: 14px;
+	background: url(../images/dialog/middle_top.png) repeat-x;
+}
+
+.message_dialog_rt1 {
+	width: 10px;
+	height: 14px;
+	background: url(../images/dialog/right_corner_top.png) no-repeat;
+}
+
+.message_dialog_rt2 {
+	width: 14px;
+	height: 14px;
+	background: url(../images/dialog/right_corner.png) no-repeat bottom;
+}
+
+.message_dialog_lt3 {
+	width: 14px;
+	height: 10px;
+	background: url(../images/dialog/left_corner_down.png) no-repeat;
+}
+
+.message_dialog_rt3 {
+	width: 14px;
+	height: 10px;
+	background: url(../images/dialog/right_corner_down.png) no-repeat;
+}
+
+.message_dialog_lc {
+	width: 14px;
+	background: url(../images/dialog/middle_left.png) repeat-y;
+}
+
+.message_dialog_rc {
+	width: 14px;
+	background: url(../images/dialog/middle_right.png) repeat-y;
+}
+
+.message_dialog_lb3 {
+	width: 14px;
+	height: 10px;
+	background: url(../images/dialog/d_left_corner_top.png) no-repeat;
+}
+
+.message_dialog_rb3 {
+	width: 14px;
+	height: 10px;
+	background: url(../images/dialog/d_right_corner_top.png) no-repeat;
+}
+
+.message_dialog_lb1 {
+	width: 14px;
+	height: 16px;
+	background: url(../images/dialog/d_left_corner.png) no-repeat;
+}
+
+.message_dialog_lb2 {
+	width: 10px;
+	height: 16px;
+	background: url(../images/dialog/d_left_corner_down.png) no-repeat;
+}
+
+.message_dialog_bc {
+	height: 16px;
+	background: url(../images/dialog/middle_down.png) repeat-x;
+}
+
+.message_dialog_rb1 {
+	width: 10px;
+	height: 16px;
+	background: url(../images/dialog/d_right_corner_down.png) no-repeat;
+}
+
+.message_dialog_rb2 {
+	width: 14px;
+	height: 16px;
+	background: url(../images/dialog/d_right_corner.png) no-repeat;
+}

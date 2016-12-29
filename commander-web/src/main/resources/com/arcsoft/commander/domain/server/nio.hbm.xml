@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class
+  name="com.arcsoft.commander.domain.server.NIO" table="tbl_nios">
+  <id name="id" type="java.lang.Integer">
+   <column name="id"/>
+   <generator class="native"/>
+  </id>
+  <property generated="never" lazy="false" name="name" type="java.lang.String">
+   <column name="name"/>
+  </property>
+  <property generated="never" lazy="false" name="type" type="java.lang.Integer">
+   <column name="type"/>
+  </property>
+ </class>
+</hibernate-mapping>

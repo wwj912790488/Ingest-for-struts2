@@ -1,0 +1,21 @@
+<assembly>
+	<id>tomcat</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>build/tomcat/</directory>
+			<excludes>
+				<exclude>bin/*</exclude>
+			</excludes>
+			<outputDirectory>/</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>build/tomcat/bin</directory>
+			<fileMode>0755</fileMode>
+			<outputDirectory>/bin</outputDirectory>
+		</fileSet>
+	</fileSets>
+</assembly>

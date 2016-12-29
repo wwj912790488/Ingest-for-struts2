@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-24 11:15:36 by Hibernate Tools 3.4.0.CR1 -->
+
+<hibernate-mapping>
+	<class name="com.arcsoft.commander.domain.record.RecordInfo" table="tbl_record_base">
+		<id name="id" type="int">
+			<column name="id" not-null="true" unique="true" />
+			<generator class="identity" />
+		</id>
+		<property name="name" column="name" type="string" />
+		<property name="channelId" column="channel_id" type="int" />
+		<property name="profile" column="profile_id" type="int" />
+		<property name="recordType">
+			<column name="record_type" not-null="true" />
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.arcsoft.commander.domain.record.RecordType</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="outputPath" column="output_path" type="string" />
+		<property name="fileName" column="file_name" type="string" />
+		<many-to-one lazy="false" class="com.arcsoft.commander.domain.schedule.Schedule" fetch="join" name="schedule">
+			<column name="schedule_id"/>
+		</many-to-one>
+		<property name="generateThumb" column="generate_thumb" type="boolean" />
+		<property name="thumbWidth" column="thumb_width" type="int" />
+		<property name="thumbHeight" column="thumb_height" type="int" />
+		<property name="createFolderMap" column="create_folder_map" type="string"/>
+		<property name="ftpOption" column="ftp_option" type="boolean" />
+		<property name="ftpPath" column="ftp_path" type="string" />
+
+		<property name="ftpApiOption" column="ftp_ApiOption" type="boolean" />
+		<property name="ftpApiIP" column="ftp_ApiIP" type="string" />
+		<property name="ftpApiUserName" column="ftp_ApiUserName" type="string" />
+		<property name="ftpApiPassWord" column="ftp_ApiPassWord" type="string" />
+		<property name="ftpApiPath" column="ftp_ApiPath" type="string" />
+	</class>
+</hibernate-mapping>

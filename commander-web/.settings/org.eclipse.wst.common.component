@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="TestWebApp">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="commander-common-2.7.0.34.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/commander-common/commander-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-utils-2.7.0.34.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/commons-utils/commons-utils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/overlay/var/M2_REPO/com/arcsoft/transcoder-tmservice/1.10.0.134/transcoder-tmservice-1.10.0.134.war?unpackFolder=target/m2e-wtp/overlays&amp;includes=**/**&amp;excludes=META-INF/MANIFEST.MF">
+            <dependency-type>consumes</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/overlay/var/M2_REPO/com/arcsoft/transcoder-taskui/1.10.0.134/transcoder-taskui-1.10.0.134.war?unpackFolder=target/m2e-wtp/overlays&amp;includes=**/**&amp;excludes=WEB-INF/lib/*.jar">
+            <dependency-type>consumes</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/overlay/slf/?includes=**/**&amp;excludes=META-INF/MANIFEST.MF">
+            <dependency-type>consumes</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/TestWebApp/target/classes"/>
+        <property name="context-root" value="commander"/>
+    </wb-module>
+</project-modules>

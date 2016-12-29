@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-19 12:48:19 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="com.arcsoft.commander.domain.system.SystemSettingEntity" table="tbl_system_settings">
+  <id name="key" type="java.lang.String">
+   <column name="setting_key" not-null="true" unique="true"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="value" type="java.lang.String">
+   <column name="setting_value"/>
+  </property>
+ </class>
+</hibernate-mapping>

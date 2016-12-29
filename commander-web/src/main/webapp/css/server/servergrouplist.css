@@ -1,0 +1,187 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    outline: 0px none;
+}
+
+html, body {
+	overflow-y: hidden;
+}
+
+#groupPanel{
+	position:absolute;	
+	width:268px;
+	top:0px;	
+	bottom:0px;	
+	background:#ffffff;
+	border: 1px solid #b8b8b8;
+}
+
+#rootPanel{
+	height:50px;
+	background:url("../../images/servergroup/commander bg.png") repeat-x scroll 0px 0px;
+	line-height:50px;
+	padding:0px 14px;
+}
+
+#groupLabel{
+	height:42px;
+	background:#efefef;
+	line-height:42px;
+	padding:0px 14px;
+	border-bottom: 1px solid #b8b8b8;
+}
+
+#groupList{
+	position: absolute;
+	top: 92px;
+	bottom: 0px;
+	width: 268px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#detailContainer{
+	border-top: 1px solid #b8b8b8;
+	border-right: 1px solid #b8b8b8;
+	border-bottom: 1px solid #b8b8b8;	
+	position:absolute;	
+	top:0px;
+	bottom:0px;
+	left:270px;	
+	right:0px;
+}
+
+#detailFrame{
+	width:100%;
+	height: 100%;
+	height: expression(($('#detailContainer').height())+ "px");
+}
+
+#emptyPanel{
+	margin-left:92px;
+}
+
+#emptyLabel{
+	margin-left:-8px;
+	margin-top:-15px;
+}
+
+table {	
+	border-collapse:collapse;
+	border-spacing:0;
+	/*table-layout:fixed;*/
+}
+
+tr.group{
+	height:60px;
+	background:url("../../images/servergroup/group bg.png") repeat scroll 0px 0px;
+}
+
+tr.serverFocus{
+	background:#21A4D1 !important;
+	color:#FFFFFF !important;
+}
+
+img.focus{	
+	z-index:1;	
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+tr.server td, tr.newServer td{
+	height: 40px;
+	border-bottom:1px solid #dedede;
+}
+
+a.addBtn {
+	width:40px;
+	height:40px;
+	background: transparent url(../../images/servergroup/create_n.png) no-repeat scroll 0px 0px;
+}
+
+a.addBtn:hover {
+	background:url("../../images/servergroup/create_p.png") no-repeat scroll 0px 0px;
+}
+
+a.deleteBtn {
+	display:none;
+	width:40px;
+	height:40px;
+	background: transparent url(../../images/servergroup/delet_n.png) no-repeat scroll 0px 0px;
+}
+
+a.deleteBtn:hover {
+	background:url("../../images/servergroup/delet_p.png") no-repeat scroll 0px 0px;
+}
+
+.serverText{
+	padding-left:5px;
+}
+
+.nameInput {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	text-align: left;
+	word-break: break-all;
+	width: 120px;
+}
+
+.nameText {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	text-align: left;
+	white-space: nowrap;
+	width: 120px;
+	height: 19px;
+}
+
+.nameError{
+	color:red;
+}
+
+.font_12{
+	font-size:10pt;
+}
+
+.font_11{
+	font-size:9pt;
+}
+
+#defaultPanel {
+	padding-top: 50%;
+	margin-top: -60px;
+	height: 120px;
+	text-align: center;
+}
+
+.groupToggleIcon {
+	width: 30px;
+	height: 30px;
+	background: url(../../images/servergroup/dropdown_r.png) no-repeat;
+}
+
+.groupToggleIconOpen {
+	background: url(../../images/servergroup/dropdown.png) no-repeat;
+}
+
+.groupToggleIconFocus {
+	width: 30px;
+	height: 30px;
+	background: url(../../images/servergroup/dropdown_r_pressed.png) no-repeat;
+}
+
+.groupToggleIconFocusOpen {
+	background: url(../../images/servergroup/dropdown_pressed.png) no-repeat;
+}
+
+.groupIcon {
+	width: 40px;
+	height: 40px;
+	background: url(../../images/servergroup/group.png) no-repeat;
+}
+
+.groupIconFocus {
+	background: url(../../images/servergroup/group_pressed.png) no-repeat;
+}

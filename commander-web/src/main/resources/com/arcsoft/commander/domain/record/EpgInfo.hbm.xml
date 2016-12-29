@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-24 11:15:36 by Hibernate Tools 3.4.0.CR1 -->
+
+<hibernate-mapping>
+	<class name="com.arcsoft.commander.domain.record.EpgInfo" table="tbl_record_epg_info">
+		<id name="id" type="int">
+			<column name="id" not-null="true" unique="true" />
+			<generator class="identity" />
+		</id>
+		<property name="channelId" column="channelId" type="int" />
+		<property name="filePath" column="filePath" type="string" />
+	</class>
+</hibernate-mapping>

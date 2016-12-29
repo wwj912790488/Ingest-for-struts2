@@ -1,0 +1,94 @@
+.signal_header {
+	line-height: 30px;
+}
+
+.signal_option_lt {
+	border:1px solid #000000;
+}
+
+.signal_option_lc {
+	border-left:1px solid #000000;
+	border-right:1px solid #000000;
+	border-bottom:1px solid #000000;
+}
+
+.signal_option_lb {
+	border-left:1px solid #000000;
+	border-right:1px solid #000000;
+	border-bottom:1px solid #000000;
+}
+
+.signal_option_ct {
+	border-top:1px solid #000000;
+	border-right:1px solid #000000;
+	border-bottom:1px solid #000000;
+}
+
+.signal_option_cc {
+	border-right:1px solid #000000;
+	border-bottom:1px solid #000000;
+}
+
+.signal_option_cb {
+	border-right:1px solid #000000;
+	border-bottom:1px solid #000000;
+}
+
+.signal_option_rt {
+	border-top:1px solid #000000;
+	border-right:1px solid #000000;
+	border-bottom:1px solid #000000;
+}
+
+.signal_option_rc {
+	border-right:1px solid #000000;
+	border-bottom:1px solid #000000;
+}
+
+.signal_option_rb {
+	border-right:1px solid #000000;
+	border-bottom:1px solid #000000;
+}
+
+.signal_option_base {
+	height: 28px;
+	padding-left: 20px;
+	padding-top: 4px;
+	vertical-align:middle;
+}
+.signal_buttons {
+	line-height: 50px;
+}
+.NetBody input[type=text] {
+	width: 40px;
+	text-align: center;
+}
+
+.signal_block {
+	height: 165px;
+}
+
+.div_left {
+	float: left;
+	width: 230px;
+}
+
+.div_center {
+	float: left;
+	width: 230px;
+}
+
+.div_right {
+	float: left;
+	width: 230px;
+}
+
+.DefaultText {
+	width: 100px;
+}
+
+
+.button{
+	width:85px;
+	height:23px;
+}

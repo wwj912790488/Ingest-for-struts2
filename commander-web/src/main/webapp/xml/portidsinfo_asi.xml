@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PortIDs type="ASI">
+    <Ports Count="2">
+        <Port idx="2">
+        </Port>
+        <Port idx="4">
+        </Port>
+    </Ports>
+</PortIDs>

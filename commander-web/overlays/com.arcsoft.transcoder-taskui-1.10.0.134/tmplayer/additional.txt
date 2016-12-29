@@ -1,0 +1,2 @@
+- if high byte((0x0FFFFF00)) is not 0, (alpha&0x0FFFFF00) indicates resize percent * 10.
+function AddLogoImage(logoUrl, xPos, yPos, width, height, alpha)

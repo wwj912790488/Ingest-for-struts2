@@ -1,0 +1,23 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="groupId">
+		<field-validator type="required" short-circuit="true">
+			<message key="validation.serverorgroupid"/>
+		</field-validator>
+	</field>
+	<field name="type">
+		<field-validator type="regex">
+			<param name="regex">[0|1]</param>
+			<message key="validation.type.invalid"/>
+		</field-validator>
+	</field>
+	<field name="inputs">
+		<field-validator type="numOfInputs" short-circuit="true">
+            <param name="min">1</param>
+			<param name="max">1</param>
+    		<message key="validation.numofinputs"></message>
+        </field-validator>
+    </field>
+</validators>

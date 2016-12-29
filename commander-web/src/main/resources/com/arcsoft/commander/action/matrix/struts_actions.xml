@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+      "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="matrix" extends="json-default,default">
+		<action name="setmatrix" class="com.arcsoft.commander.action.matrix.MatrixAction">
+			<result name="success">/jsp/settings/matrix.jsp</result>
+		</action>
+		<action name="matrixInit" class="com.arcsoft.commander.action.matrix.MatrixAction" method="init">
+			<result name="success">/jsp/settings/matrixinit.jsp</result>
+		</action>
+		<action name="saveMatrix" class="com.arcsoft.commander.action.matrix.MatrixAction" method="save">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">code,description</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>
+		
+		<action name="matrixSetting" class="com.arcsoft.commander.action.matrix.MatrixSettingAction">
+			<result name="success">/jsp/settings/matrixsetting.jsp</result>
+		</action>
+		<action name="saveMatrixSetting" class="com.arcsoft.commander.action.matrix.MatrixSettingAction" method="save">
+			<result type="json"></result>
+		</action>
+		<action name="selectPort" class="com.arcsoft.commander.action.matrix.SelectPortAction">
+			<result name="success">/jsp/settings/selectPort.jsp</result>
+		</action>
+	</package>
+</struts>

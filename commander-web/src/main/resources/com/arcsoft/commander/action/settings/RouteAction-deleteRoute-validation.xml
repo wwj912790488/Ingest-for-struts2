@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN"
+	"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="route.dest">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message key="settings.err.invalid.dest" />
+		</field-validator>
+		<field-validator type="ip">
+			<message key="settings.err.invalid.dest" />
+		</field-validator>
+	</field>
+	<field name="route.gateway">
+		<field-validator type="regex">
+			<param name="regex"><![CDATA[(^$)|(^(?:(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$)]]></param>
+			<message key="settings.err.invalid.gateway"/>
+		</field-validator>
+	</field>
+	<field name="route.mask">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message key="settings.err.invalid.netmask" />
+		</field-validator>
+		<field-validator type="subnetMask">
+			<message key="settings.err.invalid.netmask" />
+		</field-validator>
+	</field>
+	<field name="route.iface">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="settings.err.invalid.eth" />
+		</field-validator>
+	</field>
+</validators>

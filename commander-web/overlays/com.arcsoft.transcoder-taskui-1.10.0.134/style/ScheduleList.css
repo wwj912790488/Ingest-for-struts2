@@ -1,0 +1,52 @@
+@CHARSET "UTF-8";
+
+.ListContainer{
+	width:100%;
+}
+
+.TblRow{
+	display:table-row;
+	border:0px;margin:0px;padding:0px;
+	border-bottom:1px solid #cdcdcd;
+	width:100%;height:45px;line-height:45px;
+}
+
+.TblCol_0 {
+	display:table-cell;
+	width:1%;min-width:30px;max-width:30px;
+}
+.TblCol_S {
+	display:table-cell;overflow:hidden;
+	width:10%;min-width:120px;max-width:120px;
+	text-overflow:ellipsis;	
+}
+.TblCol_Name {
+	display:table-cell;overflow:hidden;
+	width:20%;min-width:120px;max-width:120px;
+	text-overflow:ellipsis;	
+}
+.TblCol_Start {
+	display:table-cell;overflow:hidden;
+	width:20%;min-width:120px;max-width:120px;
+	text-overflow:ellipsis;	
+}
+
+.TblCol_End {
+	display:table-cell;overflow:hidden;
+	width:20%;min-width:120px;max-width:120px;
+	text-overflow:ellipsis;	
+}
+.TblCol_Feq {
+	display:table-cell;overflow:hidden;
+	width:20%;min-width:120px;max-width:120px;
+	text-overflow:ellipsis;	
+}
+.TblCol_Dur {
+	display:table-cell;overflow:hidden;
+	width:20%;min-width:120px;max-width:120px;
+	text-overflow:ellipsis;	
+}
+
+.SwitchWatch{
+	
+}

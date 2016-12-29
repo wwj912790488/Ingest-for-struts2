@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:sec="http://www.springframework.org/schema/security"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                    http://www.springframework.org/schema/security 
+                    http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+    <sec:global-method-security
+		pre-post-annotations="disabled" proxy-target-class="true"/>
+		
+	<sec:http security="none" pattern="/api/**" />
+	<sec:http security="none" pattern="/ts/**" />
+	<sec:http security="none" pattern="/flv/**" />
+	<sec:http security="none" pattern="/tms.content"/>
+	<sec:http security="none" pattern="/frameListTask.action**"/>
+
+	<sec:http security="none" pattern="/FramelistProfile**"/>
+	<sec:http security="none" pattern="/FramenewProfile**"/>
+	<sec:http security="none" pattern="/exportProfiles"/>
+	<sec:http security="none" pattern="/FrameimportProfiles"/>
+	<sec:http security="none" pattern="/FrameeditProfile"/>
+	<sec:http security="none" pattern="/FramenewProfile"/>
+	<sec:http security="none" pattern="/FramedeleteProfile"/>
+	<sec:http security="none" pattern="/getDirFiles"/>
+	<sec:http security="none" pattern="/listIfaces"/>
+	<sec:http security="none" pattern="/getGpuCount"/>
+	<sec:http security="none" pattern="/listPresetmenu"/>
+	<sec:http security="none" pattern="/FramesaveProfile"/>
+
+	<sec:http security="none" pattern="/frameListAlert.action**"/>
+	<sec:http security="none" pattern="/frameListRecord.action**"/>
+	<sec:http security="none" pattern="/frameAddScheduleRecord.action**"/>
+	<sec:http security="none" pattern="/frameAddFullTimeRecord.action**"/>
+	<sec:http security="none" pattern="/frameAddEpgRecord**"/>
+	<sec:http security="none" pattern="/frameAddEpgFileRecord**"/>
+	<sec:http security="none" pattern="/frameAddWeeklyRecord**"/>
+	<sec:http security="none" pattern="/frameLoadAlertSetting**"/>
+	<sec:http security="none" pattern="/frameSaveAlertSetting**"/>
+	<sec:http security="none" pattern="/frameSaveFullTimeRecord.action**"/>
+	<sec:http security="none" pattern="/frameSaveScheduleRecord.action**"/>
+	<sec:http security="none" pattern="/frameSaveEpgRecord**"/>
+	<sec:http security="none" pattern="/frameSaveWeeklyRecord**"/>
+	<sec:http security="none" pattern="/frameUpdateFullTimeRecord**"/>
+	<sec:http security="none" pattern="/frameUpdateScheduleRecord**"/>
+	<sec:http security="none" pattern="/frameDeleteTask**"/>
+	<sec:http security="none" pattern="/frameDeleteRecord.action**"/>
+	<sec:http security="none" pattern="/frameDeleteAlert.action**"/>
+
+	<sec:http security="none" pattern="/frameExportAlert.action**"/>
+	<sec:http security="none" pattern="/frameTaskCtrl**"/>
+	<sec:http security="none" pattern="/frameDownloadTaskData**"/>
+	<sec:http security="none" pattern="/frameRescheduleRecord.action**"/>
+	<sec:http security="none" pattern="/frameSelectEpgFile.action**"/>
+	<sec:http security="none" pattern="/frameSelectWeeklyFile**"/>
+	<sec:http security="none" pattern="/frameShowEpgItems**"/>
+	<sec:http security="none" pattern="/frameGetDirFiles**"/>
+
+
+	<!--<sec:http security="none" pattern="/frame**"/>-->
+
+	<sec:http use-expressions="true" 
+		entry-point-ref="authenticationEntryPoint"
+		disable-url-rewriting = "true">
+		<sec:access-denied-handler ref="accessDeniedHandler"/>
+	
+		<sec:intercept-url pattern="/images/**" access="permitAll()" />
+		<sec:intercept-url pattern="/css/**" access="permitAll()" />
+		<sec:intercept-url pattern="/style/**" access="permitAll()" />
+		<sec:intercept-url pattern="/js/**" access="permitAll()" />
+		<sec:intercept-url pattern="/jsp/iframe/**" access="permitAll()" />
+		<sec:intercept-url pattern="/**" access="isAuthenticated()" />
+		
+		<sec:form-login	login-processing-url="/auth"
+			authentication-failure-handler-ref="authFailedHandler"
+			username-parameter="username" password-parameter="password"
+			default-target-url="/"
+			always-use-default-target="true"/>
+			
+		<sec:logout logout-url="/logout"/>
+		
+		<sec:session-management
+			session-authentication-strategy-ref="sessionControlStrategy">
+		</sec:session-management>	
+		
+		<sec:custom-filter ref="forwardFilter" before="FIRST"/>
+		<sec:custom-filter ref="myFilter" before="FILTER_SECURITY_INTERCEPTOR"/>
+		<sec:custom-filter ref="checkAccountValidFilter" after="EXCEPTION_TRANSLATION_FILTER"/>
+		<sec:custom-filter ref="i18n" after="SECURITY_CONTEXT_FILTER"/>
+		
+		
+	</sec:http>
+	
+	<sec:authentication-manager alias="authenticationManager">
+		<sec:authentication-provider ref="authenticationProvider">
+		</sec:authentication-provider>
+	</sec:authentication-manager>
+
+	<bean id="myFilter" class="com.arcsoft.commander.security.authentication.MyFilterSecurityInterceptor">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="accessDecisionManager" ref="myAccessDecisionManager" />
+		<property name="securityMetadataSource" ref="mySecurityMetadataSource" />
+	</bean>
+
+	<!-- 访问决策器，决定某个用户具有的角色，是否有足够的权限去访问某个资源。 -->
+	<bean id="myAccessDecisionManager" class="com.arcsoft.commander.security.authentication.MyAccessDecisionManager">
+	</bean>
+
+	<!-- 资源源数据定义，将所有的资源和权限对应关系建立起来，即定义某一资源可以被哪些角色去访问。 -->
+	<bean id="mySecurityMetadataSource"
+		class="com.arcsoft.commander.security.authentication.MyInvocationSecurityMetadataSourceService">
+		<property name="resourceService" ref="resourceService"/>
+	</bean> 
+ 
+ 
+	<!-- forward loginAction to login.jsp -->
+	<bean id="forwardFilter" 
+		class="com.arcsoft.commander.security.ForwardFilter">
+		<property name="forwardMap">
+		      <map>  
+		        <entry key="/login" value="/jsp/security/login.jsp"/>
+     		 </map> 
+		</property>
+	</bean>
+
+
+	<!-- i18n -->
+	<bean id="i18n" 
+		class="com.arcsoft.commander.security.I18NFilter">
+		<property name="localeResolver" ref ="localeResolver"/>
+	</bean>
+
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+   		<property name="basename" value="classpath:language/resources"/>
+	</bean>
+	
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver"/>
+	
+	<!-- login -->
+	<bean id="authenticationEntryPoint"
+		class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+		<property name="loginFormUrl" value="/login" />
+	</bean>
+		
+	<bean id="authFailedHandler"
+		class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+		<property name="useForward" value="true"></property>
+		<property name="defaultFailureUrl" value="/jsp/security/login.jsp"></property>
+	</bean>
+	
+	<!-- authenticationManager -->
+	<bean id="userDetailService"
+		class="com.arcsoft.commander.security.authentication.UserDetailServerImpl">
+		<property name="dao" ref="userDao"></property>
+		<property name="securityService" ref="securityService"/>
+	</bean>
+
+	
+	
+	<bean id="authenticationProvider"
+		class="com.arcsoft.commander.security.authentication.CustomDaoAuthenticationProvider">
+		<property name="userDetailsService" ref="userDetailService" />
+		<property name="hideUserNotFoundExceptions" value="false" />
+	</bean>
+	
+	<!-- sessionManager -->
+	<bean id="sessionControlStrategy"
+		class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy">
+		<constructor-arg name="sessionRegistry" ref="sessionRegistry" />
+	</bean>
+	<bean id="sessionRegistry"
+		class=" org.springframework.security.core.session.SessionRegistryImpl" />
+		
+	<!-- check whether the use is enabled -->
+	<bean id="checkAccountValidFilter" class="com.arcsoft.commander.security.CheckAccountValidFilter">
+	</bean>
+	
+	<!-- access denied handler -->
+	<bean id="accessDeniedHandler" class="com.arcsoft.commander.security.AccessDeniedHandlerImpl">
+		<property name="errorPage" value="/jsp/security/deny.jsp"/>
+	</bean>
+</beans> 

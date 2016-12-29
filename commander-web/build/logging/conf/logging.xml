@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<logging>
+	<version>1.0</version>
+	<description>ArcVideo Logging Service</description>
+	<compress>
+		<type>zip</type>
+		<threads>1</threads>
+		<password></password>
+		<cpulimit>true</cpulimit>
+	</compress>
+	<entries>
+		<entry>
+			<type>ASLOG</type>
+			<source>/mnt/data/local-disk1/aslog</source>
+			<archive>/mnt/data/local-disk1/logarchive</archive>
+			<scanPeriod>60</scanPeriod>
+			<deletePeriod>600</deletePeriod>
+			<keepTime>259200</keepTime>
+			<deleteSource>true</deleteSource>
+		</entry>
+	</entries>
+</logging>

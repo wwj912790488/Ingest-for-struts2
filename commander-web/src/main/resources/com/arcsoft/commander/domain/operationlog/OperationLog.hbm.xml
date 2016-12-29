@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-8-29 17:15:03 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.arcsoft.commander.domain.operationlog.OperationLog" table="logs" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="user" type="string">
+            <column name="user" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="1024"/>
+        </property>
+        <property name="createdAt" type="timestamp">
+            <column name="created_at" length="19" />
+        </property>
+        <property name="attachment" type="string">
+            <column name="attachment" length="2147483647"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+                     ArcSoft Commander Version 1.0.0
+                            Change Log
+
+Version: 1.0.0
+============================================================
+Add Feature: 1+1/m+n master/slave backup.
+Add Feature: task management.
+Add Feature: remote storage management.
+Add Feature: security management.
+Add Feature: agent status monitor.
+Add Feature: date time and time zone settings.
+Add Feature: reboot / shutdown server.
+Add Feature: DNS settings.
+Add Feature: firewall settings.
+Add Feature: route settings.
+Add Feature: network settings.
+Add Feature: remove group
+Add Feature: rename group
+Add Feature: remove server
+Add Feature: rename server
+Add Feature: add server(s) to exist group
+Add Feature: creating 1+1/m+n group.
+Add Feature: cluster base functions.

@@ -1,0 +1,178 @@
+html, body {
+	overflow-y: hidden;
+}
+
+#headerContainer{
+	position: fixed;
+	border: 0px none;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height:143px;
+	background: #000 url("../images/header/tab_down.png") repeat-x bottom;
+	z-index: 10;
+}
+
+#headerPanel{
+	margin:0px auto;
+	width:1024px;
+	background: url("../images/header/Header_commander_BG_p.png") no-repeat scroll 0px -5px;
+}
+
+#logoPanel {
+	height: 89px;
+	line-height: 89px;
+}
+
+#logoPanel > img {
+	float: left;
+	padding: 16px 0px 16px 0px;
+	width: 100px;
+	height: 56px;
+}
+
+#navTabPanel {
+	width: 100%;
+	height: 54px;
+}
+
+.navTab {
+	float: left;
+	width: 100px;
+	height:54px;
+	line-height: 40px;
+	vertical-align: bottom;	
+	cursor: pointer;
+}
+
+.navTab > a {
+	display: none;
+}
+
+.active{
+	background:url("../images/header/tab.png") repeat-x scroll 0px 0px;
+	color: #FFFFFF !important;	
+}
+
+.navBtnText{
+	font-size: 12pt;
+	font-style: normal;
+	color:#cecece;	
+	font-weight: normal;
+	text-align:center;	
+}
+
+#mainFrameContainer{
+	position: fixed;
+	border: 0px none;
+	left: 0px;
+	top: 142px;
+	bottom: 50px;
+	width: 100%;
+	padding: 20px 0px 10px 0px;
+	text-align:center;
+	background:url("../images/BG.png") repeat scroll 0px 0px;
+	z-index: 1;
+}
+
+#mainFrame{
+	height: expression(($('#mainFrameContainer').height())+ "px");
+	height: 100%;
+	width: 1024px;
+	background: #ffffff;
+}
+
+#footer {
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	height: 50px;
+	width: 100%;
+	background-color: #3E3E3E;
+	z-index: 5;
+}
+
+#footerContent {
+	margin: 0px auto;
+	width: 1024px;
+	line-height: 50px;
+	font-size: 10pt;
+	padding: 0px;
+	color: white;
+	text-align: center;
+}
+
+.menu{
+	cursor:pointer;
+	/* width:101px; */
+	height:30px;
+	line-height:30px;
+}
+
+.menu_text {
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-align: center;
+}
+
+.menu_text_hightlight{
+	color: #21A4D1;
+}
+
+.image_user{
+	background: url("../images/security/user.png");
+	width:20px;
+	height:20px;
+}
+
+.image_gear{
+	background: url("../images/security/gear.png");
+	width:10px;
+	height:10px;
+}
+
+.label_user{
+	font-size: 9pt;
+}
+
+.navTab2{
+	cursor: pointer;
+	float: right;
+	height:54px;
+	line-height: 40px;
+	vertical-align: bottom;
+}
+
+ .second-nav{
+	display: none;
+	line-height: 25px;
+}
+
+.second-nav a{
+	display: inline-block;
+	width : 114px;
+	height : 27px;
+	line-height : 27px;
+	text-align : center;
+	color: #fff;
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+.second-nav .active{
+	background: url("../images/header/tab_bg.png") no-repeat;
+}
+
+.second-nav a:hover{
+	text-decoration: none;
+	background: url("../images/header/tab_bg.png") no-repeat;
+}
+
+.second-nav a span{
+	color: #fff;
+}
+
+#loading_title {
+	color: white;
+}

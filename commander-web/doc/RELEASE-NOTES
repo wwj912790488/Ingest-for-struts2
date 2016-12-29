@@ -1,0 +1,46 @@
+                     ArcSoft Commander Version 1.0.0
+                            Release Notes
+
+============================================================
+CONTENTS:
+============================================================
+* Dependency
+* Feature List
+* Viewing the Change Log
+
+============================================================
+Dependency:
+============================================================
+(1) J2SE 1.7+
+(2) MySQL 5.5+
+(3) Tomcat 7.0+
+
+============================================================
+Feature List:
+============================================================
+Support security management.
+Support 1+1/m+n master/slave backup.
+    - input/output network monitor.
+    - heart beat.
+    - support switch master/salve manually.
+    - auto rebound.
+Support task management.
+Support discovery agents in cluster.
+Support create 1+1/m+n group.
+Support add server(s) to exist group
+Support device management:
+    - rename server
+    - remove server
+    - reboot / shutdown server.
+    - date time and time zone settings.
+    - DNS settings.
+    - firewall settings.
+    - route settings.
+    - network settings.
+    - remote storage management.
+Support agent status monitor.
+
+============================================================
+Viewing the Change Log:
+============================================================
+See CHANGELOG in this directory.

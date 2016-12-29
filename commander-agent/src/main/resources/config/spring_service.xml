@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<bean id="agentService" name="remoteExecutorService, ethSettingsListener"
+		class="com.arcsoft.commander.agent.service.agent.impl.LiveAgentServiceImpl"
+		init-method="init"
+		p:taskManager-ref="taskManager"
+		p:licenseService-ref="licenseService"
+		p:gpuChecker-ref="overallGpuChecker"
+		p:gpuTestingEnabled="${gpu.testing.enabled}"
+		p:gpuTestingTimeout="${gpu.checker.timeout}"
+		p:gpuTestingOnStartup="${gpu.checker.onstartup}"
+		destroy-method="destroy">
+		<property name="actionHandlers">
+			<list>
+				<ref bean="dateTimeService"/>
+				<ref bean="dnsService"/>
+				<ref bean="ethService"/>
+				<ref bean="firewallService"/>
+				<ref bean="hostService"/>
+				<ref bean="routeService"/>
+				<ref bean="taskManager"/>
+				<ref bean="storageService"/>
+				<ref bean="licenseActionService"/>
+				<ref bean="agentSnmpService"/>
+				<ref bean="loggingSettingService"/>
+				<ref bean="nioBindingService"/>
+				<ref bean="cmdMediaInfoService"/>
+				<ref bean="faultService"/>
+				<ref bean="agentSourceSignalSettingService"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="remoteExecutorServiceSupport"
+		class="com.arcsoft.commander.agent.service.remote.RemoteExecutorServiceSupport"
+		abstract="true"
+		p:remoteExecutorService-ref="remoteExecutorService"
+		/>
+
+	<!-- settings -->
+	<bean id="dateTimeService"
+		class="com.arcsoft.commander.agent.service.settings.DateTimeService"
+		p:localDateTimeService-ref="localDateTimeService"
+		/>
+
+	<bean id="localDateTimeService"
+		class="com.arcsoft.commander.service.settings.impl.LocalDateTimeServiceImpl"
+		p:timeDao-ref="timeDao"
+		/>
+
+	<bean id="dnsService"
+		class="com.arcsoft.commander.agent.service.settings.DNSService"
+		p:localDNSService-ref="localDNSService"
+		/>
+
+	<bean id="localDNSService"
+		class="com.arcsoft.commander.service.settings.impl.LocalDNSServiceImpl"
+		p:dnsDao-ref="dnsDao"
+		/>
+
+	<bean id="ethService"
+		class="com.arcsoft.commander.agent.service.settings.EthService"
+		p:localEthService-ref="localEthService"
+		/>
+
+	<bean id="localEthService"
+		class="com.arcsoft.commander.service.settings.impl.LocalEthServiceImpl"
+		p:ethDao-ref="ethDao"
+		/>
+
+	<bean id="firewallService"
+		class="com.arcsoft.commander.agent.service.settings.FirewallService"
+		p:localFirewallService-ref="localFirewallService"
+		/>
+
+	<bean id="localFirewallService"
+		class="com.arcsoft.commander.service.settings.impl.LocalFirewallServiceImpl"
+		p:firewallDao-ref="firewallDao"
+		/>
+
+	<bean id="hostService"
+		class="com.arcsoft.commander.agent.service.settings.HostService"
+		p:localHostService-ref="localHostService"
+		/>
+
+	<bean id="localHostService"
+		class="com.arcsoft.commander.service.settings.impl.LocalHostServiceImpl"
+		p:hostDao-ref="hostDao"
+		/>
+
+	<bean id="routeService"
+		class="com.arcsoft.commander.agent.service.settings.RouteService"
+		p:localRouteService-ref="localRouteService"
+		/>
+
+	<bean id="localRouteService"
+		class="com.arcsoft.commander.service.settings.impl.LocalRouteServiceImpl"
+		p:routeDao-ref="routeDao"
+		/>
+
+	<bean id="storageService"
+		class="com.arcsoft.commander.agent.service.settings.StorageService"
+		p:localStorageService-ref="localStorageService"
+		/>
+
+	<bean id="localStorageService"
+		class="com.arcsoft.commander.service.settings.impl.LocalStorageServiceImpl"
+		init-method="initialize"
+		p:persistDao-ref="persistDao"
+		p:mountDao-ref="mountDao"
+		/>
+
+	<bean id="loggingSettingService"
+		class="com.arcsoft.commander.agent.service.settings.LoggingSettingService"
+		/>
+
+	<bean id="nioBindingService" name="networkConfigService"
+		class="com.arcsoft.commander.agent.service.settings.NioBindingService"
+		init-method="init"
+		p:ethSettingsListener-ref="ethSettingsListener"
+		/>
+
+	<util:list id="licenseChangedListenerList">
+		<ref bean="agentService"/>
+	</util:list>
+
+	<bean id="licenseActionService"
+		class="com.arcsoft.commander.agent.service.settings.LicenseActionService"
+		p:licenseService-ref="licenseService"
+		p:listeners-ref="licenseChangedListenerList"
+		/>
+
+	<!-- task -->
+	<util:list id="transcodingStatusListenerList">
+		<ref bean="taskManager"/>
+	</util:list>
+	<util:list id="transcodingMessageListenerList">
+		<ref bean="taskManager"/>
+	</util:list>
+	<util:list id="taskEventHandlers">
+		<ref bean="recordTaskService" />
+	</util:list>
+	<util:list id="alertListeners">
+		<ref bean="transcodingMessageListener"/>
+		<ref bean="agentService"/>
+	</util:list>
+	<util:list id="taskStateChangedListeners">
+		<ref bean="recordTaskService" />
+	</util:list>
+	<util:list id="taskXmlProcessFilters">
+		<ref bean="taskManager" />
+		<ref bean="recordTaskService" />
+	</util:list>
+
+	<!-- Do not use destroy-method on below bean. 
+		It will cause the tasks can't switch issue. Because the transcoder will shutdown self and trigger TaskStatusChanged first -->
+	<bean id="taskTranscodingService" 
+		class="com.arcsoft.web4transcoder.service.transcoder.DefaultTranscodingService"
+		p:templateEngine-ref="templateEngine"
+		p:xmlFileBuilder-ref="xmlFileBuilder"
+		p:licenseService-ref="licenseService"
+		p:extraTranscodingStatusListener-ref="transcodingStatusListenerList"
+		p:extraTaskMessageListeners-ref="transcodingMessageListenerList"
+		p:transcoderTaskCompiler-ref="transcoderTaskCompiler"
+		p:httpGroupSettingAccessor-ref="httpGroupSettingAccessor"
+		p:limitChecker-ref="emptyLimitChecker"
+		init-method="init">
+		<constructor-arg index="0" ref="transcoder" />
+		<constructor-arg index="1" ref="merger"/>
+	</bean>
+
+	<bean id="transcoder"
+		class="com.arcsoft.transcoder.spi.single.ThreadTrackBasedTranscoder"
+		destroy-method="destroy"
+		/>
+
+	<bean id="emptyLimitChecker"
+		class="com.arcsoft.commander.agent.service.task.impl.EmptyLimitChecker"
+		/>
+
+	<bean id="merger"
+		class="com.arcsoft.merger.Merger"
+		destroy-method="destroy"
+		/>
+
+	<bean id="transcoderTaskCompiler"
+		class="com.arcsoft.web4transcoder.service.transcoder.TaskCompiler"
+		p:taskTranscodingContext-ref="taskTranscodingService"
+		/>
+
+	<bean id="taskManager"
+		class="com.arcsoft.commander.agent.service.task.impl.TaskManagerImpl"
+		parent="remoteExecutorServiceSupport"
+		p:remoteExecutorService-ref="remoteExecutorService"
+		p:transcodingService-ref="taskTranscodingService"
+		p:taskXmlParser-ref="taskXmlParser"
+		p:licenseService-ref="licenseService"
+		p:poolSize="5"
+		p:restartDelay="${transcoder.restart.delay}"
+		init-method="init"
+		destroy-method="destroy"
+		p:agentService-ref="agentService"
+		p:alertListeners-ref="alertListeners"
+		p:taskEventHandlers-ref="taskEventHandlers"
+		p:taskStateChangedListeners-ref="taskStateChangedListeners"
+		/>
+
+	<bean id="transcodingMessageListener" class="com.arcsoft.commander.agent.service.alert.AlertMessageService"
+		parent="remoteExecutorServiceSupport"
+		p:agentService-ref="agentService"
+		init-method="init"
+		destroy-method="destory"/>
+
+	<bean id="recordTaskService"
+		parent="remoteExecutorServiceSupport"
+		class="com.arcsoft.commander.agent.service.record.RecordTaskService"
+		p:taskXmlParser-ref="taskXmlParser"
+		p:ossUploadService-ref="ossUploadService"
+		init-method="init"
+		destroy-method="destroy"
+		/>
+
+	<bean id="cmdMediaInfoService"
+		class="com.arcsoft.commander.agent.service.task.impl.MediaInfoServiceImpl"
+		p:networkConfigService-ref="networkConfigService"
+		/>
+
+	<bean id="snmpService" class="com.arcsoft.transcoder.snmp.SnmpService"
+		p:snmpAgentHost="localhost"
+		p:enableArcVideoSnmp="${snmp.arcvideo.enabled}"
+		p:snmpClientName="agent"
+		init-method="init"
+		/>
+
+	<bean id="agentSnmpService"
+		class="com.arcsoft.commander.agent.service.snmp.AgentSnmpService"
+		p:snmpService-ref="snmpService"
+		/>
+
+	<!-- scheduling tasks -->
+	<bean id="scheduledFactory"
+		class="org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean"
+		p:scheduledExecutorTasks-ref="agentScheduledTasks"
+		/>
+
+	<util:list id="agentScheduledTasks">
+		<ref bean="dropCachesScheduledTask"/>
+	</util:list>
+
+	<bean id="dropCachesExecutor"
+		class="com.arcsoft.commander.common.concurrent.LinuxShellExecutor"
+		p:command="echo 3 > /proc/sys/vm/drop_caches"
+		/>
+
+	<bean id="dropCachesScheduledTask"
+		class="org.springframework.scheduling.concurrent.ScheduledExecutorTask"
+		p:period="120000"
+		p:runnable-ref="dropCachesExecutor"
+		/>
+		
+	<bean id="faultService"
+		class="com.arcsoft.commander.agent.service.fault.FaultService"
+		init-method="init"
+		/>
+
+	<bean id="gpuChecker"
+		class="com.arcsoft.arcvideo.gputool.DefaultGpuChecker"
+		p:gpuInfoPath="${gpu.config.file}"
+		p:gpuCountCommand="${gpu.count.command}"
+		p:checkGpuPath="${gpu.checker.path}"
+		/>
+
+	<bean id="overallGpuChecker"
+		class="com.arcsoft.arcvideo.gputool.ConfigurableOverallGpuChecker"
+		p:mode="${gpu.checker.mode}"
+		p:gpuChecker-ref="gpuChecker"
+		/>
+
+	<bean id="httpGroupSettingAccessor" class="com.arcsoft.web4transcoder.service.HttpGroupSettingAccessorImpl" 
+		p:ip="127.0.0.1" /> <!-- 238.0.0.1 -->
+
+	<bean id="agentSourceSignalSettingService"
+		class="com.arcsoft.commander.agent.service.settings.SignalSettingService"
+		p:listeners-ref="signalSettingChangedListeners"
+		/>
+
+	<util:list id="signalSettingChangedListeners">
+		<ref bean="taskManager"/>
+	</util:list>
+
+	<util:properties id="mimeTypes" location="file:${agent.home}/conf/mimetypes.properties"/>
+
+	<bean id="ossUploadService"
+		class="com.arcsoft.commander.agent.service.oss.OSSUploadService"
+		p:featureEnabled="${oss.upload.enabled}"
+		p:mappedLocalPath="${oss.mapped.local.path}"
+		p:partSize="${oss.upload.part.size}"
+		p:maxAge="${oss.cache.max.age}"
+		p:mimeTypes-ref="mimeTypes"
+		/>
+
+</beans>

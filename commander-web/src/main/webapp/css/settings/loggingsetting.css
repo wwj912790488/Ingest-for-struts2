@@ -1,0 +1,19 @@
+#logging_content {
+	padding: 20px;
+}
+
+.logging_view_label {
+	text-align: right;
+	padding: 0px 5px;
+	height: 30px;
+}
+
+.logging_view_data {
+	padding: 0px 5px;
+}
+
+#btnUpdateLogging {
+	margin-top: 10px;
+	width: 80px;
+	height: 24px;
+}

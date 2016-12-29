@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClass}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="minPoolSize" value="${c3p0.minPoolSize}" />
+		<property name="maxPoolSize" value="${c3p0.maxPoolSize}" />
+		<property name="initialPoolSize" value="${c3p0.initialPoolSize}" />
+		<property name="maxIdleTime" value="${c3p0.maxIdleTime}" />
+	</bean>
+	
+	<bean id="hibernateMappingResources" class="com.arcsoft.arcvideo.spring.utils.ResourcesManager">
+		<property name="resources">
+			<list>
+				<value>classpath*:/com/arcsoft/web4transcoder/domain/**/*.hbm.xml</value>
+				<value>classpath*:/com/arcsoft/commander/domain/*/*.hbm.xml</value>
+			</list>
+		</property>
+		<property name="excluded">
+			<list>
+				<value>classpath*:/com/arcsoft/web4transcoder/domain/alert/*.hbm.xml</value>
+				<value>classpath*:/com/arcsoft/web4transcoder/domain/log/*.hbm.xml</value>
+				<value>classpath*:/com/arcsoft/web4transcoder/domain/os/*.hbm.xml</value>
+				<value>classpath*:/com/arcsoft/web4transcoder/domain/security/*.hbm.xml</value>
+				<value>classpath*:/com/arcsoft/web4transcoder/domain/automation/*.hbm.xml</value>
+				<value>classpath*:/com/arcsoft/commander/domain/task/CommanderTask.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingLocations" value="#{hibernateMappingResources.resources}"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.query.substitutions">true=1 false=0</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+		p:sessionFactory-ref="sessionFactory" />
+
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="create*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
+			<tx:method name="apply*" propagation="REQUIRED" />
+			<tx:method name="rename*" propagation="REQUIRED" />
+			<tx:method name="execute*" propagation="REQUIRED" />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<tx:advice id="arcvideoAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true"/>
+			<tx:method name="*"/>
+		</tx:attributes>
+	</tx:advice>
+
+	<tx:advice id="taskServiceAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="updateTaskProgress" propagation="SUPPORTS" />
+			<tx:method name="updateTaskState" propagation="SUPPORTS" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="new*" propagation="REQUIRED" />
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="find*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+
+	<aop:config>
+		<aop:pointcut id="xPointcut" expression="target(com.arcsoft.commander.service.Transaction)" />
+		<aop:pointcut id="arcvideoPointcut"
+			expression="
+			bean(profileService)||
+			bean(presetService)||
+			bean(mountPointConfigService)" />
+		<aop:pointcut id="taskServicePointcut" expression="bean(taskService)||bean(customTaskService)"/>
+
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="xPointcut" />
+		<aop:advisor advice-ref="arcvideoAdvice" pointcut-ref="arcvideoPointcut" />
+		<aop:advisor advice-ref="taskServiceAdvice" pointcut-ref="taskServicePointcut" />
+	</aop:config>
+
+</beans>

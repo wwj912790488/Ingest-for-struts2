@@ -1,0 +1,141 @@
+@CHARSET "UTF-8";
+
+.TaskToGroupMenu{
+	
+}
+.TaskToGroupMenu .Title{
+	text-decoration-line:underline;
+}
+.TaskToGroupMenu .MenuItems{
+	display:none;
+}
+.TaskToGroupMenu:hover .MenuItems{
+	display:inline;
+}
+.TaskToGroupMenu:hover .MenuItems .MenuItem{
+	margin-left:10px;
+}
+
+.SubCT{
+	display:table;
+	width:100%;
+}
+.TaskGroupsPanel{
+	display:table-cell;
+	padding-left:10px;
+	width:10%;
+}
+
+.BodyPanel{
+	display:table-cell;
+	width:90%;
+}
+
+.GroupInfoPanel{
+	margin-bottom:25px;
+}
+
+.SettingPanel{
+	
+}
+
+.AddNewGroupPanel{
+	
+}
+
+.TaskGroupList{
+	margin-bottom:40px;	
+}
+
+.TaskGroupList .TaskGroup{
+	margin:10px;
+}
+
+.TaskEntry{
+	margin-bottom:20px;
+}
+
+.TaskTitleRunning{	
+	border-bottom: 1px solid #CDCDCD;
+	padding-bottom:5px;
+	font-weight:bold;
+	color:#000000;
+	width:100%;
+}
+
+.TaskTitle{	
+	border-bottom: 1px solid #CDCDCD;
+	padding-bottom:5px;
+	font-weight:bold;
+	color:#666666;
+	width:100%;
+}
+.TitleW{
+	max-width:33%;
+	text-align:left;
+	text-overflow:ellipsis;overflow:hidden;
+	work-wrap:break-word;word-break:break-all;
+}
+.TaskBody{	
+	display:table;
+	width:100%;
+	
+}
+
+.TaskTitle .TaskId{	
+	min-width:20px;
+}
+.TaskTitle .TaskName{	
+	margin-left:5px;
+}
+.TaskEntry .TaskMotionIconPanel{
+	margin-left:46px;
+}
+.TaskEntry .MotionIcon{
+}
+
+.TaskBody .Row{
+	display:table-row;
+}
+
+.VideoSettingCol{
+	display:table-cell;
+	padding-left:20px;
+	width:33%;
+	border-bottom: 1px solid #cdcdcd;
+}
+.MotionIconCol{
+	display:table-cell;
+	padding-left:10px;
+	width:25%;	
+	border-left: 1px dotted #cccccc;
+	border-bottom: 1px solid #cdcdcd;
+}
+.DyTextCol{
+	display:table-cell;
+	padding-left:10px;
+	width:25%;	
+	border-left: 1px dotted #cccccc;
+	border-bottom: 1px solid #cdcdcd;
+}
+.PaddingCol{
+	display:table-cell;
+	padding-left:10px;
+	width:12%;	
+	border-left: 1px dotted #cccccc;
+	border-bottom: 1px solid #cdcdcd;
+}
+
+.ApplyAllBtn{
+	display:inline-block;
+	margin-left:16px;
+}
+
+.MotionIconOn {
+	background:url("../images/icons/light_green.png") no-repeat scroll center right;
+	background-size:12px;
+}
+.MotionIconOff {
+	background:url("../images/icons/light_red.png") no-repeat scroll center right;
+	background-size:12px;
+}

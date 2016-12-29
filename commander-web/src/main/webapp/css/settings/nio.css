@@ -1,0 +1,86 @@
+*{
+	font-size: 9pt;
+	font-style: normal;
+}
+.nio_content {
+	margin:15px 15px 25px 20px;
+}
+
+#space_1{
+	height:17px;
+}
+
+#space_2{
+	height:25px;
+}
+
+#space_3{
+	height:30px;
+}
+
+#nio_list_table{
+	margin:0;
+	border-collapse:collapse;
+}
+
+#nio_list_table td{
+	padding:0px 0px 0px 0px;
+}
+
+td.nioName{
+	width: 200px;
+	padding:0px 0px 0px 0px;
+}
+
+td.nioType{
+	width: 60px;
+	padding:0px 0px 0px 0px;
+}
+
+td.deleteBtn{
+	padding:0px 10px 0px 0px;
+}
+
+td.editBtn{
+	padding:0px 10px 0px 0px;
+}
+
+a.editBtn {
+	width:40px;
+	height:40px;
+	display: block;
+	background: url("../../images/servergroup/edit_n.png") no-repeat scroll 0px 0px;
+}
+
+a.editBtn:hover {
+	background: url("../../images/servergroup/edit_p.png") no-repeat scroll 0px 0px;
+	cursor:pointer;
+}
+
+#table_add_nio td {
+	padding:0px 10px 0px 0px;
+}
+
+.addNioFrame input{
+	width:120px;
+	height:21px;
+	line-height:21px;
+}
+
+.addNioFrame select{
+	width:70px;
+	height:23px
+}
+
+.addNioFrame button{
+	width:85px;
+	height:23px
+}
+
+.error{
+	color:red;
+}
+#apply_button{
+	width:85px;
+	height:23px
+}

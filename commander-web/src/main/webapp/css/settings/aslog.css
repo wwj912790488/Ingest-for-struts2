@@ -1,0 +1,23 @@
+#aslog_content {
+	padding: 20px;
+}
+
+.aslog_view_label {
+	text-align: right;
+	padding: 0px 5px;
+}
+
+.aslog_view_data {
+	padding: 0px 5px;
+}
+
+#aslogFile {
+	width: 300px;
+	height: 23px;
+}
+
+#btnUpdateASLog {
+	margin-top: 10px;
+	width: 80px;
+	height: 24px;
+}

@@ -1,0 +1,18 @@
+                     ArcSoft Commander Agent Version 1.0.0
+                            Change Log
+
+Version: 1.0.0
+============================================================
+Add switch role support.
+Add input/output network monitor.
+Add task transcoding.
+Add mount remote storage.
+Add startup and shutdown agent by command line.
+Add agent configuration.
+Add date time and time zone settings.
+Add reboot / shutdown server.
+Add DNS settings.
+Add firewall settings.
+Add route settings.
+Add network settings.
+Add cluster node and base functions.

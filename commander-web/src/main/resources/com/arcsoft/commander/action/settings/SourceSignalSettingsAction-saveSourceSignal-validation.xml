@@ -1,0 +1,111 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="notifyInterval">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+	
+	<field name="signalBrokenTimeout">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+	
+	<field name="patLossTimeout">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+	
+	<field name="progidLossTimeout">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+	
+	<field name="pmtLossTimeout">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+	
+	<field name="avLossTimeout">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+	
+	<field name="ccErrorTimeout">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+	
+	<field name="ccErrorCount">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+
+	<field name="warningSignalBrokenTimeout">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+	
+	<field name="warningPatLossTimeout">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+
+	<field name="warningProgidLossTimeout">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+
+	<field name="warningPmtLossTimeout">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+
+	<field name="warningAvLossTimeout">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+
+	<field name="warningCcErrorTimeout">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+
+	<field name="warningCcErrorCount">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<message key="validation.signal.min.value"></message>
+		</field-validator>
+	</field>
+
+</validators>

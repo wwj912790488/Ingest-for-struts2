@@ -1,0 +1,124 @@
+#!/bin/bash
+#
+# ingest_alertd        This shell script takes care of starting and stopping
+#               the ArcVideo Alert System (ingest_alertd).
+#
+# chkconfig: 2345 85 15
+# description: The ArcVideo Alert System.
+#
+
+#
+# Source profile settings
+#
+. /etc/profile
+
+#
+# Source function library.
+#
+. /etc/rc.d/init.d/functions
+
+#
+# initial values
+#
+prog=ingest_alertd
+home=/usr/local/arcvideo/ingest/alert
+
+#
+# Set timeouts here
+#
+STOP_TIMEOUT=10
+RETVAL=0
+
+#
+# resolve links - $0 may be a softlink
+#
+# PRG="$0"
+# while [ -h "$PRG" ]; do
+#   ls=`ls -ld "$PRG"`
+#   link=`expr "$ls" : '.*-> \(.*\)$'`
+#   if expr "$link" : '/.*' > /dev/null; then
+#     PRG="$link"
+#   else
+#     PRG=`dirname "$PRG"`/"$link"
+#   fi
+# done
+# PRGDIR=`dirname "$PRG"`
+# if [ "$PRGDIR" != "/etc/init.d" ] ; then
+# 	home=`cd "$PRGDIR/.." >/dev/null; pwd`
+# fi
+
+#
+# start service
+#
+start() {
+  PID=`ps -ef | grep $home/conf | grep -v grep | awk '{print $2}'`
+  if [ ! -z "$PID" ]; then
+    echo "The $prog: is already running, pid=$PID"
+  else
+    echo $"Starting $prog: "
+    exec "$home/bin/startup.sh" &
+  fi
+}
+
+#
+# stop service
+#
+stop() {
+  PID=`ps -ef | grep $home/conf | grep -v grep | awk '{print $2}'`
+  if [ ! -z "$PID" ]; then
+    # try term the application before force kill
+    echo -n $"Stopping  $prog:"
+	kill -TERM $PID >/dev/null 2>&1
+
+	if checkpid $PID 2>&1; then
+      # check pid every 1s
+      usleep 100000
+      count=$STOP_TIMEOUT
+      while checkpid $PID && [ "$count" -gt 0 ]; do
+        sleep 1
+        count=$(($count-1))
+      done
+
+      # if timeout, force kill the process
+      if checkpid $PID; then
+        kill -KILL $PID >/dev/null 2>&1
+      fi
+    fi
+  fi
+}
+
+#
+# service status
+#
+status() {
+  PID=`ps -ef | grep $home/conf | grep -v grep | awk '{print $2}'`
+  if [ ! -z "$PID" ]; then
+    echo "$prog: is running, pid=$PID"
+  else
+    echo "$prog: is not running"
+  fi
+}
+
+#
+# See how we were called.
+#
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  status)
+    status
+    ;;
+  restart)
+   stop
+   start
+   ;;
+  *)
+   echo $"Usage: $prog {start|stop|restart|status}"
+   RETVAL=2
+esac
+
+exit $RETVAL

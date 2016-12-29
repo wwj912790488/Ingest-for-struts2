@@ -1,0 +1,77 @@
+*{
+	font-size: 9pt;
+	font-style: normal;
+}
+
+.firewall_content{
+	margin:30px 25px 35px 30px;
+}
+
+#space1{
+	height:15px;
+}
+
+#space2{
+	height:20px;
+}
+
+.div_onOff{
+	margin:0px 0px 0px 8px;
+}
+
+#input_dport{
+	width:128px;
+	height:23px;
+}
+
+button{
+	width:85px;
+	height:23px
+}
+
+select.port_type{
+	width:108px;
+	height:23px;
+}
+
+.table_onOff{
+	border-collapse:collapse;
+}
+
+#lable{
+	padding:0px 16px 0px 0px;
+}
+
+.radio_onOff{
+	padding:0px 10px 0px 0px;
+}
+
+.protocol_td{
+	padding:0px 19px 0px 0px;
+}
+
+.lable_td{
+	padding:0px 15px 0px 0px;
+}
+
+.dest_port_td{
+	padding:0px 285px 0px 0px;
+}
+
+#td_on{
+	padding:0px 8px 0px 0px;
+}
+
+#td_on_text{
+	padding:0px 30px 0px 0px;
+}
+
+#td_off{
+	padding:0px 8px 0px 0px;
+}
+
+.td_error{
+	color:red;
+}
+
+

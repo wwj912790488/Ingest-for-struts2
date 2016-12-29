@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<modules>
+    <module name="Local">
+        <opertor id="2" name="Edit">
+            <resource key="ROLE_LOCAL_EDIT_NETWORK">
+                <title>set network</title>
+                <url>/local/setNetwork.action</url>
+            </resource>
+            <resource key="ROLE_LOCAL_EDIT_TIMEZONE">
+                <title>set timezone</title>
+                <url>/local/setTimezone.action</url>
+            </resource>
+            <resource key="ROLE_LOCAL_EDIT_REBOOT">
+                <title>reboot</title>
+                <url>/local/reboot.action</url>
+            </resource>
+            <resource key="ROLE_LOCAL_EDIT_SHUTDOWN">
+                <title>shutdown</title>
+                <url>/local/shutdown.action</url>
+            </resource>
+            <resource key="ROLE_LOCAL_EDIT_SYSINIT">
+                <title>sysinit</title>
+                <url>/local/sysinit.action</url>
+            </resource>
+            <resource key="ROLE_LOCAL_EDIT_SETSTORAGE">
+                <title>set storage</title>
+                <url>/local/setStorage.action</url>
+            </resource>
+            <resource key="ROLE_LOCAL_EDIT_SOURCESIGNAL">
+                <title>set source signal switch mode</title>
+                <url>/local/setSourceSignal.action</url>
+            </resource>
+        </opertor>
+        <opertor id="3" name="View">
+            <resource key="ROLE_LOCAL_VIEW">
+                <title>view version</title>
+                <url>/local/setHost.action,/local/getVersion.action</url>
+            </resource>
+        </opertor>
+    </module>
+    <module name="Group">
+        <opertor id="10" name="Add">
+            <resource key="ROLE_GROUP_ADD">
+                <title>set network</title>
+                <url>/addGroup.action,/saveGroup.action</url>
+            </resource>
+        </opertor>
+        <opertor id="11" name="Delete">
+            <resource key="ROLE_GROUP_DELETE">
+                <title>group delete</title>
+                <url>/deleteGroup.action</url>
+            </resource>
+        </opertor>
+        <opertor id="12" name="Edit">
+            <resource key="ROLE_GROUP_EDIT_RENAME">
+                <title>group rename</title>
+                <url>/renameGroup.action</url>
+            </resource>
+            <resource key="ROLE_GROUP_EDIT_TIMEZONE">
+                <title>group set timezone</title>
+                <url>/groupTimeView.action</url>
+            </resource>
+            <resource key="ROLE_GROUP_EDIT_STORAGE">
+                <title>group set storage</title>
+                <url>/groupStorageView.action</url>
+            </resource>
+            <resource key="ROLE_GROUP_EDIT_LICENSE">
+                <title>group update lincese</title>
+                <url>/groupLicenseView.action</url>
+            </resource>
+            <resource key="ROLE_GROUP_UPDATE_ASLOG">
+                <title>group update aslog</title>
+                <url>/groupASLogView.action,/groupASLogUpdate.action</url>
+            </resource>
+            <resource key="ROLE_GROUP_UPDATE_LOGGING_SETTING">
+                <title>group update logging settings</title>
+                <url>/groupLoggingSettingView.action,/groupLoggingSettingUpdate.action</url>
+            </resource>
+            <resource key="ROLE_GROUP_EDIT_MATRIX">
+                <title>group set matrix</title>
+                <url>/setmatrix.action,/saveMatrixSetting.action,/saveMatrix.action,/matrixSetting.action,/matrixInit.action</url>
+            </resource>
+        </opertor>
+    </module>
+    <module name="Server">
+        <opertor id="20" name="Add">
+            <resource key="ROLE_SERVER_ADD">
+                <title>server add</title>
+                <url>/addServer.action,/saveServer.action</url>
+            </resource>
+        </opertor>
+        <opertor id="21" name="Delete">
+            <resource key="ROLE_SERVER_DELETE">
+                <title>server delete</title>
+                <url>/deleteServer.action</url>
+            </resource>
+			<resource key="ROLE_SERVER_EDIT_MANAGEHOST">
+                <title>manage host</title>
+                <url>/manageHost.action</url>
+            </resource>
+        </opertor>
+        <opertor id="22" name="Edit">
+            <resource key="ROLE_SERVER_EDIT_RENAME">
+                <title>server rename</title>
+                <url>/renameServer.action</url>
+            </resource>
+            <resource key="ROLE_SERVER_EDIT_REBOOT">
+                <title>server reboot</title>
+                <url>/reboot.action</url>
+            </resource>
+            <resource key="ROLE_SERVER_EDIT_SWITCHROLE">
+                <title>server switch role</title>
+                <url>/switchRole.action</url>
+            </resource>
+            <resource key="ROLE_SERVER_EDIT_SHUTDOWN">
+                <title>server shutdown</title>
+                <url>/shutdown.action</url>
+            </resource>
+            <resource key="ROLE_SERVER_EDIT_LINCESE">
+                <title>server update lincese</title>
+                <url>/updateLicense.action,/listLicense.action</url>
+            </resource>
+            <resource key="ROLE_SERVER_EDIT_NETWORK">
+                <title>serve set network</title>
+                <url>/setNetwork.action</url>
+            </resource>
+            <resource key="ROLE_SERVER_EDIT_TIMEZONE">
+                <title>server set timezone</title>
+                <url>/setTimezone.action</url>
+            </resource>
+            <resource key="ROLE_SERVER_EDIT_STORAGE">
+                <title>server set storage</title>
+                <url>/setStorage.action</url>
+            </resource>
+            <resource key="ROLE_SERVER_EDIT_MANAGEHOST">
+                <title>manage host</title>
+                <url>/manageHost.action</url>
+            </resource>
+            <resource key="ROLE_SERVER_UPDATE_ASLOG">
+                <title>manage host</title>
+                <url>/showASLog.action,/updateASLog.action</url>
+            </resource>
+			<resource key="ROLE_SERVER_UPDATE_LOGGING_SETTING">
+                <title>manage host</title>
+                <url>/viewLogging.action,/updateLogging.action</url>
+            </resource>
+			<resource key="ROLE_SERVER_EDIT_SWITCHSERVER">
+                <title>server switch</title>
+                <url>/switchServer.action</url>
+            </resource>
+			<resource key="ROLE_SERVER_EDIT_FAULT">
+                <title>server set fault </title>
+                <url>/setFault.action,/getIpmi.action,/saveIpmi.action,/getSwitch.action,/saveSwitch.action,/updateFaultDisabled.action</url>
+            </resource>
+        </opertor>
+        <opertor id="23" name="View">
+            <resource key="ROLE_SERVER_VIEW">
+                <title>server view</title>
+                <url>/listServer.action,/setHost.action,/getVersion.action</url>
+            </resource>
+        </opertor>
+    </module>
+	<module name="Channel">
+        <opertor id="100" name="Add">
+            <resource key="ROLE_CHANNEL_ADD">
+                <title>add channel</title>
+                <url>/addChannel.action,/showChannels.action,/saveChannel.action</url>
+            </resource>
+        </opertor>
+        
+        <opertor id="101" name="Delete">
+            <resource key="ROLE_CHANNEL_DELETE">
+                <title>delete channel</title>
+                <url>/deleteChannel.action</url>
+            </resource>
+        </opertor>
+        <opertor id="102" name="View">
+            <resource key="ROLE_CHANNEL_VIEW">
+                <title>view channel</title>
+                <url>/listChannel.action</url>
+            </resource>
+        </opertor>
+        <opertor id="103" name="Edit">
+            <resource key="ROLE_CHANNEL_EDIT">
+                <title>edit channel</title>
+                <url>/editChannel.action,/updateChannels.action</url>
+            </resource>
+        </opertor>
+	</module>
+	<module name="Record">
+        <opertor id="110" name="Add">
+            <resource key="ROLE_RECORD_ADD">
+                <title>add record</title>
+                <url>/addFullTimeRecord.action,/saveFullTimeRecord.action,/addScheduleRecord.action,/saveScheduleRecord.action,/addEpgRecord.action,/addEpgFileRecord.action,/saveEpgRecord.action,/addWeeklyRecord.action,/saveWeeklyRecord.action,/frameAddFullTimeRecord.action,/frameAddScheduleRecord.action,/frameSaveFullTimeRecord.action,/frameSaveScheduleRecord.action</url>
+            </resource>
+        </opertor>
+        <opertor id="111" name="Delete">
+            <resource key="ROLE_RECORD_DELETE">
+                <title>delete record</title>
+                <url>/deleteRecord.action</url>
+            </resource>
+        </opertor>
+        <opertor id="112" name="Edit">
+            <resource key="ROLE_RECORD_EDIT">
+                <title>edit record</title>
+                <url>/editScheduleRecord.action,/editFullTimeRecord.action,/updateScheduleRecord.action,/updateFullTimeRecord.action,/rescheduleRecord.action</url>
+            </resource>
+        </opertor>
+        <opertor id="113" name="View">
+            <resource key="ROLE_RECORD_VIEW">
+                <title>view record</title>
+                <url>/listRecord.action,/showEpgItems.action,/showWeeklyItems.action,/exportRecord.action</url>
+            </resource>
+        </opertor>
+    </module>
+    <module name="Task">
+        <opertor id="30" name="Add">
+            <resource key="ROLE_TASK_ADD_IMPORT">
+                <title>task import</title>
+                <url>/importTasks.action</url>
+            </resource>
+            <resource key="ROLE_TASK_ADD_NEW">
+                <title>task new</title>
+                <url>/newTask.action,/saveTask.action</url>
+            </resource>
+        </opertor>
+        <opertor id="31" name="Delete">
+            <resource key="ROLE_TASK_DELETE">
+                <title>task delete</title>
+                <url>/deleteTask.action</url>
+            </resource>
+        </opertor>
+        <opertor id="32" name="Edit">
+            <resource key="ROLE_TASK_EDIT">
+                <title>task edit</title>
+                <url>/editTask.action</url>
+            </resource>
+            <resource key="ROLE_TASK_EDIT_CTRL">
+                <title>task control</title>
+                <url>/taskCtrl.action,/frameTaskCtrl.action</url>
+            </resource>
+        </opertor>
+        <opertor id="33" name="View">
+            <resource key="ROLE_TASK_VIEW">
+                <title>task view</title>
+                <url>/listTask.action,/viewTask.action,/viewTaskXml.action,/frameListTask.action</url>
+            </resource>
+            <resource key="ROLE_TASK_VIEW_DOWNLOAD">
+                <title>task download</title>
+                <url>/downloadTaskData.action</url>
+            </resource>
+            <resource key="ROLE_TASK_VIEW_EXPORT">
+                <title>task export</title>
+                <url>/exportTasks.action</url>
+            </resource>
+        </opertor>
+    </module>
+    <module name="Profile">
+        <opertor id="40" name="Add">
+            <resource key="ROLE_PROFILE_ADD_IMPORT">
+                <title>profile import</title>
+                <url>/importProfiles.action</url>
+            </resource>
+            <resource key="ROLE_PROFILE_ADD_NEW">
+                <title>profile new</title>
+                <url>/saveProfile.action,/newProfile.action</url>
+            </resource>
+        </opertor>
+        <opertor id="41" name="Delete">
+            <resource key="ROLE_PROFILE_DELETE">
+                <title>profile delete</title>
+                <url>/deleteProfile.action</url>
+            </resource>
+        </opertor>
+        <opertor id="42" name="Edit">
+            <resource key="ROLE_PROFILE_EDIT">
+                <title>profile edit</title>
+                <url>/editProfile.action</url>
+            </resource>
+        </opertor>
+        <opertor id="43" name="View">
+            <resource key="ROLE_PROFILE_VIEW_EXPORT">
+                <title>profile export</title>
+                <url>/exportProfiles.action</url>
+            </resource>
+            <resource key="ROLE_PROFILE_VIEW">
+                <title>profile view</title>
+                <url>/listProfile.action,/viewProfile.action</url>
+            </resource>
+        </opertor>
+    </module>
+    <module name="Preset">
+        <opertor id="50" name="Add">
+            <resource key="ROLE_PRESET_ADD_IMPORT">
+                <title>preset import</title>
+                <url>/importPresets.action</url>
+            </resource>
+            <resource key="ROLE_PRESET_ADD_NEW">
+                <title>preset new</title>
+                <url>/savePreset.action,/newPreset.action</url>
+            </resource>
+        </opertor>
+        <opertor id="51" name="Delete">
+            <resource key="ROLE_PRESET_DELETE">
+                <title>preset delete</title>
+                <url>/deletePreset.action,/deletePresetCategory.action</url>
+            </resource>
+        </opertor>
+        <opertor id="52" name="Edit">
+            <resource key="ROLE_PRESET_EDIT">
+                <title>preset edit</title>
+                <url>/editPreset.action</url>
+            </resource>
+        </opertor>
+        <opertor id="53" name="View">
+            <resource key="ROLE_PRESET_VIEW_EXPORT">
+                <title>preset export</title>
+                <url>/exportPresets.action</url>
+            </resource>
+            <resource key="ROLE_PRESET_VIEW">
+                <title>preset view</title>
+                <url>/listPreset.action,/listPresetCategory.action</url>
+            </resource>
+        </opertor>
+    </module>
+    <module name="User">
+        <opertor id="60" name="Add">
+            <resource key="ROLE_USER_ADD">
+                <title>proset new</title>
+                <url>/addUser.action</url>
+            </resource>
+        </opertor>
+        <opertor id="62" name="Edit">
+            <resource key="ROLE_USER_EDIT">
+                <title>user edit</title>
+                <url>/updateUser.action</url>
+            </resource>
+            <resource key="ROLE_USER_EDIT_CHANGE_PASSWORD">
+                <title>user change password</title>
+                <url>/changePasswordByAdmin.action</url>
+            </resource>
+        </opertor>
+        <opertor id="63" name="View">
+            <resource key="ROLE_USER_VIEW">
+                <title>user view</title>
+                <url>/listRoles.action,/roleIndex.action</url>
+            </resource>
+        </opertor>
+         <opertor id="64" name="Delete">
+            <resource key="ROLE_USER_EDIT_UNREGIST">
+                <title>user unregist</title>
+                <url>/unRegisterUser.action</url>
+            </resource>
+        </opertor>
+    </module>
+    <module name="Role">
+        <opertor id="70" name="Add">
+            <resource key="ROLE_ROLE_ADD">
+                <title>role new</title>
+                <url>/addRole.action</url>
+            </resource>
+        </opertor>
+        <opertor id="72" name="Edit">
+            <resource key="ROLE_ROLE_EDIT">
+                <title>role edit</title>
+                <url>/updateRole.action</url>
+            </resource>
+        </opertor>
+        <opertor id="73" name="View">
+            <resource key="ROLE_ROLE_VIEW">
+                <title>role view</title>
+                <url>/listRoles.action,/roleIndex.action</url>
+            </resource>
+        </opertor>
+        <opertor id="74" name="Delete">
+            <resource key="ROLE_ROLE_DELETE">
+                <title>delete rolet</title>
+                <url>/deleteRole.action</url>
+            </resource>
+        </opertor>
+    </module>
+    <module name="Log">
+        <opertor id="81" name="Delete">
+            <resource key="ROLE_LOG_DELETE">
+                <title>log delete</title>
+                <url>/deleteLog.action</url>
+            </resource>
+        </opertor>
+        <opertor id="83" name="View">
+            <resource key="ROLE_LOG_VIEW">
+                <title>log view</title>
+                <url>/showLogAttachment.action,/listLog.action</url>
+            </resource>
+            <resource key="ROLE_LOG_VIEW_EXPORT">
+                <title>log export</title>
+                <url>/exportLog.action</url>
+            </resource>
+        </opertor>
+    </module>
+    <module name="Alert">
+        <opertor id="91" name="Delete">
+            <resource key="ROLE_ALERT_DELETE">
+                <title>alert delete</title>
+                <url>/deleteAlert.action，/frameDeleteAlert.action</url>
+            </resource>
+        </opertor>
+        <opertor id="93" name="View">
+            <resource key="ROLE_ALERT_VIEW">
+                <title>alert view</title>
+                <url>/listAlert.action,/frameListAlert.action</url>
+            </resource>
+            <resource key="ROLE_ALERT_VIEW_EXPORT">
+                <title>alert export</title>
+                <url>/exportAlert.action</url>
+            </resource>
+        </opertor>
+    </module>
+</modules>

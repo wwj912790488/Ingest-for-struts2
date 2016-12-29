@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<!-- alert types -->
+	<entry key="alert.type.hardware">硬件</entry>
+	<entry key="alert.type.system">系统</entry>
+	<entry key="alert.type.device">设备</entry>
+	<entry key="alert.type.source">信源</entry>
+	<entry key="alert.type.task">任务</entry>
+
+	<!-- alert levels -->
+	<entry key="alert.level.warning">警告</entry>
+	<entry key="alert.level.error">错误</entry>
+
+	<!-- hardware resources -->
+	<entry key="alert.rule.net_use_rate">网络流量</entry>
+	<entry key="alert.desc.net_use_rate.warning">流量负荷高: 网口=#{alert.index}, 当前流量=#{alert.value}%</entry>
+	<entry key="alert.desc.net_use_rate.error">流量负荷满: 网口=#{alert.index}, 当前流量=#{alert.value}%</entry>
+
+	<entry key="alert.rule.cpu_use_rate">CPU使用率</entry>
+	<entry key="alert.desc.cpu_use_rate.warning">cpu负荷高: 当前使用率=#{alert.value}%</entry>
+	<entry key="alert.desc.cpu_use_rate.error">cpu负荷满: 当前使用率=#{alert.value}%</entry>
+
+	<entry key="alert.rule.gpu_use_rate">GPU使用率</entry>
+	<entry key="alert.desc.gpu_use_rate.warning">GPU负载高: 当前使用率=#{alert.value}%</entry>
+	<entry key="alert.desc.gpu_use_rate.error">GPU负载满: 当前使用率=#{alert.value}%</entry>
+
+	<entry key="alert.rule.gpu_mem_use_rate">GPU内存使用率</entry>
+	<entry key="alert.desc.gpu_mem_use_rate.warning">GPU内存负荷高: 当前使用率=#{alert.value}%</entry>
+	<entry key="alert.desc.gpu_mem_use_rate.error">GPU内存负荷满: 当前使用率=#{alert.value}%</entry>
+
+	<entry key="alert.rule.mem_use_rate">内存使用率</entry>
+	<entry key="alert.desc.mem_use_rate.warning">内存负荷高: 当前使用率 =#{alert.value}%</entry>
+	<entry key="alert.desc.mem_use_rate.error">内存负荷满: 当前使用率 =#{alert.value}%</entry>
+
+	<entry key="alert.rule.disk_use_rate">磁盘使用率</entry>
+	<entry key="alert.desc.disk_use_rate.warning">磁盘负荷高: 磁盘名=#{alert.index}, 当前使用率=#{alert.value}%</entry>
+	<entry key="alert.desc.disk_use_rate.error">磁盘负荷满: 磁盘名=#{alert.index}, 当前使用率=#{alert.value}%</entry>
+
+	<entry key="alert.rule.cpu_temp">CPU温度</entry>
+	<entry key="alert.desc.cpu_temp.warning">CPU温度偏高: CPU名=#{alert.index}, 温度=#{alert.value}℃</entry>
+	<entry key="alert.desc.cpu_temp.error">CPU温度过高: CPU名=#{alert.index}, 温度=#{alert.value}℃</entry>
+
+	<entry key="alert.rule.gpu_temp">GPU温度</entry>
+	<entry key="alert.desc.gpu_temp.warning">GPU温度偏高, GPU名=#{alert.index}, 温度为#{alert.value}℃</entry>
+	<entry key="alert.desc.gpu_temp.error">GPU温度过高, GPU名=#{alert.index}, 温度为#{alert.value}℃</entry>
+
+	<entry key="alert.rule.fan_speed">风扇转数</entry>
+	<entry key="alert.desc.fan_speed.warning">风扇转速过慢: 风扇编号=#{alert.index}, 转数=#{alert.value}转/分</entry>
+	<entry key="alert.desc.fan_speed.error">风扇停转: 风扇编号=#{alert.index}, 转数=#{alert.value}转/分</entry>
+
+	<!-- device resources -->
+	<entry key="alert.rule.device_offline">设备断开</entry>
+	<entry key="alert.desc.device_offline">服务器断开</entry>
+
+	<entry key="alert.rule.device_no_backup">无备用设备</entry>
+	<entry key="alert.desc.device_no_backup">m+n组[#{group_name}]: 没有可用的备用服务器</entry>
+
+	<entry key="alert.rule.device_take_over">M+N切换</entry>
+	<entry key="alert.desc.device_take_over">m+n组[#{group_name}]: 服务器[#{source_ip}]切换到[#{new_server}]</entry>
+
+	<entry key="alert.rule.device_switch_role">1+1切换</entry>
+	<entry key="alert.desc.device_switch_role">1+1组[#{group_name}]: 服务器[#{source_ip}]切换到[#{new_server}]</entry>
+
+	<entry key="alert.rule.device_network_broken">网络断开</entry>
+	<entry key="alert.desc.device_network_broken">输入或输出网络异常</entry>
+
+	<entry key="alert.rule.device_gpu_broken">GPU异常</entry>
+	<entry key="alert.desc.device_gpu_broken">至少有一个GPU无法正常工作</entry>
+
+	<entry key="alert.rule.fault_monitor_failed">启动故障检测失败</entry>
+	<entry key="alert.desc.fault_monitor_failed">故障检测服务没有开启</entry>
+
+	<entry key="alert.rule.fault_detected">设备故障</entry>
+	<entry key="alert.desc.fault_detected">服务器故障，无法连接</entry>
+
+	<entry key="alert.rule.fault_reboot_failed">重启设备失败</entry>
+	<entry key="alert.desc.fault_reboot_failed">重启设备[#{source_ip}]失败:[#{error_code}]</entry>
+
+	<entry key="alert.rule.fault_switch_failed">设置交换机端口失败</entry>
+	<entry key="alert.desc.fault_switch_failed">设置交换机端口[#{source_ip}]失败:[#{error_code}]</entry>
+
+	<!-- source resources -->
+	<entry key="alert.rule.source_interrupt">信源中断</entry>
+	<entry key="alert.desc.source_interrupt">信源中断: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.source_no_video">信源无视频</entry>
+	<entry key="alert.desc.source_no_video">信源无视频: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.source_no_audio">信源无音频</entry>
+	<entry key="alert.desc.source_no_audio">信源无音频: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.source_resume">信源恢复</entry>
+	<entry key="alert.desc.source_resume">信源恢复: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.source_switch">信源切换</entry>
+	<entry key="alert.desc.source_switch">信源主备切换: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<!-- new source signal resources -->
+	<entry key="alert.rule.signal_resume">信源恢复</entry>
+	<entry key="alert.desc.signal_resume">信源[#{signal_id}]恢复: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_broken">信源中断</entry>
+	<entry key="alert.desc.signal_broken">信源[#{signal_id}]中断: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_broken_persistent">信源持续中断</entry>
+	<entry key="alert.desc.signal_broken_persistent">信源[#{signal_id}]持续中断: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_broken_switch">信源中断，待切换</entry>
+	<entry key="alert.desc.signal_broken_switch">信源[#{signal_id}]中断，待切换: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_patloss">信源PAT表丢失</entry>
+	<entry key="alert.desc.signal_patloss">信源[#{signal_id}]PAT表丢失: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_patloss_persistent">信源持续PAT表丢失</entry>
+	<entry key="alert.desc.signal_patloss_persistent">信源[#{signal_id}]持续PAT表丢失: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_patloss_switch">信源PAT表丢失，待切换</entry>
+	<entry key="alert.desc.signal_patloss_switch">信源[#{signal_id}]PAT表丢失，待切换: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_progidloss">信源Program ID丢失</entry>
+	<entry key="alert.desc.signal_progidloss">信源[#{signal_id}]Program ID丢失: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_progidloss_persistent">信源Program ID持续丢失</entry>
+	<entry key="alert.desc.signal_progidloss_persistent">信源[#{signal_id}]Program ID持续丢失: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_progidloss_switch">信源Program ID丢失，待切换</entry>
+	<entry key="alert.desc.signal_progidloss_switch">信源[#{signal_id}]Program ID丢失，待切换: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_pmtloss">信源PMT表丢失</entry>
+	<entry key="alert.desc.signal_pmtloss">信源[#{signal_id}]PMT表丢失: 任务号=#{task_id}, 输入=#{task_input}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_pmtloss_persistent">信源PMT表持续丢失</entry>
+	<entry key="alert.desc.signal_pmtloss_persistent">信源[#{signal_id}]PMT表持续丢失: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_pmtloss_switch">信源PMT表丢失，待切换</entry>
+	<entry key="alert.desc.signal_pmtloss_switch">信源[#{signal_id}]PMT表丢失，待切换: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_videoloss">信源视频流丢失</entry>
+	<entry key="alert.desc.signal_videoloss">信源[#{signal_id}]视频流丢失: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_videoloss_persistent">信源视频流持续丢失</entry>
+	<entry key="alert.desc.signal_videoloss_persistent">信源[#{signal_id}]视频流持续丢失: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_videoloss_switch">信源视频流丢失，待切换</entry>
+	<entry key="alert.desc.signal_videoloss_switch">信源[#{signal_id}]视频流丢失，待切换: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_audioloss">信源音频流丢失</entry>
+	<entry key="alert.desc.signal_audioloss">信源[#{signal_id}]音频流丢失: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_audioloss_persistent">信源音频流持续丢失</entry>
+	<entry key="alert.desc.signal_audioloss_persistent">信源[#{signal_id}]音频流持续丢失: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_audioloss_switch">信源音频流丢失，待切换</entry>
+	<entry key="alert.desc.signal_audioloss_switch">信源[#{signal_id}]音频流丢失，待切换: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_ccerror">信源连续计数错误</entry>
+	<entry key="alert.desc.signal_ccerror">信源[#{signal_id}]连续计数错误: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_ccerror_persistent">信源连续计数持续错误</entry>
+	<entry key="alert.desc.signal_ccerror_persistent">信源[#{signal_id}]连续计数持续错误: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_ccerror_switch">信源连续计数错误，待切换</entry>
+	<entry key="alert.desc.signal_ccerror_switch">信源[#{signal_id}]连续计数错误，待切换: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_packetloss">信源丢包</entry>
+	<entry key="alert.desc.signal_packetloss">信源[#{signal_id}]丢包: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_switch_success">信源主备切换</entry>
+	<entry key="alert.desc.signal_switch_success">信源切换: 当前信源=#{signal_id}, 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_progid_changed">Program ID 改变</entry>
+	<entry key="alert.desc.signal_progid_changed">信源[#{signal_id}]Program ID 改变: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_pmtid_changed">PMT ID 改变</entry>
+	<entry key="alert.desc.signal_pmtid_changed">信源[#{signal_id}]PMT ID 改变: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_vid_changed">Video ID 改变</entry>
+	<entry key="alert.desc.signal_vid_changed">信源[#{signal_id}]Video ID 改变: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_aid_changed">Audio ID 改变</entry>
+	<entry key="alert.desc.signal_aid_changed">信源[#{signal_id}]Audio ID 改变: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_vtype_changed">Video类型改变</entry>
+	<entry key="alert.desc.signal_vtype_changed">信源[#{signal_id}]Video类型改变: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+	
+	<entry key="alert.rule.signal_atype_changed">Audio类型改变</entry>
+	<entry key="alert.desc.signal_atype_changed">信源[#{signal_id}]Audio类型改变: 任务号=#{task_id}, 名称=#{task_name}, 输入=#{task_input}, 错误码=#{error_code}</entry>
+
+	<!-- task resources -->
+	<entry key="alert.rule.signal_video_queue_full">视频队列满</entry>
+	<entry key="alert.desc.signal_video_queue_full">视频队列满: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_video_queue_normal">视频队列正常</entry>
+	<entry key="alert.desc.signal_video_queue_normal">视频队列正常: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_audio_queue_full">音频队列满</entry>
+	<entry key="alert.desc.signal_audio_queue_full">音频队列满: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.signal_audio_queue_normal">音频队列正常</entry>
+	<entry key="alert.desc.signal_audio_queue_normal">音频队列正常: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.task_open_file_failed">打开源失败</entry>
+	<entry key="alert.desc.task_open_file_failed">打开源失败: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.task_read_file_failed">读源失败</entry>
+	<entry key="alert.desc.task_read_file_failed">读源失败: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.task_write_file_failed">写文件失败</entry>
+	<entry key="alert.desc.task_write_file_failed">写文件失败: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.task_write_disc_full">输出磁盘满</entry>
+	<entry key="alert.desc.task_write_disc_full">输出磁盘满: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.task_file_error">源错误</entry>
+	<entry key="alert.desc.task_file_error">源错误: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.task_file_illegal">源非法</entry>
+	<entry key="alert.desc.task_file_illegal">源非法: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.task_file_encrypted">源加密</entry>
+	<entry key="alert.desc.task_file_encrypted">源加密: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.task_error">任务执行失败</entry>
+	<entry key="alert.desc.task_error">任务执行失败: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.task_warning">任务执行警告</entry>
+	<entry key="alert.desc.task_warning">任务执行警告: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.task_auto_restart">任务自动重启</entry>
+	<entry key="alert.desc.task_auto_restart">任务自动重启: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.hls_server_connection_failed">HLS Server无法连接</entry>
+	<entry key="alert.desc.hls_server_connection_failed">HLS Server无法连接: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.hls_put_failed">HLS切片上传失败</entry>
+	<entry key="alert.desc.hls_put_failed">HLS切片上传失败: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.hls_put_timeout">HLS切片上传超时</entry>
+	<entry key="alert.desc.hls_put_timeout">HLS切片上传超时: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.hls_delete_file_failed">HLS删除文件失败</entry>
+	<entry key="alert.desc.hls_delete_file_failed">HLS删除文件失败: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.output_broken">输出断流</entry>
+	<entry key="alert.desc.output_broken">输出断流: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.output_broken_persistent">持续输出断流</entry>
+	<entry key="alert.desc.output_broken_persistent">持续输出断流: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.padding_image_no_file">垫片文件不存在</entry>
+	<entry key="alert.desc.padding_image_no_file">垫片文件不存在: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+	<entry key="alert.rule.padding_image_error_file">垫片文件格式错误</entry>
+	<entry key="alert.desc.padding_image_error_file">垫片文件格式错误: 任务号=#{task_id}, 名称=#{task_name}, 错误码=#{error_code}</entry>
+
+</properties>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN"
+	"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="user.realName">
+		<field-validator type="required" short-circuit="true">
+			<param name="trim">true</param>
+			<message key="xwork.default.invalid.fieldvalue" />
+		</field-validator>
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message key="xwork.default.invalid.fieldvalue" />
+		</field-validator>
+	</field>
+	<!-- field name="user.role.id">
+		<field-validator type="int" short-circuit="true">
+			<param name="min">2</param>    
+    		<param name="max">3</param> 
+			<message key="xwork.default.invalid.fieldvalue" />
+		</field-validator>
+	</field-->
+</validators>

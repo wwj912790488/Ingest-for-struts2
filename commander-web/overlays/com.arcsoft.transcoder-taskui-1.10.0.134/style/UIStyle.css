@@ -1,0 +1,647 @@
+@charset "utf-8";
+
+/*common style*/
+
+html {
+	overflow-y:scroll;
+	height:100%;
+}
+
+body {	
+	border:0px;
+	padding:0px;
+	margin:0px;
+	height:100%;
+	font-family: "微软雅黑","msyh","Arial";
+	font-size:11pt;
+	background-color: #ebebeb;
+}
+
+form {
+	padding:0;
+	margin:0;
+}
+
+table {
+	boder: 0px;
+	width: 100%;
+	empty-cells: show;
+	border-collapse: collapse;
+	padding:0;
+	margin:0;
+}
+
+input {
+	margin: 0;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+select {
+	margin: 0;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+tr {
+	padding:0;
+	margin:0;
+}
+
+td {
+	padding:0;
+	margin:0;
+}
+
+.TabBgImg {
+	display:inline-block;
+	vertival-align:bottom;
+	border:0px;
+	cursor:pointer;
+ 	background-image: url("#");
+ 	background-position:left bottom;
+ 	background-repeat:repeat-x;  
+ 	overflow: hidden;  
+}
+
+.HeadPanel{
+	position:fixed;
+	border:0px;
+	left:0px;top:0px;
+	width:100%;height:128px;
+	z-index:100;
+	background:url("../images/Header/Header_BG.png") repeat scroll 0px 0px;
+}
+
+.HeadPanelContent {
+	position:relative;
+	margin-left: auto; 
+	margin-right: auto; 
+	margin-top: 0;
+	margin-bottom: 0;
+	width: 1024px;
+	background:url("../images/Header/Header_BG_p.png") no-repeat scroll 0px 0px;
+}
+
+.HeadLogo{
+	float:left;
+	margin-left:20px;
+	width:100px;height:50px;
+	color:#ffffff;
+	background:url("../images/icons/logo.png") no-repeat scroll 0px 0px;
+}
+
+.TopGradient {
+	position:fixed;
+	left:0px;top:104px;width:100%;height:200px;
+	z-index:-1;
+	/*background:url("../images/Header/index_top_gradient.png") repeat-x scroll 0px 0px;*/
+}
+
+.BottomGradient {	
+	position:absolute;
+	bottom:40px;
+	width:100%;height:200px;
+	z-index:-1;
+	/*background:url("../images/Footer/index_down_gradient.png") repeat-x scroll 0px 0px;*/
+}
+
+.FootPanel{
+	position:absolute;overflow:hidden;
+	bottom:0px;
+	width:100%;height:40px;
+	z-index:100;
+	background:url("../images/Header/Header_BG.png") repeat scroll 0px 0px;
+}
+
+.BottomArea{
+	position:relative;
+	width:100%;min-height:100px;
+}
+
+.ContentArea {
+	width:100%;
+	min-height:65%;
+}
+.ListBody{
+	background:#ffffff;
+}
+
+.ContentWidth{
+	width:1024px;
+}
+
+.ContentPos {
+	position:relative;
+	margin:0px;
+	margin-left:auto;
+	margin-right:auto;
+	width:1024px;
+}
+
+.HeadTabPanel{
+	position:relative;
+	left:0px;top:0px;width:100%;height:40px;
+	border:0px;
+	padding:0px;
+	margin:0px;
+	z-index:1;
+}
+
+.HeadTabPanel .HitArea{
+	position:absolute;
+	left:0px;top:0px;right:0px;bottom:0px;
+}
+
+.HeadTab{
+	position:relative;display:inline-block;
+	left:0px;top:0px;width:120px;height:41px;
+	margin:0px;margin-left:8px;margin-right:8px;
+	line-height:41px;vertical-align:bottom;
+	/*background:url("../images/mainmenu/mainmenu_deselect_middle.png") repeat scroll 0px 0px;*/
+	cursor:pointer;	
+}
+.HeadTab .L{
+	position:absolute;overflow:hidden;
+	left:-8px;top:0px;width:8px;height:41px;	
+	/*background:url("../images/mainmenu/mainmenu_deselect_left.png") no-repeat scroll 0px 0px;	*/
+}
+.HeadTab .R{
+	position:absolute;overflow:hidden;
+	right:-8px;top:0px;width:8px;height:41px;	
+	/*background:url("../images/mainmenu/mainmenu_deselect_right.png") no-repeat scroll 0px 0px;*/	
+}
+.HeadTab:hover{
+	/*background:url("../images/mainmenu/mainmenu_deselect_middle-hover.png") repeat scroll 0px 0px;*/
+}
+.HeadTab:hover .L{
+	/*background:url("../images/mainmenu/mainmenu_deselect_left-hover.png") no-repeat scroll 0px 0px;*/
+}
+.HeadTab:hover .R{
+	/*background:url("../images/mainmenu/mainmenu_deselect_right-hover.png") no-repeat scroll 0px 0px;	*/
+}
+
+.HeadTabActive{
+	position:relative;display:inline-block;
+	left:0px;top:0px;width:120px;height:41px;
+	margin:0px;margin-left:8px;margin-right:8px;
+	line-height:41px;vertical-align:bottom;
+	background:url("../images/Header/mainmenu_button_active.png") repeat scroll 0px 0px;	
+	cursor:pointer;	
+}
+.HeadTabActive .L{
+	position:absolute;overflow:hidden;
+	left:-2px;top:0px;width:2px;height:41px;	
+	background:url("../images/Header/mainmenu_button_active.png") no-repeat scroll 0px 0px;	
+}
+.HeadTabActive .R{
+	position:absolute;overflow:hidden;
+	right:-2px;top:0px;width:2px;height:41px;	
+	background:url("../images/Header/mainmenu_button_active.png") no-repeat scroll 0px 0px;	
+}
+
+.HeadTab .SubTab {
+	display:none;position:absolute;
+}
+.HeadTabActive .SubTab {
+	position:absolute;
+	left:-130px;top:53px;min-width:380px;height:32px;line-height:30px;
+	margin:0px;margin-left:9px;margin-right:9px;
+	background:url("../images/mainmenu/mainmenu_under_middle.png") repeat-x scroll 0px 0px;	
+}
+
+.HeadTabActive .SubTab .SL{
+	position:absolute;overflow:hidden;
+	left:-9px;top:0px;width:9px;height:32px;	
+	background:url("../images/mainmenu/mainmenu_under_left.png") no-repeat scroll 0px 0px;	
+}
+.HeadTabActive .SubTab .SR{
+	position:absolute;overflow:hidden;
+	right:-9px;top:0px;width:9px;height:32px;	
+	background:url("../images/mainmenu/mainmenu_under_right.png") no-repeat scroll 0px 0px;	
+}
+.HeadTabActive .SubTab .SItem{
+	float:left;
+	height:100%;min-width:181px;
+	color:black;
+}
+
+.HeadTabActive .SubTab .SItemActive{
+	float:left;
+	height:100%;min-width:181px;
+	background:url("../images/mainmenu/mainmenu_under_middle-select.png") no-repeat scroll left bottom;	
+}
+
+.SubMainMenuPanel{
+	position:relative;
+	height:37px;line-height:37px;
+	background:url('../images/bar/submainmenu_bg.png') repeat-x scroll 0px 0px;
+	overflow:hidden;
+	text-align:center;
+}
+.SubMainMenuPanel .MenuBorder{
+	height:36px;
+	/*border-bottom: 1px dashed #3088a0;*/
+}
+.SubMainMenuPanel .SItem{
+	float:left;
+	height:37px;min-width:140px;
+}
+
+.SubMainMenuPanel .SItemActive{
+	float:left;
+	height:37px;min-width:140px;
+	background:url("../images/bar/submainmenu_active.png") no-repeat scroll center top;	
+}
+
+
+.HeadHLine{
+	position:absolute;overflow:hidden;
+	width:100%;height:10px;
+	background:url("../images/Header/head_hr.png") repeat-x scroll 0px 0px;	
+}
+
+.HeadBtnText {
+	font-family: "微软雅黑","msyh", "Arial";
+	font-size: 12pt;
+	font-style: normal;
+	color: #ffffff;	
+	font-weight: normal;
+	text-align:center;
+}
+
+.ActionBarPanel{
+	position:fixed;
+	left:0px;
+	top:128px;
+	width:100%;
+	z-index:50;	
+}
+
+.ActionBarPanel .Sep{
+	height:6px;
+	background:url("../images/bg/body.png") repeat scroll 0px 0px;
+}
+
+.ActionBarHint{
+	display:inline-block; overflow:hidden; text-overflow:ellipsis;white-space:nowrap;
+    padding-left:4px;padding-right:8px;
+    left:0px;top:0px;height:44px;min-width:20px;max-width:400px;line-height:44px;
+    vertical-align:middle;
+    font-weight:bold;
+    float:left;
+}
+
+.ActionBarCheckBox {
+	display:inline-block;
+	vertical-align:middle;
+	width:25px;
+}
+
+.ActionBarItem {
+	cursor:pointer;
+	display:inline-block;	
+	vertical-align:middle;
+ 	background: url("#") no-repeat scroll 0px 7px transparent;
+    overflow: hidden;
+    padding-left: 32px;
+    margin-left:6px;margin-right:6px;
+    height:44px;
+    min-width:32px;
+    line-height:44px;
+}
+.ActionBarItem:active{
+	background-position:0px 8px;
+	line-height:46px;
+}
+
+.ActionItemEdit{
+	 background: url("../images/icons/edit.png") no-repeat scroll 0px 7px;
+}
+.ActionItemEdit:hover{
+	 background: url("../images/icons/edit_hover.png") no-repeat scroll 0px 7px;
+}
+.ActionItemEdit:active{
+	 background: url("../images/icons/edit_hover.png") no-repeat scroll 0px 8px;
+}
+.ActionItemCopy{
+	 background: url("../images/icons/copy.png") no-repeat scroll 0px 7px;
+}
+.ActionItemCopy:hover{
+	 background: url("../images/icons/copy_hover.png") no-repeat scroll 0px 7px;
+}
+.ActionItemCopy:active{
+	 background: url("../images/icons/copy_hover.png") no-repeat scroll 0px 8px;
+}
+.ActionItemDelete{
+	 background: url("../images/icons/delete.png") no-repeat scroll 0px 7px;
+}
+.ActionItemDelete:hover{
+	 background: url("../images/icons/delete_hover.png") no-repeat scroll 0px 7px;
+}
+.ActionItemDelete:active{
+	 background: url("../images/icons/delete_hover.png") no-repeat scroll 0px 8px;
+}
+.ActionItemExport{
+	 background: url("../images/icons/copy.png") no-repeat scroll 0px 7px;
+}
+.ActionItemExport:hover{
+	 background: url("../images/icons/copy_hover.png") no-repeat scroll 0px 7px;
+}
+.ActionItemExport:active{
+	 background: url("../images/icons/copy_hover.png") no-repeat scroll 0px 8px;
+}
+
+.ActionItemSetting{
+	 background: url("../images/icons/icon_setting.png") no-repeat scroll 0px 7px;
+}
+.ActionItemSetting:hover{
+	 background: url("../images/icons/icon_setting.png") no-repeat scroll 0px 7px;
+}
+.ActionItemSetting:active{
+	 background: url("../images/icons/icon_setting.png") no-repeat scroll 0px 8px;
+}
+
+.ActionBarText {
+	font-family: "微软雅黑","msyh","Arial";
+	font-size: 9pt;
+	font-style: normal;	
+	color: #ffffff;
+	font-weight: normal;
+	word-wrap:break-word;
+}
+
+.FilterButton{
+	display:inline-block; position:relative;
+	margin-left:10px;margin-right:10px;margin-top:5px;margin-bottom:5px;	
+	min-width:40px;height:32px;
+	line-height:32px;text-align:center;
+ 	cursor:pointer; 	
+}
+
+.FilterButton .L{
+	position:absolute;overflow:hidden;
+	left:-4px;top:0px;width:4px;height:32px;	
+}
+.FilterButton .R{
+	position:absolute;overflow:hidden;
+	right:-4px;top:0px;width:4px;height:32px;
+}
+
+.FilterButton:hover{
+	background:url("../images/bar/filter_button_m_hover.png") repeat-x scroll 0px 0px;
+}
+
+.FilterButton:hover .L{
+	position:absolute;overflow:hidden;
+	left:-4px;top:0px;width:4px;height:32px;	
+	background:url("../images/bar/filter_button_l_hover.png") repeat-x scroll 0px 0px;
+}
+.FilterButton:hover .R{
+	position:absolute;overflow:hidden;
+	right:-4px;top:0px;width:4px;height:32px;
+	background:url("../images/bar/filter_button_r_hover.png") repeat-x scroll 0px 0px;
+}
+
+.FilterButtonPressed {
+	display:inline-block; position:relative; cursor:pointer;
+	margin-left:10px;margin-right:10px;margin-top:5px;margin-bottom:5px;	
+	min-width:40px; height:32px;
+	line-height:32px;text-align:center;  	
+ 	background:url("../images/bar/filter_button_m_sel.png") repeat-x scroll 0px 0px;
+}
+.FilterButtonPressed .L {
+	display:block;position:absolute;overflow:hidden;
+	left:-4px;top:0px;width:4px;height:32px;	
+	background:url("../images/bar/filter_button_l_sel.png") no-repeat scroll 0px 0px;
+}
+.FilterButtonPressed .R {
+	display:block;position:absolute;overflow:hidden;
+	right:-4px;top:0px;width:4px;height:32px;	
+	background:url("../images/bar/filter_button_r_sel.png") no-repeat scroll 0px 0px;
+}
+
+.FilterPanel{
+	position:relative;
+	height:49px;line-height:59px;
+	background:url("../images/bg/body.png") repeat scroll 0px 0px;
+	overflow:hidden;
+}
+.FilterPanel .FilterButton{
+	color:black;
+}
+
+.MouseHover {
+	cursor:pointer;
+}
+
+.Head1Text {
+	font-family: "微软雅黑","msyh","Arial";
+	font-size: 10pt;
+	font-style: normal;
+	color: #000000;
+	font-weight: bold;
+	text-align:left;
+}
+
+.TableColTitleText {
+	font-family: "微软雅黑","msyh","Arial";
+	font-size: 10pt;
+	font-style: normal;
+	color: #000000;
+	font-weight: bold;
+	vertical-align:middle;
+}
+
+.TableItemText {
+	font-family: "微软雅黑","msyh","Arial";
+	font-size: 9pt;
+	font-style: normal;
+	color: #000000;
+}
+.TableItemTextSelected {
+	font-family: "msyh","Arial";
+	font-size: 9pt;
+	font-style: normal;
+	color: #ffffff;
+}
+
+.CopyrightText {
+	font-family: "微软雅黑","msyh","Arial";
+	font-size: 9pt;
+	font-style: normal;
+	line-height: 25pt;
+	color: #a0a0a0;
+	margin: 2px;
+	text-align:center;
+}
+
+.UnderLineTab_Trigger {
+	font-family: "微软雅黑", "Arial";
+	font-size: 10pt;
+	color: #000000;
+	font-weight: normal;
+	height: 20px;
+	line-height: 20px;
+	width: 85px;
+	text-align: center;
+	cursor:pointer;
+}
+
+.UnderLineTab_Active {
+	color: #fff;
+	background-color: #179fc4;
+}
+
+.UnderLineTab_Hover {
+}
+
+.ColorTab_Trigger {
+	text-align: center;
+	background-color: #abd7d6;
+	border: 1px;
+	border-style: solid;
+	border-color: #555555;
+}
+
+.ColorTab_Active {
+	background-color: #33cccc;
+}
+
+.ColorTab_Hover {
+}
+
+.TryUseAlert{
+	position:absolute;
+	z-index:10001;
+	opacity:0.7;	
+	margin-top:8px;
+	right:360px;
+	width:320px;height:20px;	
+	color:red;
+	text-align:right;
+}
+
+.TopMiniAlert{
+	position:absolute;
+	z-index:10001;
+	opacity:0.7;	
+	margin-top:8px;
+	right:12px;
+	width:312px;height:60px;	
+}
+
+.AlertTitleBar{
+	position:relative;
+	width:100%;height:22px;
+}
+.AlertTitleBar .CancelIcon{
+	display:none;
+	position:absolute;
+	top:1px;right:1px;
+	width:20px;height:20px;
+	background:url('../images/icons/cancel.png') no-repeat scroll 0px 0px;
+}
+.AlertTitleBar .CancelIcon:active{
+	background:url('../images/icons/cancel_pressed.png') no-repeat scroll 0px 0px;
+}
+.AlertBoxBody{
+	position:relative;
+	width:100%;
+	min-height:40px;
+}
+
+.TopMiniAlert .AlertTitleBar{
+	background:#3f3f3f;
+		
+}
+.TopMiniAlert .AlertBoxBody{	
+	padding-left:36px;
+	width:276px;
+	background:#585858 url('../images/icons/alert.png') no-repeat scroll 2px 12px;	
+}
+.TopMiniAlert .AlertTitleBar .CancelIcon{
+	display:block;
+	position:absolute;
+	top:1px;right:1px;
+	width:20px;height:20px;
+	background:url('../images/icons/cancel.png') no-repeat scroll 0px 0px;
+}
+.TopMiniAlert .AlertTitleBar .CancelIcon:active{
+	background:url('../images/icons/cancel_pressed.png') no-repeat scroll 0px 0px;
+}
+
+.DataTable{
+	border-collapse：separate;
+}
+.DataTable tr{
+	padding:1px;
+	margin:1px;
+}
+.DataTable td{
+	padding:2px;
+	margin:2px;
+	border:1px solid gray;
+}
+
+.Disabled{
+	color:gray;
+}
+
+.LinePlaceHolder {
+	width: 1px;
+}
+
+.LineSpacing {
+	height: 10px;
+}
+
+.Hide {
+	display: none;
+}
+
+.DashLine {
+	border-width: 0px;
+	border-top-width: 1px;
+	border-style: dotted;
+	border-color: #cccccc;
+	height: 1px;
+}
+
+.BoldLine {
+	background-color: #cccccc;
+	height: 1px;
+}
+
+.BoldLine1 {
+	border-width: 0px;
+	border-top-width: 1px;
+	border-style: solid;
+	border-color: #dbdbdb;
+	height: 1px;
+}
+
+.DefaultCheckbox {
+	vertical-align: middle;
+}
+
+.DefaultSelect {
+	width: 110px;
+	height: 20px;
+}
+
+.DefaultText {
+	width: 66px;
+}
+
+.LabelAlign {
+	text-align: right;
+}
+
+.LabelEndSpacing {
+	width: 12px;
+}
+
+.PreButtonSpacing {
+	width: 20px;
+}

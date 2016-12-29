@@ -1,0 +1,64 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    outline: 0px none;
+}
+
+tr {
+	font-size:10pt;
+}
+
+ table{
+    border-collapse: collapse;
+    border: none;
+     text-align:center; 
+     margin:0 auto
+}
+
+ td{
+   border: solid #C0C0C0 1px;
+}
+
+.header{
+	background:#535D68	
+	
+}
+
+.headertext{
+	color:#FFF;
+}
+
+td.ethLabel {
+	padding:9px;
+	text-align:right;
+	height:24px;
+	width: 100px;
+}
+
+td.ethVal {
+	padding:0 5px;
+}
+
+
+div#btnPanel{
+	margin-top:50px;
+	width:700px;
+	text-align:center;
+}
+tr.data td{
+	position£ºrelative; 
+}
+tr.data input[type='text']{
+	border:none;
+	width:100%;
+}
+
+.text-center input[type='text']{
+	text-align:center;
+}
+
+div#Panel button{
+	font-size:9pt;
+	width:102px;
+}
+

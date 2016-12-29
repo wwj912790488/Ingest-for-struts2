@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN"
+	"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="snmp.snmpRun">
+		<field-validator type="required">
+			<message key="snmp.error.agent.invalid.status"/>
+		</field-validator>
+	</field>
+
+	<field name="snmp.community">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="snmp.error.agent.invalid.community"/>
+		</field-validator> 
+	</field>
+
+	<field name="snmp.trapAllowed">
+		<field-validator type="required">
+			<message key="snmp.error.trap.invalid.allowed"/>
+		</field-validator>
+	</field>
+
+	<field name="snmp.trapCommunity">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="snmp.error.trap.invalid.community"/>
+		</field-validator> 
+	</field>
+
+	<field name="snmp.trapHost">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="snmp.error.trap.invalid.host"/>
+		</field-validator>
+	</field>
+</validators>

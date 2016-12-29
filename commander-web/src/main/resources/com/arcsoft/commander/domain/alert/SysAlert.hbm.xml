@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.arcsoft.commander.domain.alert.SysAlert" table="alerts" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="taskId" type="java.lang.Integer">
+            <column name="task_id" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" />
+        </property>
+        <property name="level" type="string">
+            <column name="level" />
+        </property>
+        <property name="errorCode" type="string">
+            <column name="error_code" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" />
+        </property>
+        <property name="createdAt" type="timestamp">
+            <column name="created_at" length="19" />
+        </property>
+        <property name="ip" type="string">
+        	<column name="ip" />
+        </property>
+        <property name="timestamp" type="long">
+            <column name="time_stamp" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN"
+	"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="settings.clusterType">
+		<field-validator type="required">
+			<message key="settings.err.invalid.type"/>
+		</field-validator>
+	</field>
+
+	<field name="settings.clusterIp">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="settings.err.invalid.ip"/>
+		</field-validator>
+		<field-validator type="regex">     
+			<param name="regex"><![CDATA[^239(\.\d{1,3}){3}$]]></param>     
+			<message key="settings.err.invalid.ip"/> 
+		</field-validator>
+	</field>
+
+	<field name="settings.clusterPort">
+		<field-validator type="required">
+			<message key="settings.err.invalid.port"/>
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1025</param>
+			<param name="max">65535</param>
+			<message key="settings.err.invalid.port"/>
+		</field-validator>
+	</field>
+
+	<field name="settings.bindAddr">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="settings.err.invalid.bindAddr"/>
+		</field-validator> 
+	</field>
+
+	<field name="settings.timeToLive">
+		<field-validator type="required">
+			<message key="settings.err.invalid.ttl"/>
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<param name="max">255</param>
+			<message key="settings.err.invalid.ttl"/>
+		</field-validator>
+	</field>
+
+	<field name="settings.clusterSearchType">
+		<field-validator type="required">
+			<message key="settings.err.invalid.search.type"/>
+		</field-validator>
+	</field>
+
+	<field name="settings.heartbeatInterval">
+		<field-validator type="required">
+			<message key="settings.err.invalid.heartbeat.interval"/>
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="settings.err.invalid.heartbeat.interval"/>
+		</field-validator>
+	</field>
+
+	<field name="settings.heartbeatTimeout">
+		<field-validator type="required">
+			<message key="settings.err.invalid.heartbeat.timeout"/>
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="settings.err.invalid.heartbeat.timeout"/>
+		</field-validator>
+	</field>
+
+</validators>

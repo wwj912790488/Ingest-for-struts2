@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<watchfolder>
+	<active>1</active>
+	<interval>5</interval>
+	<uri></uri>
+	<profileid>-1</profileid>
+	<filterpattern enabled="1">
+		<filter>*.ts</filter>
+	</filterpattern>
+</watchfolder>

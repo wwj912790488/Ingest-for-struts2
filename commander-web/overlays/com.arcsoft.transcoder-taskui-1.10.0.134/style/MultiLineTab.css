@@ -1,0 +1,212 @@
+@charset "utf-8";
+/* CSS Document */
+.MultiLineTab {
+	cursor:pointer;
+	overflow: hidden;
+	height: 44px;
+	background-image: url(CtrlTabGreen/bg_shadow.png);
+}
+
+.MLT_Container {
+}
+
+.MLT_PlaceHolder {
+	width: 1px;
+}
+
+.MLT_Tail {
+	display: none;
+}
+
+.MLT_Line {
+}
+
+.MLT_LineHead {
+	width: 6px;
+}
+
+.MLT_LineEnd {
+	width: auto;
+}
+
+.MLT_Item {
+	width: 160px;
+}
+
+.MLT_Prev {
+	width: 40px;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+.MLT_Next {
+	width: 40px;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+.MLT_Main {
+	vertical-align: bottom;
+}
+
+.TabStateNormal {
+	display: table-cell;
+}
+
+.TabStateActive {
+	display: table-cell;
+}
+
+.TabStateHide {
+	display: none;
+}
+
+.MLT_ItemSpacing {
+	width: 3px;
+}
+
+.MLT_ItemNormalLeft {
+	width: 2px;
+	height: 36px;
+	background-image:url(CtrlTabGreen/tab_normal_l.png);
+}
+
+.MLT_ItemNormalCenter {
+	height: 36px;
+	background-image:url(CtrlTabGreen/tab_normal_m.png);
+}
+
+.MLT_ItemNormalRight {
+	width: 2px;
+	height: 36px;
+	background-image:url(CtrlTabGreen/tab_normal_r.png);
+}
+
+.MLT_ItemActiveLeft {
+	width: 2px;
+	height: 36px;
+	background-image:url(CtrlTabGreen/tab_focus.png);
+}
+
+.MLT_ItemActiveCenter {
+	height: 36px;
+	background-image:url(CtrlTabGreen/tab_focus.png);
+}
+
+.MLT_ItemActiveRight {
+	width: 2px;
+	height: 36px;
+	background-image:url(CtrlTabGreen/tab_focus.png);
+}
+
+.MLT_IconPrev {
+	width: 30px;
+	height: 30px;
+	background-image:url(CtrlTabGreen/Output_tab_arrow_Right.png);
+}
+
+.MLT_IconNext {
+	width: 30px;
+	height: 30px;
+	background-image:url(CtrlTabGreen/Output_tab_arrow_left.png);
+}
+
+.MLT_Remove {
+	width: 15px;
+}
+
+.MLT_IconDelete {
+	width: 26px;
+	height: 26px;
+	background-image: url(CtrlTabGreen/Output_tab_BTN_cancel.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.MLT_ItemContent {
+	text-align: center; 
+}
+
+.MLT_ItemText {
+	font-family: "宋体", "微软雅黑", "Segoe UI";
+	font-size: 10pt;
+	font-style: normal;
+	line-height: 12pt;
+	color: #000000;
+	font-weight: bolder;
+}
+
+.MLT_ICON_HLS {
+	width: 30px;
+	height: 22px;
+	background-image:url(CtrlTab/icon_Output_tab_Apple-HLS.png);
+	background-repeat: no-repeat;
+}
+
+.MLT_ICON_FLV {
+	width: 30px;
+	height: 22px;
+	background-image:url(CtrlTab/icon_Output_tab_Archive-FLV.png);
+	background-repeat: no-repeat;
+}
+
+.MLT_ICON_MP4 {
+	width: 30px;
+	height: 22px;
+	background-image:url(CtrlTab/icon_Output_tab_Archive-MP4.png);
+	background-repeat: no-repeat;
+}
+
+.MLT_ICON_TS {
+	width: 30px;
+	height: 22px;
+	background-image:url(CtrlTab/icon_Output_tab_Archive-TS.png);
+	background-repeat: no-repeat;
+}
+
+.MLT_ICON_RTMP_MULTI {
+	width: 30px;
+	height: 22px;
+	background-image:url(CtrlTab/icon_Output_tab_flash-mutiple.png);
+	background-repeat: no-repeat;
+}
+
+.MLT_ICON_RTMP_SINGLE {
+	width: 30px;
+	height: 22px;
+	background-image:url(CtrlTab/icon_Output_tab_flash-single.png);
+	background-repeat: no-repeat;
+}
+
+.MLT_ICON_MMS_MULTI {
+	width: 30px;
+	height: 22px;
+	background-image:url(CtrlTab/icon_Output_tab_MS-mutiple.png);
+	background-repeat: no-repeat;
+}
+
+.MLT_ICON_MMS_SINGLE {
+	width: 30px;
+	height: 22px;
+	background-image:url(CtrlTab/icon_Output_tab_MS-single.png);
+	background-repeat: no-repeat;
+}
+
+.MLT_BottomLine {
+	height: 2px;
+	background-image:url(CtrlTabGreen/tab_focus_buttom.png);
+}
+
+.MLT_ICON_OUTPUT_ENABLED {
+	width: 29px;
+	height: 20px;
+	background-image:url(icons/output_enabled.png);
+	background-repeat: no-repeat;
+}
+
+.MLT_ICON_OUTPUT_DISABLED {
+	width: 29px;
+	height: 20px;
+	background-image:url(icons/output_disabled.png);
+	background-repeat: no-repeat;
+}

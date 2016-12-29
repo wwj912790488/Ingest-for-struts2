@@ -1,0 +1,29 @@
+
+*{
+	font-size: 10pt;
+	font-style: normal;
+	margin: 0px;
+}
+
+
+table{
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border: 0px solid #B1CDE3; 
+	 margin: auto;
+}
+
+body{
+	background:#069;
+}
+
+.td_port{
+	text-align:center;
+	vertical-align:middle;
+	width:40px;
+	height:40px;
+}
+
+.td_port:hover{
+	background-color:#0aa099;
+}

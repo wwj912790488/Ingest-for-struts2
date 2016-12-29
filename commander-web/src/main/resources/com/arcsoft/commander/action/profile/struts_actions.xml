@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="profile" extends="default, arcvideo">
+		<action name="listProfile" class="com.arcsoft.commander.action.profile.ListLiveProfileAction">
+			<result>/jsp/profile/ProfileList.jsp</result>
+		</action>
+
+		<action name="FramelistProfile" class="com.arcsoft.commander.action.profile.ListLiveProfileAction">
+			<result>/jsp/profile/FrameProfileList.jsp</result>
+		</action>
+
+		<action name="listProfileMenu" class="com.arcsoft.commander.action.profile.ListLiveProfileAction">
+			<result>/jsp/profile/ProfileListData.jsp</result>
+		</action>
+
+
+		<action name="deleteProfile" class="com.arcsoft.commander.action.profile.DeleteLiveProfileAction">
+			<result name="success" type="redirect">listProfile</result>
+		</action>
+
+		<action name="FramedeleteProfile" class="com.arcsoft.commander.action.profile.DeleteLiveProfileAction">
+			<result name="success" type="redirect">FramelistProfile</result>
+		</action>
+
+		<action name="newProfile" class="com.arcsoft.web4transcoder.action.liveprofile.NewLiveProfileAction">
+			<result>/jsp/profile/ProfileDetail.jsp</result>			
+		</action>
+
+		<action name="FramenewProfile" class="com.arcsoft.web4transcoder.action.liveprofile.NewLiveProfileAction">
+			<result>/jsp/profile/FrameProfileDetail.jsp</result>
+		</action>
+
+		<action name="editProfile" class="com.arcsoft.web4transcoder.action.liveprofile.EditLiveProfileAction">
+			<result>/jsp/profile/ProfileDetail.jsp</result>			
+		</action>
+
+		<action name="FrameeditProfile" class="com.arcsoft.web4transcoder.action.liveprofile.EditLiveProfileAction">
+			<result>/jsp/profile/FrameProfileDetail.jsp</result>
+		</action>
+
+		<action name="saveProfile" class="com.arcsoft.web4transcoder.action.liveprofile.SaveLiveProfileAction">
+			<interceptor-ref name="stackWithAssociation"/>
+			<result type="redirectAction">
+		          	<param name="actionName">listProfile</param>
+		          	<param name="namespace">/</param>
+		      	</result>
+			<result name="input">/jsp/profile/ProfileDetail.jsp</result>			
+		</action>
+
+		<action name="FramesaveProfile" class="com.arcsoft.web4transcoder.action.liveprofile.SaveLiveProfileAction">
+			<interceptor-ref name="stackWithAssociation"/>
+			<result type="redirectAction">
+				<param name="actionName">FramelistProfile</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="input">/jsp/profile/FrameProfileDetail.jsp</result>
+		</action>
+
+
+		<action name="importProfiles" class="com.arcsoft.web4transcoder.action.liveprofile.ImportLiveProfilesAction">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1024000000</param>
+			</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="success" type="redirect">listProfile</result>
+			<result name="error">/jsp/common/error.jsp</result>
+		</action>
+
+		<action name="FrameimportProfiles" class="com.arcsoft.web4transcoder.action.liveprofile.ImportLiveProfilesAction">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1024000000</param>
+			</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="success" type="redirect">FramelistProfile</result>
+			<result name="error">/jsp/common/error.jsp</result>
+		</action>
+
+		<action name="exportProfiles" class="com.arcsoft.web4transcoder.action.liveprofile.ExportLiveProfilesAction" >
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">liveProfilesXmlStream</param>
+				<param name="contentDisposition">attachment;filename="profiledata.xml"</param> 
+			</result>
+		</action>
+
+
+
+	</package>
+</struts>

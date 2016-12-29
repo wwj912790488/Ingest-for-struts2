@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+      "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="filesys" extends="default">
+		<action name="getDirFiles" class="com.arcsoft.commander.action.filesys.ListFileAction" >
+			<result>/jsp/controls/DirFileList.jsp</result>
+		</action>
+		<action name="frameGetDirFiles" class="com.arcsoft.commander.action.filesys.ListFileAction" >
+			<result>/jsp/controls/DirFileList.jsp</result>
+		</action>
+		<action name="getDirFtpFiles" class="com.arcsoft.commander.action.filesys.ListFtpFileAction" >
+			<result>/jsp/controls/DirFtpFileList.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

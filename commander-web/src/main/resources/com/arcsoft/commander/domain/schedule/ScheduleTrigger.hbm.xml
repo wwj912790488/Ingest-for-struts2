@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-24 11:15:36 by Hibernate Tools 3.4.0.CR1 -->
+
+<hibernate-mapping>
+	<class name="com.arcsoft.commander.domain.schedule.ScheduleTrigger" table="tbl_schedule_triggers">
+		<id name="id" type="long">
+			<column name="id" not-null="true" unique="true" />
+			<generator class="identity" />
+		</id>
+		<many-to-one lazy="false" name="event" class="com.arcsoft.commander.domain.schedule.ScheduleEvent">
+			<column name="event_id"/>
+		</many-to-one>
+		<property name="scheduleTime" column="schedule_time" type="timestamp"/>
+		<property name="triggered" column="triggered" type="boolean"/>
+		<property name="finished" column="finished" type="boolean"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+#sysinit_main {
+	width: 600px;
+}
+
+#sysinit_table th {
+	padding: 5px 20px;
+	text-align: right;
+	width: 100px;
+}
+
+#sysinit_saveButton {
+	width: 100px;
+	height: 24px;	
+}
+
+#sysinit_buttons {
+	text-align: center;
+}
+
+.cm_fieldError {
+	padding-left: 20px;
+	color: red;
+}

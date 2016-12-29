@@ -1,0 +1,57 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    outline: 0px none;
+}
+
+.select{
+	width:85px;	
+	margin:0px 2px;
+}
+
+div#time, div#user, div#level, div#description {
+	margin-left: 5px;
+}
+
+div#description input {
+	width: 100px;
+	margin-left: 2px;
+}
+
+.timeSelection input[type=text]{
+	width:150px;
+}
+
+.timeSelection{
+	margin:0px 10px 0px 5px;
+}
+
+table tbody tr td {
+	word-break: break-all;
+	word-wrap:break-word;
+}
+
+#log_content {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+}
+
+#log_header {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	height: 122px;
+}
+
+#log_data {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 122px;
+	bottom: 0px;
+	overflow-y: auto;
+}

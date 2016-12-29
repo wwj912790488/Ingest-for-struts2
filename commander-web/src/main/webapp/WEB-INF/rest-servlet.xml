@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+    <mvc:annotation-driven/>
+    <mvc:default-servlet-handler/>
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="order" value="1"/>
+        <property name="favorParameter" value="false"/>
+        <property name="favorPathExtension" value="false"/>
+        <property name="ignoreAcceptHeader" value="false"/>
+        <property name="defaultContentType" value="text/html"/>
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json"/>
+            </map>
+        </property>
+        <property name="defaultViews">
+            <list>
+                <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="classpath:ftl/"/>
+        <property name="preferFileSystemAccess" value="false"/>
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="default_encoding">UTF-8</prop>
+                <prop key="number_format">#</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="contentType" value="text/html; charset=utf-8"/>
+        <property name="cache" value="true"/>
+        <property name="prefix" value=""/>
+        <property name="suffix" value=".ftl"/>
+        <property name="exposeRequestAttributes" value="true"/>
+        <property name="exposeSessionAttributes" value="true"/>
+        <property name="exposeSpringMacroHelpers" value="true"/>
+    </bean>
+
+    <bean id="liveProfileController" class="com.arcsoft.commander.controller.LiveProfileController">
+        <property name="liveProfileXmlParser" ref="liveProfileXmlParser"/>
+        <property name="liveProfilesXmlParser" ref="liveProfilesXmlParser"/>
+        <property name="liveProfileXmlValidator" ref="liveProfileXmlValidator"/>
+        <property name="transformableObjectValidator" ref="transformableObjectValidator"/>
+        <property name="liveProfileService" ref="liveProfileService"/>
+        <property name="pageSize" value="20"/>
+    </bean>
+
+    <bean id="presetController" class="com.arcsoft.web4transcoder.controller.PresetController">
+        <property name="presetXmlParser" ref="presetXmlParser"/>
+        <property name="presetsXmlParser" ref="presetsXmlParser"/>
+        <property name="presetXmlValidator" ref="presetXmlValidator"/>
+        <property name="presetValidator" ref="presetValidator"/>
+        <property name="presetService" ref="presetService"/>
+        <property name="pageSize" value="20"/>
+    </bean>
+
+    <bean id="channelController" class="com.arcsoft.commander.controller.ChannelController">
+        <property name="serverService" ref="serverService"/>
+        <property name="channelService" ref="channelService"/>
+        <property name="cmdMediaInfoService" ref="cmdMediaInfoService"/>
+    </bean>
+
+    <bean id="recordController" class="com.arcsoft.commander.controller.RecordController">
+        <property name="recordInfoService" ref="recordInfoService"/>
+        <property name="liveProfileService" ref="liveProfileService"/>
+        <property name="channelService" ref="channelService"/>
+        <property name="epgInfoService" ref="epgInfoService"/>
+        <property name="customTaskService" ref="customTaskService"/>
+
+    </bean>
+
+    <bean id="liveEventController" class="com.arcsoft.commander.controller.LiveEventController">
+        <property name="recordInfoService" ref="recordInfoService"/>
+        <property name="liveProfileService" ref="liveProfileService"/>
+        <property name="customTaskService" ref="customTaskService"/>
+        <property name="taskExecuteService" ref="taskExecuteService"/>
+        <property name="serverService" ref="serverService"/>
+    </bean>
+
+    <bean id="settingController" class="com.arcsoft.commander.controller.SettingController">
+        <property name="serverService" ref="serverService"/>
+        <property name="localDateTimeService" ref="localDateTimeService"/>
+        <property name="remoteDateTimeService" ref="remoteDateTimeService"/>
+        <property name="remoteStorageService" ref="remoteStorageService"/>
+        <property name="localStorageService" ref="localStorageService"/>
+    </bean>
+
+    <bean id="simpleProfileController" class="com.arcsoft.commander.controller.SimpleProfileController">
+        <property name="liveProfileXmlParser" ref="liveProfileXmlParser"/>
+        <property name="liveProfileService" ref="liveProfileService"/>
+        <property name="pageSize" value="20"/>
+    </bean>
+
+    <bean id="taskController" class="com.arcsoft.commander.controller.TaskController">
+        <property name="selectServerMode" value="0"/>
+        <property name="serverService" ref="serverService"/>
+        <property name="taskXmlParser" ref="taskXmlParser"/>
+        <property name="tasksXmlParser" ref="tasksXmlParser"/>
+        <property name="taskXmlValidator" ref="taskXmlValidator"/>
+        <property name="transformableObjectValidator" ref="transformableObjectValidator"/>
+        <property name="taskService" ref="taskService"/>
+        <property name="taskExecuteService" ref="taskExecuteService"/>
+        <property name="taskExtXmlValidator" ref="taskExtXmlValidator"/>
+        <property name="taskExtXmlParser" ref="taskExtXmlParser"/>
+        <property name="liveProfileService" ref="liveProfileService"/>
+        <property name="presetService" ref="presetService"/>
+        <property name="outputFactory" ref="outputFactory"/>
+        <property name="outputGroupFactory" ref="outputGroupFactory"/>
+        <property name="schedulePersistentService" ref="schedulePersistentService"/>
+        <property name="recordTaskService" ref="recordTaskService"/>
+        <property name="recordInfoService" ref="recordInfoService"/>
+        <property name="pageSize" value="20"/>
+    </bean>
+
+    <bean id="alertLogController" class="com.arcsoft.commander.controller.AlertLogController">
+        <property name="sysAlertService" ref="sysAlertService"/>
+    </bean>
+
+    <bean id="presetServiceTemplate" abstract="true" init-method="init">
+        <property name="presetRepository" ref="presetRepository"/>
+
+        <property name="presetXmlParser" ref="presetXmlParser"/>
+        <property name="presetXml">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="presetService"
+          class="com.arcsoft.web4transcoder.service.PresetServiceImpl"
+          parent="presetServiceTemplate"/>
+
+</beans>

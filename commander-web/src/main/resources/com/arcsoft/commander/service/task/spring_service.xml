@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="taskExecuteService" name="serverDispatcher"
+		class="com.arcsoft.commander.service.task.impl.TaskExecuteServiceImpl"
+		parent="remoteExecutorServiceSupport"
+		p:taskXmlBuilder-ref="taskXmlBuilder"
+		p:serverDao-ref="serverDao"
+		p:serverGroupDao-ref="serverGroupDao"
+		p:liveGroupDispatcher-ref="liveGroupDispatcher"
+		p:defaultGroupDispatcher-ref="defaultGroupDispatcher"
+		p:taskService-ref="customTaskService"
+		p:sourceSignalSettingsService-ref="sourceSignalSettingsService"
+		p:systemDao-ref="systemDao"
+		p:customTaskRepository-ref="customTaskRepository"
+		init-method="init"
+		destroy-method="destroy"/>
+
+	<bean id="abstractGroupDispatcher" 
+		abstract="true" 
+		class="com.arcsoft.commander.service.task.dispatcher.GroupDispatcher"
+		p:serverDao-ref="serverDao"
+		p:serverDispatcher-ref="serverDispatcher"
+		lazy-init="true"/>
+
+	<bean id="liveGroupDispatcher"
+		class="com.arcsoft.commander.service.task.dispatcher.LiveGroupDispatcher"
+		parent="abstractGroupDispatcher" />
+
+	<bean id="defaultGroupDispatcher"
+		class="com.arcsoft.commander.service.task.dispatcher.DefaultGroupDispatcher"
+		parent="abstractGroupDispatcher" />
+
+	<bean id="taskService" name="customTaskService"
+		class="com.arcsoft.commander.service.task.impl.CustomTaskServiceImpl" 
+		parent="taskServiceTemplate"
+		p:xmlFileBuilder-ref="xmlFileBuilder"
+		p:customTaskRepository-ref="customTaskRepository"
+		p:sourceSignalSettingsService-ref="sourceSignalSettingsService"
+		p:remoteExecutorService-ref="remoteExecutorService"
+		p:eventManager-ref="eventManager"
+		/>
+
+	<bean id="exportTaskXmlBuilder"
+		class="com.arcsoft.commander.service.task.builder.ExportTaskXmlBuilderImpl"
+		init-method="init"
+		/>
+
+	<bean id="importTaskXmlParser"
+		class="com.arcsoft.web4transcoder.service.parser.XmlParserImpl"
+		p:rootElementParser-ref="serversElementParser"
+		/>
+
+	<bean id="serversElementParser"
+		class="com.arcsoft.commander.service.task.parser.ServersElementParser"
+		p:serverElementParser-ref="serverElementParser"
+		/>
+
+	<bean id="serverElementParser"
+		class="com.arcsoft.commander.service.task.parser.ServerElementParser"
+		p:tasksElementParser-ref="tasksElementParser"
+		/>
+
+	<bean id="cmdMediaInfoService"
+		class="com.arcsoft.commander.service.task.impl.MediaInfoServiceImpl"
+		parent="remoteExecutorServiceSupport"
+		/>
+
+</beans>

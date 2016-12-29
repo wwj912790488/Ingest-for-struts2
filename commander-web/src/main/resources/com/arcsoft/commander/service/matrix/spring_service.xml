@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="controller" class="com.arcsoft.arcvideo.matrix.nevion.serial.SerialController">
+	</bean>
+	
+	<bean id="matrixService" class="com.arcsoft.commander.service.matrix.impl.MatrixServiceImpl">
+		<property name="matrixSettingService" ref="matrixSettingService"/>
+		<property name="matrixDao" ref="matrixDao"/>
+		<property name="controller" ref="controller"/>
+		<property name="com" value="${matrix.serial.com}" />
+		<property name="bitRate" value="${matrix.serial.bitrate}" />
+		<property name="stopFlag" value="${matrix.serial.stopbits}" />
+		<property name="parity" value="${matrix.serial.parity}" />
+		<property name="databits" value="${matrix.serial.databits}" />
+		<property name="inCount" value="${matrix.in.count}" />
+		<property name="outCount" value="${matrix.out.count}" />
+	</bean>
+	
+	<bean id="matrixSettingService" class="com.arcsoft.commander.service.matrix.impl.MatrixSettingServiceImpl">
+		<property name="matrixSettingDao" ref="matrixSettingDao"/>
+		
+	</bean>
+</beans>

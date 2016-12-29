@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+      "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="snmp" extends="json-default, default">
+		<action name="getSnmp" class="com.arcsoft.commander.action.snmp.SnmpAction" method="get">
+			<result name="success">/jsp/snmp/snmp.jsp</result>
+			<result name="error">/jsp/settings/error.jsp</result>
+		</action>
+		<action name="saveSnmp" class="com.arcsoft.commander.action.snmp.SnmpAction" method="save">
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">success,actionErrors\[\d+\],fieldErrors\..+$</param>
+			</result>
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">success,actionErrors\[\d+\],fieldErrors\..+$</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

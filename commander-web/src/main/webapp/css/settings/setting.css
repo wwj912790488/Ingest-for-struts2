@@ -1,0 +1,229 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    outline: 0px none;
+}
+
+body{
+	margin:20px 22px 0px 23px;
+}
+
+/* navigation panel */
+#navLine{
+	width:100%;
+	height:3px;
+	background-color: #21A4D1;
+}
+
+#firstNavigationPanel {
+	height: 36px;
+}
+
+.firstClassNav{
+	float: left;
+	width: 110px;
+	height:36px;
+	line-height:36px;
+	vertical-align:bottom;	
+	cursor:pointer;
+	
+	font-size: 10pt;
+	font-style: normal;
+	font-weight: normal;
+	text-align:center;
+	
+	background: #ffffff;
+}
+
+.firstClassNavActive {	
+	color:#ffffff;
+	background-color: #21A4D1;
+}
+
+/* host setting page*/
+#itemList{
+	padding:10px 0px;
+}
+
+#itemList > div{
+	text-align:center;
+}
+
+input.item{
+	margin:18px;
+	width:105px;
+	height:25px;
+	font-size: 10pt;
+}
+
+#secondNavigationPanel {
+	height: 52px;
+}
+
+/* network setting tab page */
+.secondClassNav{
+	float: left;
+	
+	padding: 0px 5px;
+	min-width:70px;
+	height:20px;	
+	cursor:pointer;		
+	
+	margin:16px 24px 16px 0px;
+	text-align:center;
+	line-height:20px;
+	font-size:9pt;
+	
+}
+
+.secondClassNavActive{
+	background-color: #21A4D1;
+	color:#ffffff;
+}
+
+/*eth setting tab page */
+#main{
+	border:1px solid #dedede;
+}
+
+#eth{
+	overflow:hidden;
+}
+
+#ethTabList{
+	float:left;
+	background:#e8e8e8;	
+	width:170px;
+	padding-bottom:1000px;
+	margin-bottom:-1000px;
+}
+
+.ethTab{
+	height:32px;
+	vertical-align:bottom;
+	font-size:9pt;
+	padding:8px 10px;
+	cursor:pointer;
+	border-bottom:1px solid #dddddd;
+}
+
+.ethTab img{
+	float:left;
+	
+}
+
+.ethTabActive{
+	background:#ffffff !important;
+}
+
+.ethContent{
+	float:left;
+	padding-top:10px;
+	padding-left:50px;
+	padding-bottom:1000px;
+	margin-bottom:-1000px;
+}
+
+tr {
+	font-size:10pt;
+}
+
+td.ethLabel {
+	padding:9px;
+	text-align:right;
+	height:24px;
+	width: 100px;
+}
+
+td.ethVal {
+	padding:0 5px;
+}
+
+td.ethVal > select {
+	width:155px;
+	height:22px; 
+	line-height:18px; 
+	padding:2px 0;
+}
+
+td.ethVal > input[type=text]{
+	width:155px;
+	height:20px;
+	line-height:20px; 
+}
+	
+.submitBtn{
+	margin-top:30px;
+	margin-bottom:25px;
+	width:107px;
+	font-size:9pt;
+}
+
+.alert{
+	color:red;
+	display:none;
+}
+
+a.deleteBtn {
+	width:40px;
+	height:40px;
+	display: block;
+	background: url(../../images/servergroup/delet_n.png) no-repeat scroll 0px 0px;
+	
+}
+
+a.deleteBtn:hover {
+	background:url("../../images/servergroup/delet_p.png") no-repeat scroll 0px 0px;
+	cursor:pointer;
+}
+
+/*time setting*/
+div#timePanel{
+	padding-top:20px;
+	font-size:10pt;
+}
+
+div#timePanel button{
+	font-size:9pt;
+	width:102px;
+}
+
+td.timeLabel{	
+	width:100px;
+	padding: 5px 12px 5px 0px;
+	text-align:right;
+}
+
+td.ntpServer{	
+	width:100px;
+	padding: 5px 12px 5px 0px;
+	text-align:left6;
+}
+
+td.ntpPrefer{	
+	width:35px;
+	text-align:right;
+}
+
+div#btnPanel{
+	margin-top:50px;
+	width:700px;
+	text-align:center;
+}
+
+#btnAdd{
+	margin-left:20px;
+}
+
+#timezonePanel select{
+	width:200px;
+}
+
+#zoneSelector option{
+	padding-left:20px;
+}
+
+div#timePanel input[type=text]{
+	width:180px;
+}
+

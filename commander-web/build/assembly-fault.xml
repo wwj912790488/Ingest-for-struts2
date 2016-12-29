@@ -1,0 +1,37 @@
+<assembly>
+	<id>fault</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>com.arcsoft:arcvideo-fault-app</include>
+			</includes>
+			<unpack>true</unpack>
+			<unpackOptions>
+				<excludes>
+					<exclude>conf/fault.properties</exclude>
+					<exclude>bin/faultd</exclude>
+				</excludes>
+			</unpackOptions>
+			<scope>provided</scope>
+		</dependencySet>
+	</dependencySets>
+	<fileSets>
+		<fileSet>
+			<directory>build/fault/</directory>
+			<excludes>
+				<exclude>bin/*</exclude>
+			</excludes>
+			<outputDirectory>/</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>build/fault/bin</directory>
+			<fileMode>0755</fileMode>
+			<outputDirectory>/bin</outputDirectory>
+		</fileSet>
+	</fileSets>
+</assembly>

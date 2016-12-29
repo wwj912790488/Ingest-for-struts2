@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+
+	<display-name>ArcVideo Commander</display-name>
+
+	<!-- configuration for log4j -->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:config/log4j.properties</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jExposeWebAppRoot</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>ArcVideoIngest</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+
+	<!-- configuration for system initialization -->
+	<context-param>
+		<param-name>webappConfigLocation</param-name>
+		<param-value>classpath:config/webapp.properties</param-value>
+	</context-param>
+	<listener>
+		<listener-class>com.arcsoft.commander.web.SystemInitConfigListener</listener-class>
+	</listener>
+
+	<!-- configuration for upgrade  -->
+	<context-param>
+		<param-name>upgradeConfigLocation</param-name>
+		<param-value>
+			classpath:config/upgrade/spring_*.xml
+		</param-value>
+	</context-param>
+	<listener>
+		<listener-class>com.arcsoft.commander.web.UpgradeContextListener</listener-class>
+	</listener>
+
+	<!-- configuration for springs -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath*:/config/core/*.xml
+			classpath*:/config/task/*.xml
+			classpath:/config/spring_*.xml
+			classpath:/com/arcsoft/commander/**/spring_*.xml
+	    </param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>com.arcsoft.commander.web.SpringWebApplicationContext</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>
+            org.springframework.web.filter.CharacterEncodingFilter
+        </filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+	<!-- rest api -->
+	<servlet>
+		<servlet-name>rest</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>rest</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- configuration for spring security -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<listener>
+    	<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+  	</listener> 
+ 
+	<!-- configuration for struts -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>com.arcsoft.arcvideo.web.struts.StrutsAutoLoadFilter</filter-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>
+				classpath:config/struts.xml
+				classpath:config/struts-arcvideo.xml
+				classpath:com/arcsoft/commander/action/*/struts_actions.xml
+			</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- default home page -->
+	<welcome-file-list>
+		<welcome-file>index.action</welcome-file>
+	</welcome-file-list>
+
+</web-app>

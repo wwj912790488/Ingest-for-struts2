@@ -1,0 +1,29 @@
+#license_content {
+	padding: 20px;
+}
+
+.license_view_label {
+	text-align: right;
+	padding: 0px 5px;
+}
+
+.license_view_data {
+	padding: 0px 5px;
+}
+
+.license_error_message {
+	color: red;
+	text-align: center;
+	padding: 0px 5px;
+}
+
+#licenseFile {
+	width: 300px;
+	height: 23px;
+}
+
+#btnUpdateLicense {
+	margin-top: 10px;
+	width: 80px;
+	height: 24px;
+}

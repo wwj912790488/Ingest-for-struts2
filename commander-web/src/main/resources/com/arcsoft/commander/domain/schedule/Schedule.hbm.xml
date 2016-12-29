@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-24 11:15:36 by Hibernate Tools 3.4.0.CR1 -->
+
+<hibernate-mapping>
+	<class name="com.arcsoft.commander.domain.schedule.Schedule" table="tbl_schedules">
+		<id name="id" type="long">
+			<column name="id" not-null="true" unique="true" />
+			<generator class="identity" />
+		</id>
+		<property name="name" column="name" type="string" />
+		<property name="source" column="source" type="string" />
+		<property name="scheduleType">
+			<column name="schedule_type" not-null="true" />
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.arcsoft.commander.domain.schedule.ScheduleType</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="startType">
+			<column name="start_type" not-null="true" />
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.arcsoft.commander.domain.schedule.StartType</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="startDate" column="start_date" type="date" />
+		<property name="startTime" column="start_time" type="time" />
+		<property name="endType">
+			<column name="end_type" not-null="true" />
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.arcsoft.commander.domain.schedule.EndType</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		<property name="endDate" column="end_date" type="date" />
+		<property name="endTime" column="end_time" type="time" />
+		<property name="repeatEndType">
+            <column name="repeat_end_type"/>
+            <type name="org.hibernate.type.EnumType">
+            	<param name="enumClass">com.arcsoft.commander.domain.schedule.RepeatEndType</param>
+            	<param name="type">12</param>
+            </type>
+        </property>
+		<property name="repeatEndDate" column="repeat_end_date" type="date"/>
+		<property name="interval" column="repeat_interval" type="int" />
+		<property name="days" column="repeat_days" type="int" />
+		<property name="firstTime" column="first_time" type="timestamp" />
+		<property name="finalTime" column="final_time" type="timestamp" />
+		<property name="nextTime" column="next_time" type="timestamp" />
+		<property name="lastTime" column="last_time" type="timestamp" />
+		<property name="createdAt" column="create_at" type="timestamp" />
+		<property name="disabled" column="disabled" type="boolean" />
+		<property name="finished" column="finished" type="boolean" />
+	</class>
+</hibernate-mapping>

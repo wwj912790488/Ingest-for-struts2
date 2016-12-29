@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="roleService" class="com.arcsoft.commander.service.security.impl.RoleServiceImpl">
+		<property name="dao" ref="roleDao"/>
+		<property name="resourceService" ref="resourceService"/>
+		<property name="securityService" ref="securityService"/>
+	</bean>
+	
+	<bean id="resourceService" class="com.arcsoft.commander.service.security.impl.ResourceServiceImpl"
+		  init-method="loadResourceDefine">
+		<property name="roleService" ref="roleService"/>
+	</bean>
+	
+	<bean id="securityService" class="com.arcsoft.commander.service.security.impl.SecurityServiceImpl">
+		<property name="dao" ref="userDao"/>
+		<property name="resourceService" ref="resourceService"/>
+		<property name="registry" ref="sessionRegistry"></property>
+	</bean>
+</beans>

@@ -1,0 +1,185 @@
+<!--
+html, body {
+	overflow: hidden;
+	margin: 0px;
+}
+
+/* dialog title div */
+#dialog_title {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 35px;
+	line-height: 35px;
+	padding: 0px 20px;
+	background: url(../../images/dialog/title.png) repeat-x;
+	color: white;
+}
+
+/* dialog buttons div */
+#dialog_buttons {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	height: 50px;
+	line-height: 50px;
+	border-top: 1px solid darkgray;
+	padding: 0px 20px;
+}
+
+/* buttons in dialog buttons div */
+#dialog_buttons INPUT {
+	width: 80px;
+}
+
+/* dialog content for contains steps */
+#dialog_content {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 35px;
+	bottom: 50px;
+	width: 100%;
+}
+
+/* steps all */
+#step_name, #step_select, #step_summary {
+	height: 100%;
+}
+
+#step_name table {
+	position: absolute;
+	left: 200px;
+	top: 150px;
+}
+
+/* input box for group name */
+#step_name INPUT {
+	width: 200px;
+}
+
+/* selecter for group type */
+#step_name SELECT {
+	width: 150px;
+}
+
+/* title in step_select page */
+#serverListTitle {
+	height: 30px;
+	line-height: 30px;
+	padding-left: 34px;
+	padding-top: 22px;
+}
+
+#serverList {
+	margin: 20px 20px 0px 67px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 250px;
+}
+
+#serverList #select_server_id {
+	width: 30px;
+}
+
+#serverList #select_server_icon {
+	width: 40px;
+	height: 40px;
+}
+
+#serverList #select_server_ip {
+	width: 100px;
+}
+
+/* for readOnly text box in server list */
+#serverList input[readonly] {
+	border: 0px;
+}
+
+/* summary title in step_summary */
+#summaryTitle {
+	height: 30px;
+	line-height: 30px;
+	padding-left: 34px;
+	padding-top: 22px;
+}
+
+/* group name title in step_summary */
+#summaryGroupNameTitle {
+	float: left;
+	padding-top: 20px;
+	width: 120px;
+	height: 30px;
+	text-align: right;
+}
+
+/* group name in step_summary */
+#summaryGroupName {
+	float: left;
+	padding-top: 20px;
+	padding-left: 30px;
+	width: 400px;
+	height: 30px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/* server list title in step_summary */
+#summaryListTitle {
+	float: left;
+	width: 120px;
+	vertical-align: top;
+	text-align: right;
+	padding-top: 20px;
+}
+
+/* summary list in step_summary */
+#summaryList {
+	float: left;
+	margin: 10px 20px 0px 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 210px;
+}
+
+#summaryList #summary_server_icon {
+	width: 40px;
+	height: 40px;
+}
+
+#summaryList #summary_server_name {
+	float: left;
+	max-width: 200px;
+	min-width: 0px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#summaryList #summary_server_ip {
+	width: 100px;
+}
+
+.normalIcon {
+	background: url('../../images/servergroup/device_n.png') no-repeat;
+}
+
+.normalReadOnlyIcon {
+	background: url('../../images/servergroup/device_un.png') no-repeat;
+}
+
+.backupIcon {
+	background: url('../../images/servergroup/backup_device_n.png') no-repeat;
+}
+
+.readOnlyText {
+	color: gray;
+}
+
+#groupNameError, #serverNameError {
+	color: red;
+}
+-->

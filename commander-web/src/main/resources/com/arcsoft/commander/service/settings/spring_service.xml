@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="localHostService"
+		class="com.arcsoft.commander.service.settings.impl.LocalHostServiceImpl"
+		p:hostDao-ref="hostDao" />
+
+	<bean id="remoteHostService"
+		class="com.arcsoft.commander.service.settings.impl.RemoteHostServiceImpl"
+		parent="remoteExecutorServiceSupport" />
+
+	<bean id="localDNSService"
+		class="com.arcsoft.commander.service.settings.impl.LocalDNSServiceImpl"
+		p:dnsDao-ref="dnsDao" />
+
+	<bean id="remoteDNSService"
+		class="com.arcsoft.commander.service.settings.impl.RemoteDNSServiceImpl"
+		parent="remoteExecutorServiceSupport" />
+
+	<bean id="localRouteService"
+		class="com.arcsoft.commander.service.settings.impl.LocalRouteServiceImpl"
+		p:routeDao-ref="routeDao" />
+
+	<bean id="remoteRouteService"
+		class="com.arcsoft.commander.service.settings.impl.RemoteRouteServiceImpl"
+		parent="remoteExecutorServiceSupport" />
+
+	<bean id="localFirewallService"
+		class="com.arcsoft.commander.service.settings.impl.LocalFirewallServiceImpl"
+		p:firewallDao-ref="firewallDao" />
+
+	<bean id="remoteFirewallService"
+		class="com.arcsoft.commander.service.settings.impl.RemoteFirewallServiceImpl"
+		parent="remoteExecutorServiceSupport" />
+
+	<bean id="localEthService"
+		class="com.arcsoft.commander.service.settings.impl.LocalEthServiceImpl"
+		p:ethDao-ref="ethDao"/>
+
+	<bean id="remoteEthService"
+		class="com.arcsoft.commander.service.settings.impl.RemoteEthServiceImpl"
+		parent="remoteExecutorServiceSupport" />
+
+	<bean id="localDateTimeService"
+		class="com.arcsoft.commander.service.settings.impl.LocalDateTimeServiceImpl"
+		p:timeDao-ref="timeDao" />
+
+	<bean id="remoteDateTimeService"
+		class="com.arcsoft.commander.service.settings.impl.RemoteDateTimeServiceImpl"
+		parent="remoteExecutorServiceSupport" />
+
+	<bean id="localStorageService"
+		class="com.arcsoft.commander.service.settings.impl.LocalStorageServiceImpl"
+		init-method="initialize"
+		p:persistDao-ref="storagePersistDao"
+		p:mountDao-ref="mountDao"/>
+
+	<bean id="remoteStorageService"
+		class="com.arcsoft.commander.service.settings.impl.RemoteStorageServiceImpl"
+		parent="remoteExecutorServiceSupport"/>
+
+	<bean id="remoteLicenseService"
+		class="com.arcsoft.commander.service.settings.impl.RemoteLicenseServiceImpl"
+		parent="remoteExecutorServiceSupport"/>
+
+	<bean id="remoteLoggingService"
+		class="com.arcsoft.commander.service.settings.impl.RemoteLoggingServiceImpl"
+		parent="remoteExecutorServiceSupport"/>
+
+	<bean id="remoteSignalSettingService"
+		class="com.arcsoft.commander.service.settings.impl.RemoteSignalSettingServiceImpl"
+		parent="remoteExecutorServiceSupport"
+		p:sourceSignalSettingsService-ref="sourceSignalSettingsService"
+		/>
+
+	<bean id="nioService"
+		class="com.arcsoft.commander.service.settings.impl.NioServiceImpl"
+		parent="remoteExecutorServiceSupport"
+		p:nioDao-ref="nioDao"
+		/>
+
+	<bean id="ipmiService"
+		class="com.arcsoft.commander.service.settings.impl.IpmiServiceImpl"
+		parent="baseService"
+		p:ipmiDao-ref="ipmiDao"/>
+
+	<bean id="switchService"
+		class="com.arcsoft.commander.service.settings.impl.SwitchServiceImpl"
+		parent="baseService"
+		p:switchDao-ref="switchDao"/>
+
+</beans>

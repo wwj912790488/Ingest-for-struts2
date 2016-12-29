@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-24 11:19:16 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.arcsoft.commander.domain.matrix.MatrixSetting" table="matrix_setting">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="server" class="com.arcsoft.commander.domain.server.Server" lazy="false" fetch="select">
+            <column name="server_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="matrix" class="com.arcsoft.commander.domain.matrix.Matrix" lazy="false" fetch="select">
+            <column name="matrix_id" not-null="true" />
+        </many-to-one>
+        <property name="sdiPort" type="java.lang.Integer">
+            <column name="sdi_port" />
+        </property>
+        <property name="matrixOut" type="java.lang.Integer">
+            <column name="matrix_out" />
+        </property>
+        <property name="matrixMasterIn" type="java.lang.Integer">
+            <column name="matrix_master_in" />
+        </property>
+        <property name="matrixSlaveIn" type="java.lang.Integer">
+            <column name="matrix_slave_in" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" />
+        </property>
+    </class>
+</hibernate-mapping>

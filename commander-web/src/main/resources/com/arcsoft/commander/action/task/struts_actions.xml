@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+      "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="task" extends="json-default, default, arcvideo">
+
+		<action name="getAllTaskServer" class="com.arcsoft.commander.action.task.GetAllTaskServerAction">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">serverMap.*</param>
+			</result>
+		</action>
+
+		<action name="getServers" class="com.arcsoft.commander.action.task.GetServersAction">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">serverIdNamePair.*</param>
+			</result>
+		</action>
+
+		<action name="exportTasksView" class="com.arcsoft.commander.action.task.ExportTaskAction" method="list">
+			<result name="success">/jsp/task/taskexport.jsp</result>
+		</action>
+		<action name="exportTasks" class="com.arcsoft.commander.action.task.ExportTaskAction" method="export">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">tasksXmlStream</param>
+				<param name="contentDisposition">attachment;filename="tasksdata.xml"</param>
+			</result>
+		</action>
+
+		<action name="importTasksView">
+			<result name="success">/jsp/task/taskimport.jsp</result>
+		</action>
+		<action name="listImportTasks" class="com.arcsoft.commander.action.task.ImportTaskAction" method="list">
+			<result name="success">/jsp/task/taskimportlist.jsp</result>
+			<result name="error" type="httpheader">
+				<param name="status">500</param>
+			</result>
+		</action>
+		<action name="importTasks" class="com.arcsoft.commander.action.task.ImportTaskAction" method="save">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">result.*</param>
+			</result>
+			<result name="error" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">result.*</param>
+			</result>
+		</action>
+
+		<action name="listTask" class="com.arcsoft.commander.action.task.ListTaskAction">
+			<result name="success">/jsp/task/TaskList.jsp</result>
+			<result name="error">/jsp/common/error.jsp</result>
+		</action>
+
+		<action name="frameListTask" class="com.arcsoft.commander.action.task.ListTaskAction">
+			<result name="success">/jsp/task/FrameTaskList.jsp</result>
+			<result name="error">/jsp/common/error.jsp</result>
+		</action>
+
+		<action name="getAllTaskCount" class="com.arcsoft.web4transcoder.action.task.GetAllTaskCountAction">
+			<result name="success">/jsp/task/TaskCount.jsp</result>
+			<result name="error">/jsp/common/error.jsp</result> 
+		</action>
+
+		<action name="newTask" class="com.arcsoft.commander.action.task.NewTaskAction">
+			<result>/jsp/task/TaskDetail.jsp</result>
+		</action>
+
+		<action name="editTask" class="com.arcsoft.commander.action.task.EditTaskAction">
+			<result>/jsp/task/TaskDetail.jsp</result>
+		</action>
+
+		<action name="viewTask" class="com.arcsoft.commander.action.task.CommanderViewTaskAction">
+			<result>/jsp/task/ViewTaskIO.jsp</result>
+		</action>
+
+		<action name="saveTask" class="com.arcsoft.commander.action.task.SaveTaskAction">
+			<interceptor-ref name="stackWithAssociation"/>
+			<result type="redirectAction">
+            	<param name="actionName">listTask</param>
+            	<param name="namespace">/</param>
+        	</result>
+			<result name="input">/jsp/task/TaskDetail.jsp</result>
+		</action>
+
+		<action name="deleteTask" class="com.arcsoft.commander.action.task.DeleteTaskAction">
+			<result>/jsp/common/success.jsp</result>
+		</action>
+		<action name="frameDeleteTask" class="com.arcsoft.commander.action.task.DeleteTaskAction">
+			<result>/jsp/common/success.jsp</result>
+		</action>
+
+		<action name="downloadTaskData" class="com.arcsoft.web4transcoder.action.task.DownloadTaskDataAction" >
+			<result name="success" type="stream">
+				<param name="contentType">text/xml</param>
+				<param name="inputName">taskDataStream</param>
+				<param name="contentDisposition">filename="taskdata.xml"</param> 
+			</result>
+		</action>
+
+		<action name="frameDownloadTaskData" class="com.arcsoft.web4transcoder.action.task.DownloadTaskDataAction" >
+			<result name="success" type="stream">
+				<param name="contentType">text/xml</param>
+				<param name="inputName">taskDataStream</param>
+				<param name="contentDisposition">filename="taskdata.xml"</param>
+			</result>
+		</action>
+
+		<action name="taskCtrl" class="com.arcsoft.commander.action.task.CtrlTaskAction" >
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+		</action>
+		<action name="frameTaskCtrl" class="com.arcsoft.commander.action.task.CtrlTaskAction" >
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+		</action>
+
+		<action name="getTaskProgress" class="com.arcsoft.commander.action.task.GetTaskProgressAction" >
+			<result name="success" type="stream">
+				<param name="contentType">text/xml</param>
+				<param name="inputName">progressInfoStream</param>
+			</result>
+		</action>
+
+		<action name="getTaskProgressThumb" class="com.arcsoft.commander.action.task.GetTaskProgressThumbAction" >
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">thumbStream</param>
+			</result>
+		</action>
+
+		<action name="getMediaFileInfo" class="com.arcsoft.commander.action.task.GetMediaFileInfoAction" >
+			<result name="success" type="stream">
+				<param name="contentType">text/xml</param>
+				<param name="inputName">infoStream</param>
+			</result>
+		</action>
+
+		<action name="getMediaFileInfoEx" class="com.arcsoft.commander.action.task.GetMediaFileInfoActionEx" >
+			<result name="success">/jsp/task/OneLineMediaInfo.jsp</result>
+		</action>
+
+		<action name="getMediaFileThumb" class="com.arcsoft.commander.action.task.GetMediaFileThumbAction" >
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">thumbStream</param>
+			</result>
+		</action>
+
+		<action name="listIfaces" class="com.arcsoft.commander.action.task.ListNetworkAction" >
+			<result>/jsp/common/ifaces.jsp</result>
+		</action>
+
+		<action name="getGpuCount" class="com.arcsoft.web4transcoder.action.support.GpuCountAction">	
+			<result name="success">/jsp/common/gpucount.jsp</result>
+		</action>
+
+		<action name="showRuntimeSetting" class="com.arcsoft.commander.action.task.RuntimeSettingAction">	
+			<result name="success">/jsp/task/TaskRuntimeSetting.jsp</result>
+		</action>
+		<action name="saveRuntimeSetting" class="com.arcsoft.commander.action.task.RuntimeSettingAction" method="save">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">result.*</param>
+			</result>
+			<result name="error" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">result.*</param>
+			</result>
+		</action>
+
+		<action name="loadDelTaskSetting" class="com.arcsoft.commander.action.task.DelTaskSettingAction" method="load">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		<action name="saveDelTaskSetting" class="com.arcsoft.commander.action.task.DelTaskSettingAction" method="save">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionErrors\[\d+\]</param>
+			</result>
+			<result name="input" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">fieldErrors\..+$</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

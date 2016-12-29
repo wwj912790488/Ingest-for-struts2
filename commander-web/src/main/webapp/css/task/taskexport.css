@@ -1,0 +1,24 @@
+#export_task_detail {
+	height: 100%;
+	margin: 20px 0px;
+}
+
+#export_task_detail #exportTitle {
+	font-weight: bold;
+	height: 24px;
+}
+
+#export_task_detail #exportContent {
+	border: 1px solid lightgray;
+	height: 280px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#export_task_detail #exportContent td {
+	border-bottom: 1px dotted lightgray;
+}
+
+#export_task_detail #exportContent .servers {
+	width: 240px;
+}

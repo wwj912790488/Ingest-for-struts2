@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+.actionMessage{
+	display:inline-block;
+	color:red;
+	margin:1px;
+}
+
+.TblRow{
+	display:table-row;position:relative;
+	border:0px;margin:0px;padding:0px;
+	border-bottom:1px solid #cdcdcd;
+	width:100%;height:45px;line-height:45px;
+}
+.TblCol_0 {
+	display:table-cell;
+	width:40px;
+	text-align:center;
+}
+.TblCol_Id {
+	display:table-cell;
+	width:60px;	
+	text-overflow:ellipsis;overflow:hidden;
+}
+.TblCol_Name {
+	display:table-cell;
+	width:30%;min-width:100px;max-width:300px;	
+	text-overflow:ellipsis;overflow:hidden;work-wrap:break-word;word-break:break-all;
+}
+.TblCol_Desc {
+	display:table-cell;
+	width:50%;min-width:200px;max-width:300px;	
+	text-overflow:ellipsis;overflow:hidden;work-wrap:break-word;word-break:break-all;
+}
+.TblCol_iCount {
+	display:table-cell;
+	width:120px;
+}
+.TblCol_oCount {
+	display:table-cell;
+	width:60px;
+}
+
+.FilterPanelItem {
+	display:inline-block; position:relative;
+	/*width:100px;*/
+	margin-left:10px;
+	vertical-align:middle;	
+}

@@ -1,0 +1,168 @@
+@charset "utf-8";
+/* CSS Document */
+
+.PopupMenu_TopLeft {
+	width: 12px;
+	height: 12px;
+	background-image:url(CtrlPopup/POP_up_Top_Left.png);
+}
+
+.PopupMenu_TopCenter {
+	height: 12px;
+	background-image:url(CtrlPopup/POP_up_Top_Center.png);
+}
+
+.PopupMenu_TopRight {
+	width: 12px;
+	height: 12px;
+	background-image:url(CtrlPopup/POP_up_Top_Right.png);
+}
+
+.PopupMenu_MiddleLeft {
+	width: 12px;
+	background-image:url(CtrlPopup/POP_up_Middle_Left.png);
+}
+
+.PopupMenu_MiddleCenter {
+	background-color: #ffffff;
+}
+
+.PopupMenu_MiddleRight {
+	width: 12px;
+	background-image:url(CtrlPopup/POP_up_Middle_Right.png);
+}
+
+.PopupMenu_BottomLeft {
+	width: 12px;
+	height: 20px;
+	background-image:url(CtrlPopup/POP_up_Bottom_Left.png);
+}
+
+.PopupMenu_BottomCenter {
+	height: 20px;
+	background-image:url(CtrlPopup/POP_up_Bottom_Center.png);
+}
+
+.PopupMenu_BottomRight {
+	width: 12px;
+	height: 20px;
+	background-image:url(CtrlPopup/POP_up_Bottom_Right.png);
+}
+
+.PopupMenu_Container {
+	width: 150px;
+	max-height: 400px;
+	overflow: auto; 
+}
+
+.DF_HeadLine {
+	 height: 1px; 
+	 background-color: #c0c0c0;
+}
+
+.PM_ItemText {
+	font-family: "宋体", "微软雅黑", "Arial";
+	font-size: 9pt;
+	color: #000000;
+}
+
+.PM_Item {
+	height: 21px;
+	line-height: 21px;
+	padding: 0;
+	padding-left: 12px;
+	cursor: pointer;
+}
+
+.PM_Item:hover {
+	height: 21px;
+	line-height: 21px;
+	padding: 0;
+	padding-left: 12px;
+	cursor: pointer;
+	background-image:url(CtrlPopup/POP-up_select_column.png);
+}
+
+.MenuStyle_TableBG_Left {
+	width:2px;
+	height:17px;
+	background-image:url(Ctrl-Menu/MenuSelected_L.png);
+}
+
+.MenuStyle_TableBG_Center {
+	background-image:url(Ctrl-Menu/MenuSelected_C.png);
+}
+
+.MenuStyle_TableBG_Right {
+	width:2;
+	background-image:url(Ctrl-Menu/MenuSelected_R.png);
+}
+
+.MenuStyle_NoBG_Left {
+	width:2px;
+	height:17px;
+}
+
+.MenuStyle_NoBG_Center {
+
+}
+
+.MenuStyle_NoBG_Right {
+	width:2px;
+}
+
+.MenuText_Normal {
+	font-family: "微软雅黑", "宋体", "Segoe UI";
+	font-size: 10pt;
+	font-style: normal;
+	line-height: 10pt;
+	color: #000000;
+}
+
+.MenuText_Selected {
+	font-family: "微软雅黑", "宋体", "Segoe UI";
+	font-size: 10pt;
+	font-style: normal;
+	line-height: 10pt;
+	color: #000000;
+}
+
+.PopupMenu {
+	cursor: pointer;
+}
+
+.PopupMenu .PopupMenuItems{
+	display:none;
+}
+
+.PopupMenu:hover{
+}
+
+.PopupMenu:hover .PopupMenuItems{
+	display:block;
+	position: absolute;
+	z-index: 999;
+}
+
+.PopupMenuToggle {
+	box-sizing: border-box;
+	border: 1px solid #aaa;
+	border-radius: 3.01px;
+	text-align: center;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	line-height:16px;
+}
+
+.PopupMenuItem {
+	box-sizing: border-box;
+	border: 1px solid #aaa;
+	margin-top: 2px;
+	text-align: center;
+	vertical-align: middle;
+	width: 60px;
+	height: 20px;
+	line-height:16px;
+	background-color: #fff;
+}

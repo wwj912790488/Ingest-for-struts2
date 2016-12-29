@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+.ColorTableTitle{
+	position:relative;
+	border:0px;
+	width:100%;height:40px;line-height:40px;	
+	background:url("../images/bar/titlebar_bg.png") repeat-x scroll 0px 0px;
+}
+
+.ColorTableBody{
+	background-color:#FFFFFF;
+}
+
+.ColorTableRow0{
+	border-bottom:1px solid #CDCDCD;
+	background-color:#F4F4F4;	
+}
+
+.ColorTableRow1{
+	border-bottom:1px solid #D7D7D7;
+	background-color:transparent;	
+}
+
+.ColorTableRow0Selected{
+	border-bottom:1px solid #CDCDCD;
+	background-color:F4F4F4;	
+}
+
+.ColorTableRow1Selected{
+	border-bottom:1px solid #D7D7D7;
+	background-color:F4F4F4;	
+}

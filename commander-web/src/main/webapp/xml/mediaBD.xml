@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mediaInfo name="/mnt/mxf/BD_Movie_ripped/RESIDENT_EVIL_3/">
+    <container>BD</container>
+    <programs count="3">
+        <program idx="1">
+            <name>Title3</name>
+            <used>1</used>
+            <videos count="1">
+                <video idx="0">
+                    <name>Video</name>
+                    <codec>H.264</codec>
+                    <duration>5645000</duration>
+                    <framerate>23.97</framerate>
+                    <resolution>1920x1080</resolution>
+                    <aspect_ratio>16:9</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="5">
+                <audio idx="0">
+                    <name>Audio(eng)</name>
+                    <language>eng</language>
+                    <codec>Dolby Lossless</codec>
+                    <duration>5645000</duration>
+                </audio>
+                <audio idx="1">
+                    <name>Audio(fra)</name>
+                    <language>fra</language>
+                    <codec>Dolby Lossless</codec>
+                    <duration>5645000</duration>
+                </audio>
+                <audio idx="2">
+                    <name>Audio(spa)</name>
+                    <language>spa</language>
+                    <codec>Dolby Digital(AC-3)</codec>
+                    <duration>5645000</duration>
+                </audio>
+                <audio idx="3">
+                    <name>Audio(por)</name>
+                    <language>por</language>
+                    <codec>Dolby Digital(AC-3)</codec>
+                    <duration>5645000</duration>
+                </audio>
+                <audio idx="4">
+                    <name>Audio(eng)</name>
+                    <language>eng</language>
+                    <codec>Dolby Digital(AC-3)</codec>
+                    <duration>5645000</duration>
+                </audio>
+            </audios>
+            <subtitles count="13">
+                <subtitle idx="0">
+                    <name>Subtitle(eng)</name>
+                    <language>eng</language>
+                </subtitle>
+                <subtitle idx="1">
+                    <name>Subtitle(eng)</name>
+                    <language>eng</language>
+                </subtitle>
+                <subtitle idx="2">
+                    <name>Subtitle(fra)</name>
+                    <language>fra</language>
+                </subtitle>
+                <subtitle idx="3">
+                    <name>Subtitle(spa)</name>
+                    <language>spa</language>
+                </subtitle>
+                <subtitle idx="4">
+                    <name>Subtitle(por)</name>
+                    <language>por</language>
+                </subtitle>
+                <subtitle idx="5">
+                    <name>Subtitle(zho)</name>
+                    <language>zho</language>
+                </subtitle>
+                <subtitle idx="6">
+                    <name>Subtitle(spa)</name>
+                    <language>spa</language>
+                </subtitle>
+                <subtitle idx="7">
+                    <name>Subtitle(por)</name>
+                    <language>por</language>
+                </subtitle>
+                <subtitle idx="8">
+                    <name>Subtitle(zho)</name>
+                    <language>zho</language>
+                </subtitle>
+                <subtitle idx="9">
+                    <name>Subtitle(eng)</name>
+                    <language>eng</language>
+                </subtitle>
+                <subtitle idx="10">
+                    <name>Subtitle(spa)</name>
+                    <language>spa</language>
+                </subtitle>
+                <subtitle idx="11">
+                    <name>Subtitle(por)</name>
+                    <language>por</language>
+                </subtitle>
+                <subtitle idx="12">
+                    <name>Subtitle(zho)</name>
+                    <language>zho</language>
+                </subtitle>
+            </subtitles>
+        </program>
+        <program idx="60">
+            <name>Title4</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <name>Video</name>
+                    <codec>H.264</codec>
+                    <duration>5645000</duration>
+                    <framerate>23.97</framerate>
+                    <resolution>1920x1080</resolution>
+                    <aspect_ratio>16:9</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="5">
+                <audio idx="0">
+                    <name>Audio(eng)</name>
+                    <language>eng</language>
+                    <codec>Dolby Lossless</codec>
+                    <duration>5645000</duration>
+                </audio>
+                <audio idx="1">
+                    <name>Audio(fra)</name>
+                    <language>fra</language>
+                    <codec>Dolby Lossless</codec>
+                    <duration>5645000</duration>
+                </audio>
+                <audio idx="2">
+                    <name>Audio(spa)</name>
+                    <language>spa</language>
+                    <codec>Dolby Digital(AC-3)</codec>
+                    <duration>5645000</duration>
+                </audio>
+                <audio idx="3">
+                    <name>Audio(por)</name>
+                    <language>por</language>
+                    <codec>Dolby Digital(AC-3)</codec>
+                    <duration>5645000</duration>
+                </audio>
+                <audio idx="4">
+                    <name>Audio(eng)</name>
+                    <language>eng</language>
+                    <codec>Dolby Digital(AC-3)</codec>
+                    <duration>5645000</duration>
+                </audio>
+            </audios>
+            <subtitles count="9">
+                <subtitle idx="0">
+                    <name>Subtitle(eng)</name>
+                    <language>eng</language>
+                </subtitle>
+                <subtitle idx="1">
+                    <name>Subtitle(eng)</name>
+                    <language>eng</language>
+                </subtitle>
+                <subtitle idx="2">
+                    <name>Subtitle(fra)</name>
+                    <language>fra</language>
+                </subtitle>
+                <subtitle idx="3">
+                    <name>Subtitle(spa)</name>
+                    <language>spa</language>
+                </subtitle>
+                <subtitle idx="4">
+                    <name>Subtitle(por)</name>
+                    <language>por</language>
+                </subtitle>
+                <subtitle idx="5">
+                    <name>Subtitle(zho)</name>
+                    <language>zho</language>
+                </subtitle>
+                <subtitle idx="6">
+                    <name>Subtitle(spa)</name>
+                    <language>spa</language>
+                </subtitle>
+                <subtitle idx="7">
+                    <name>Subtitle(por)</name>
+                    <language>por</language>
+                </subtitle>
+                <subtitle idx="8">
+                    <name>Subtitle(zho)</name>
+                    <language>zho</language>
+                </subtitle>
+            </subtitles>
+        </program>
+        <program idx="46">
+            <name>Title5</name>
+            <used>0</used>
+            <videos count="1">
+                <video idx="0">
+                    <name>Video</name>
+                    <codec>MPEG-2</codec>
+                    <duration>1867000</duration>
+                    <framerate>29.97</framerate>
+                    <resolution>1920x1080</resolution>
+                    <aspect_ratio>16:9</aspect_ratio>
+                </video>
+            </videos>
+            <audios count="1">
+                <audio idx="0">
+                    <name>Audio(eng)</name>
+                    <language>eng</language>
+                    <codec>Dolby Digital(AC-3)</codec>
+                    <duration>1867000</duration>
+                </audio>
+            </audios>
+            <subtitles count="3">
+                <subtitle idx="0">
+                    <name>Subtitle(spa)</name>
+                    <language>spa</language>
+                </subtitle>
+                <subtitle idx="1">
+                    <name>Subtitle(por)</name>
+                    <language>por</language>
+                </subtitle>
+                <subtitle idx="2">
+                    <name>Subtitle(zho)</name>
+                    <language>zho</language>
+                </subtitle>
+            </subtitles>
+        </program>
+    </programs>
+</mediaInfo>

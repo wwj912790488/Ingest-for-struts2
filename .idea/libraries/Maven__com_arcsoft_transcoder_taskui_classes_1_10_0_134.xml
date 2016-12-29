@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.arcsoft:transcoder-taskui:classes:1.10.0.134">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/arcsoft/transcoder-taskui/1.10.0.134/transcoder-taskui-1.10.0.134-classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/arcsoft/transcoder-taskui/1.10.0.134/transcoder-taskui-1.10.0.134-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/arcsoft/transcoder-taskui/1.10.0.134/transcoder-taskui-1.10.0.134-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="operationlog" extends="default">
+		<action name="listLog" class="com.arcsoft.commander.action.operationlog.OperationLogAction" method="list">
+			<result>/jsp/logandalert/loglist.jsp</result>
+		</action>
+		<action name="showLogAttachment" class="com.arcsoft.commander.action.operationlog.OperationLogAction" method="showAttachment">
+			<result name="success" type="stream">
+				<param name="contentType">application/xml;charset=utf-8</param>
+				<param name="inputName">attachmentStream</param>
+			</result>
+		</action>
+		<action name="deleteLog" class="com.arcsoft.commander.action.operationlog.OperationLogAction" method="delete">
+			<result type="chain">
+				<param name="actionName">listLog</param>
+			</result>	
+		</action>
+		
+		<action name="exportLog" class="com.arcsoft.commander.action.operationlog.OperationLogAction" method="export" />
+		
+	</package>
+</struts>

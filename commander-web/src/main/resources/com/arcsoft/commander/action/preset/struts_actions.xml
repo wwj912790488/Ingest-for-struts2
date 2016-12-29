@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="preset" extends="default">
+		<action name="listPresetCategory" class="com.arcsoft.web4transcoder.action.output.ListPresetCategoryAction">
+			<result>/jsp/preset/PresetListByG.jsp</result>
+		</action>
+
+		<action name="deletePresetCategory" class="com.arcsoft.web4transcoder.action.output.DeletePresetCategoryAction">
+			<result>/jsp/common/success.jsp</result>
+		</action>
+
+		<action name="importPresets" class="com.arcsoft.web4transcoder.action.output.ImportPresetsAction">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1024000000</param>
+			</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="success" type="redirect">listPreset</result>
+			<result name="error">/jsp/common/error.jsp</result>
+		</action>
+
+		<action name="exportPresets" class="com.arcsoft.web4transcoder.action.output.ExportPresetsAction" >
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">presetsXmlStream</param>
+				<param name="contentDisposition">attachment;filename="presetdata.xml"</param> 
+			</result>
+		</action>
+
+		<action name="listPreset" class="com.arcsoft.commander.action.preset.ListPresetAction">
+			<result>/jsp/preset/PresetList.jsp</result>
+		</action>
+
+		<action name="listPresetMenu" class="com.arcsoft.web4transcoder.action.output.ListPresetCategoryAction">
+			<result>/jsp/preset/PresetListData.jsp</result>
+		</action>
+
+		<action name="getPreset" class="com.arcsoft.web4transcoder.action.output.GetPresetAction">
+			<result>/jsp/preset/PresetImported.jsp</result>
+		</action>
+
+		<action name="deletePreset" class="com.arcsoft.web4transcoder.action.output.DeletePresetAction">
+			<result>/jsp/common/success.jsp</result>
+		</action>
+
+		<action name="newPreset" class="com.arcsoft.web4transcoder.action.output.NewPresetAction">
+			<result>/jsp/preset/PresetDetail.jsp</result>
+		</action>
+
+		<action name="savePreset" class="com.arcsoft.web4transcoder.action.output.SavePresetAction">
+			<result type="redirectAction">
+            	<param name="actionName">listPreset</param>
+            	<param name="namespace">/</param>
+        	</result>
+			<result name="input">/jsp/preset/PresetDetail.jsp</result>
+		</action>
+
+		<action name="editPreset" class="com.arcsoft.web4transcoder.action.output.EditPresetAction">
+			<result>/jsp/preset/PresetDetail.jsp</result>
+		</action>
+	</package>
+</struts>

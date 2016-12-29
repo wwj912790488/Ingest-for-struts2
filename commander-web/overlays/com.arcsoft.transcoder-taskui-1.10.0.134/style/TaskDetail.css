@@ -1,0 +1,766 @@
+@CHARSET "UTF-8";
+
+.StreamSettingTable {
+	border: 1px; 
+	border-color: #bbbbbb;
+	border-style: solid;
+}
+
+.BodyTitleBar {
+	height: 40px;
+	background-color: #f0f0f0;
+}
+
+.BodyIndent {
+	width: 28px;
+}
+
+.BodyMain {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #dddddd;
+	background-color: #ffffff;
+}
+
+.InputOpenFileButton {
+	width: 110px;
+}
+
+.InputURIInput {
+	width: 506px;	
+}
+
+.InputSettingIndent {
+	width: 20px;
+}
+
+.InputEditorIndent {
+	width: 10px;
+}
+
+.InputEditor {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #dddddd;
+	background-color: #ffffff;
+}
+
+.Task {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	width: 100%;
+}
+
+.TitleHeadSpacing {
+	height: 40px;
+}
+
+.FieldError {
+	background-color: #e83038
+}
+
+.BlockSpacing {
+	height: 10px;
+}
+
+.LineIndent {
+	width: 16px;
+}
+
+.TaskColumn1 {
+	width: 60px;
+}
+
+.TaskColumn2 {
+	width: 160px;
+}
+
+.TaskBlockSpacing {
+	height: 30px;
+}
+
+.TaskTailSpacing {
+	height: 150px;
+}
+
+.InputColumn0 {
+	width: 80px;
+}
+
+.InputColumn1 {
+	width: 100px;
+}
+
+.InputColumn2 {
+	width: 160px;
+}
+
+.ProgramColumn1 {
+	width: 70px;
+}
+
+.ProgramColumn2 {
+	width: 120px;
+}
+
+.InputText1 {
+	width: 30px;
+}
+
+.InputText2 {
+	width: 60px;
+}
+
+.TimeInput {
+	width: 16px;
+}
+
+.InputHead {
+	height: 31px;
+	background-image:url('../images/index_element/Input_banner.png');
+}
+
+.OutputGroup {
+	background-color: #f3f3f3;
+}
+
+.OutputURIInput {
+	width: 400px;
+}
+
+.OutputOpenFileButton {
+	width: 110px;
+}
+
+.OutputButton {
+	width: 120px;
+}
+
+.OutputIndent {
+	width: 10px;
+}
+
+.OutputGroupColumn1 {
+	width: 80px;
+}
+
+.OutputGroupColumn2 {
+	width: 170px;
+}
+
+.ArchiveOutputColumn1 {
+	width: 80px;
+}
+
+.ArchiveOutputColumn2 {
+	width: 170px;
+}
+
+.ArchiveOutputInput {
+	width: 124px;
+}
+
+.ArchiveOutputSelect {
+	width: 130px;
+	height: 20px;
+}
+
+.TSAdvancedOptionsCol1 {
+	width: 130px;
+}
+
+.TSAdvancedOptionsCol2 {
+	width: 200px;
+}
+
+.TSAdvancedOptionsInput1 {
+	width: 320px;
+}
+
+.TSAdvancedOptionsInput2 {
+	width: 106px;
+}
+
+.TSAdvancedOptionsSelect {
+	width: 110px;
+	height: 20px;
+}
+
+.StreamColumn1 {
+	width: 60px; 
+	background-color:#ddffff; 
+	text-align: center;
+}
+
+.VideoSelect {
+	width: 70px;
+	height: 20px;
+}
+
+.VideoText {
+	width: 66px;
+}
+
+.VideoColumn1 {
+	width: 100px;
+}
+
+.VideoColumn2 {
+	width: 120px;
+}
+
+.VideoColumnWide {
+	width: 350px;
+}
+
+.LogoColumn1 {
+	width: 14px;
+}
+
+.LogoColumn2 {
+	width: 70px;
+}
+
+.PreviewLogoColumn1 {
+	width: 14px;
+}
+
+.PreviewLogoColumn2 {
+	width: 60px;
+}
+
+.PreviewLogoColumn3 {
+	width: 72px;
+}
+
+.PreviewLogoText {
+	width: 50px
+}
+
+.PipColumn1 {
+	width: 10px;
+}
+
+.PipColumn2 {
+	width: 70px;
+}
+
+.PipColumn3 {
+	width: 120px;
+}
+
+.PreviewPipColumn1 {
+	width: 14px;
+}
+
+.PreviewPipColumn2 {
+	width: 50px;
+}
+
+.PreviewPipColumn3 {
+	width: 60px;
+}
+
+.PreviewPipText {
+	width: 50px
+}
+
+.WatchFolderColumn1 {
+	width: 180px;
+	text-align:right;
+	padding-right:15px;	
+}
+
+.ScheduleColumn1 {
+	width: 70px;
+}
+
+.WeekColumn {
+	width: 100px;
+}
+
+.Output {
+}
+
+.PreviewColumn1 {
+	width: 80px;
+}
+
+.PreviewColumn2 {
+	width: 120px;
+}
+
+.PreviewColumn3 {
+	width: 80px;
+}
+
+.MosaicColumn1 {
+	width: 44px;
+}
+
+.MosaicColumn2 {
+	width: 20px;
+}
+
+.MosaicColumn3 {
+	width: 60px;
+}
+
+.MosaicColumn4 {
+	width: 20px;
+}
+
+.MosaicSelect {
+	width: 50px;
+	height: 20px;
+}
+
+.CroppingColumn1 {
+	width: 50px;
+}
+
+.InputClipColumn1 {
+	width: 16px;
+}
+
+.InputClipColumn2 {
+	width: 170px;
+}
+
+.InputClipColumn3 {
+	width: 170px;
+}
+
+.AdvertisementColumn1 {
+	width: 20px;
+}
+
+.AdvertisementColumn2 {
+	width: 60px;
+}
+
+.AdvertisementColumn3 {
+	width: 170px;
+}
+
+.AdvertisementColumn4 {
+	width: 120px;
+}
+
+.SubtitleColumn0 {
+	width: 10px;
+}
+
+.SubtitleColumn1 {
+	width: 70px;
+}
+
+.SubtitleColumn2 {
+	width: 100px;
+}
+
+.WatermarkingColumn0 {
+	width: 15px;
+}
+
+.WatermarkingColumn1 {
+	width: 90px;
+}
+
+.WatermarkingColumn2 {
+	width: 120px;
+}
+
+.ImageGrabbingColumn0 {
+	width: 10px;
+}
+
+.ImageGrabbingColumn1 {
+	width: 90px;
+}
+
+.ImageGrabbingColumn2 {
+	width: 120px;
+}
+
+.MotionIconColumn0 {
+	width: 15px;
+}
+
+.MotionIconColumn1 {
+	width: 90px;
+}
+
+.MotionIconColumn2 {
+	width: 120px;
+}
+
+.DynamicTextColumn0 {
+	width: 15px;
+}
+
+.DynamicTextColumn1 {
+	width: 90px;
+}
+
+.DynamicTextColumn2 {
+	width: 120px;
+}
+
+.VideoDrmColumn0 {
+	width: 15px;
+}
+
+.VideoDrmColumn1 {
+	width: 90px;
+}
+
+.VideoDrmColumn2 {
+	width: 130px;
+}
+
+.dotBorder {
+	border: 1px;
+	border-style: dotted;
+	border-color:#bbbbbb;
+}
+
+.ICON_ArrowDown {
+	width:30px; 
+	height: 30px;
+	background-image:url('../images/icons/arrow_down.png');
+}
+
+.ICON_ArrowRight {
+	width:30px; 
+	height: 30px;
+	background-image:url('../images/icons/arrow_right.png');
+}
+
+.ICON_Delete {
+	width:28px; 
+	height: 28px;
+	background-image:url('../images/icons/delete_n.png');
+}
+
+.ICON_Delete:hover {
+	width:28px; 
+	height: 28px;
+	background-image:url('../images/icons/delete_p.png');
+}
+
+.ICON_Play {
+	width:28px; 
+	height: 28px;
+	background-image:url('../images/icons/play_n.png');
+}
+
+.ICON_Play:hover {
+	width:28px; 
+	height: 28px;
+	background-image:url('../images/icons/play_p.png');
+}
+
+
+.ICON_Expand {
+	width:30px; 
+	height: 30px;
+	background-image:url('../images/icons/icon_folding_88.png');
+}
+
+.ICON_MoveUp {
+	width:30px; 
+	height: 30px;
+	background-image:url('../images/icons/icon_up.png');
+}
+
+.ICON_MoveDown {
+	width:30px; 
+	height: 30px;
+	background-image:url('../images/icons/icon_down.png');
+}
+
+.icon_folder {
+	width: 20px;
+	height: 20px;
+	background-image:url('../images/icons/icon_folder.png');
+}
+
+.icon_material {
+	width: 30px;
+	height: 30px;
+	background-image:url('../images/icons/Output_icon_Archive.png');
+}
+
+.A_ClickWrapper {
+	text-decoration: none;
+}
+
+.BTN_Container {
+}
+
+.BTN_Container:hover {
+}
+
+/* Button new input */
+.BTN_Container .BTN_NewInputLeft {
+	width:7px; 
+	height:35px; 
+	background-image:url('../images/input_output/New_Intput_BTN_normal_left.png');
+}
+
+.BTN_Container .BTN_NewInputCenter {
+	line-height: 35px;
+	text-align: center;
+	height:35px;
+	background-image:url('../images/input_output/New_Intput_BTN_normal_middle.png');
+}
+
+.BTN_Container .BTN_NewInputRight {
+	width:7px; 
+	height:35px; 
+	background-image:url('../images/input_output/New_Intput_BTN_normal_Right.png');
+}
+
+.BTN_Container:hover .BTN_NewInputLeft {
+	width:7px; 
+	height:35px; 
+	background-image:url('../images/input_output/New_Intput_BTN_active_left.png');
+}
+
+.BTN_Container:hover .BTN_NewInputCenter {
+	line-height: 35px;
+	text-align: center;
+	height:35px; 
+	background-image:url('../images/input_output/New_Intput_BTN_active_middle.png');
+}
+
+.BTN_Container:hover .BTN_NewInputRight {
+	width:7px; 
+	height:35px; 
+	background-image:url('../images/input_output/New_Intput_BTN_active_Right.png');
+}
+/* Button new input end */
+
+/* Button new output group */
+.BTN_Container .BTN_NewOutputLeft {
+	width:7px; 
+	height:35px; 
+	background-image:url('../images/input_output/New_Output_BTN_normal_left.png');
+}
+
+.BTN_Container .BTN_NewOutputCenter {
+	line-height: 35px;
+	text-align: center;
+	height:35px;
+	background-image:url('../images/input_output/New_Output_BTN_normal_middle.png');
+}
+
+.BTN_Container .BTN_NewOutputRight {
+	width:7px; 
+	height:35px; 
+	background-image:url('../images/input_output/New_Output_BTN_normal_Right.png');
+}
+
+.BTN_Container:hover .BTN_NewOutputLeft {
+	width:7px; 
+	height:35px; 
+	background-image:url('../images/input_output/New_Output_BTN_active_left.png');
+}
+
+.BTN_Container:hover .BTN_NewOutputCenter {
+	line-height: 35px;
+	text-align: center;
+	height:35px; 
+	background-image:url('../images/input_output/New_Output_BTN_active_middle.png');
+}
+
+.BTN_Container:hover .BTN_NewOutputRight {
+	width:7px; 
+	height:35px; 
+	background-image:url('../images/input_output/New_Output_BTN_active_Right.png');
+}
+/* Button new output group end*/
+
+/* Default button */
+.BTN_Container .BTN_Left {
+	width:3px; 
+	height:23px; 
+	background-image:url('../images/index_element/Select_BTN_left_normal.png');
+}
+
+.BTN_Container .BTN_Center {
+	text-align: center; 
+	line-height: normal;
+	height:23px; 
+	background-image:url('../images/index_element/Select_BTN_middle_normal.png');
+}
+
+.BTN_Container .BTN_Right {
+	width:3px; 
+	height:23px; 
+	background-image:url('../images/index_element/Select_BTN_right_normal.png');
+}
+
+.BTN_Container:hover .BTN_Left {
+	width:3px; 
+	height:23px; 
+	background-image:url('../images/index_element/Select_BTN_left_active.png');
+}
+
+.BTN_Container:hover .BTN_Center {
+	text-align: center; 
+	line-height: normal;
+	height:23px; 
+	background-image:url('../images/index_element/Select_BTN_middle_active.png');
+}
+
+.BTN_Container:hover .BTN_Right {
+	width:3px; 
+	height:23px; 
+	background-image:url('../images/index_element/Select_BTN_right_active.png');
+}
+/* Default button end */
+
+/* Green button */
+.BTN_Container .BTN_GreenLeft {
+	width:4px; 
+	height:30px; 
+	background-image:url('../images/bar/addnew_button_l.png');
+}
+
+.BTN_Container .BTN_GreenCenter {
+	text-align: center; 
+	line-height: normal;
+	height:30px; 
+	background-image:url('../images/bar/addnew_button_m.png');
+}
+
+.BTN_Container .BTN_GreenRight {
+	width:4px; 
+	height:30px; 
+	background-image:url('../images/bar/addnew_button_r.png');
+}
+
+.BTN_Container:hover .BTN_GreenLeft {
+	width:4px; 
+	height:30px; 
+	background-image:url('../images/bar/addnew_button_l_hover.png');
+}
+
+.BTN_Container:hover .BTN_GreenCenter {
+	text-align: center; 
+	line-height: normal;
+	height:30px; 
+	background-image:url('../images/bar/addnew_button_m_hover.png');
+}
+
+.BTN_Container:hover .BTN_GreenRight {
+	width:4px; 
+	height:30px; 
+	background-image:url('../images/bar/addnew_button_r_hover.png');
+}
+/* green button end */
+
+/* font define */
+.TaskHeadText {
+	font-family: "微软雅黑", "Arial";
+	font-size: 12pt;
+	color: #000000;
+	font-weight: normal;
+}
+
+.TaskHead2Text {
+	font-family: "微软雅黑", "Arial";
+	font-size: 11pt;
+	color: #000000;
+	font-weight: normal;
+}
+
+.TaskLabelText {
+	font-family: "微软雅黑", "Arial";
+	font-size: 10pt;
+	color: #000000;
+	font-weight: normal;
+}
+
+.TaskUriLabel {
+	font-family: "微软雅黑", "Arial";
+	font-size: 10pt;
+	color: #000000;
+	font-weight: normal;
+	word-break:normal;
+	width:500px;
+	display:block;
+	white-space:pre-wrap;
+	word-wrap : break-word ;
+	overflow: hidden ;
+}
+
+.TaskButtonGreenText {
+	font-family: "微软雅黑", "Arial";
+	font-size: 10pt;
+	color: #ffffff;
+	font-weight: normal;
+}
+
+.TaskContentText {
+	font-family: "宋体", "微软雅黑", "Arial";
+	font-size: 9pt;
+	color: #000000;
+}
+
+.ChangedText {
+	color: #0000ff;
+}
+
+.FieldErrorText {
+	font-family: "微软雅黑", "Arial";
+	font-size: 10pt;
+	padding-left: 12px;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.back_button {
+	border: 1px solid #dbdbdb;
+	text-align:center;
+	height: 22px;
+	line-height: 22px;
+	background-color: #f7f7f7;
+	cursor:pointer;
+}
+
+.operate_button {
+	border: 1px solid #dbdbdb;
+	text-align:center;
+	height: 22px;
+	line-height: 22px;
+	color: #ffffff;
+	background-color: #179fc4;
+	cursor:pointer;
+}
+
+.white_button {
+	border: 1px solid #dbdbdb;
+	text-align:center;
+	height: 22px;
+	line-height: 22px;
+	background-color: #f7f7f7;
+	cursor:pointer;
+}
+
+.AudioSelect {
+	width: 90px;
+	height: 20px;
+}
+
+.AudioText {
+	width: 86px;
+}
+
+.VideoProcessingText {
+	width: 106px;
+}

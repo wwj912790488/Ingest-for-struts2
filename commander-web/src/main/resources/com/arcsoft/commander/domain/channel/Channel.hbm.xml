@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.arcsoft.commander.domain.channel.Channel" table="tbl_channels">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="type">
+            <column name="type" not-null="true"/>
+            <type name="org.hibernate.type.EnumType">
+            	<param name="enumClass">com.arcsoft.commander.domain.channel.SourceType</param>
+            	<param name="type">12</param>
+            </type>
+        </property>
+        <property name="uri" type="string">
+            <column name="uri" />
+        </property>
+        <property name="programId" type="java.lang.Integer">
+            <column name="program_id" />
+        </property>
+        <property name="videoId" type="java.lang.Integer">
+            <column name="video_id" />
+        </property>
+        <property name="audioId" type="java.lang.Integer">
+            <column name="audio_id" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="created" />
+        </property>
+        <property name="lastModified" type="timestamp">
+            <column name="last_modified" />
+        </property>
+        <property name="videoInfo" type="string">
+            <column name="videoInfo" />
+        </property>
+        <property name="audioInfo" type="string">
+            <column name="audioInfo" />
+        </property>
+        <property name="defRecordPath" type="string">
+            <column name="defRecordPath" />
+        </property>
+        <property name="screenshotPath" type="string">
+            <column name="screenshotPath" />
+        </property>
+        <property name="audioAll" type="string">
+            <column name="audioAll" />
+        </property>
+		<many-to-one lazy="false" class="com.arcsoft.commander.domain.server.ServerGroup" fetch="select" name="group">
+			<column name="group_id"/>
+		</many-to-one>
+    </class>
+</hibernate-mapping>

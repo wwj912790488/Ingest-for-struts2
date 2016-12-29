@@ -1,0 +1,16 @@
+<simhd>
+<deblock>0</deblock>
+<deinterlace>2</deinterlace>
+<denoise>0</denoise>
+<denoisemethod>0</denoisemethod>
+<delight>0</delight>
+<sharpen>2</sharpen>
+<antialias>0</antialias>
+<antishaking>-1</antishaking>
+<brightness>0</brightness>
+<contrast>0</contrast>
+<saturation>0</saturation>
+<hue>0</hue>
+<resizealg>3</resizealg>
+<deinterlacealg>3</deinterlacealg>
+</simhd>

@@ -1,0 +1,37 @@
+<assembly>
+	<id>commander-monitor</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>com.arcsoft:arcvideo-monitor-app</include>
+			</includes>
+			<unpack>true</unpack>
+			<unpackOptions>
+				<excludes>
+					<exclude>conf/monitor.xml</exclude>
+					<exclude>bin/monitord</exclude>
+				</excludes>
+			</unpackOptions>
+			<scope>provided</scope>
+		</dependencySet>
+	</dependencySets>
+	<fileSets>
+		<fileSet>
+			<directory>build/monitor-commander/</directory>
+			<excludes>
+				<exclude>bin/*</exclude>
+			</excludes>
+			<outputDirectory>/</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>build/monitor-commander/bin</directory>
+			<fileMode>0755</fileMode>
+			<outputDirectory>/bin</outputDirectory>
+		</fileSet>
+	</fileSets>
+</assembly>

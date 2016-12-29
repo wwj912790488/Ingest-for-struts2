@@ -1,0 +1,21 @@
+*{
+	font-size: 9pt;
+	font-style: normal;
+}
+
+.table_set_ipmi {
+	margin:auto;
+	border-collapse:collapse;
+}
+
+td.ethVal > input[type=password]{
+	width:155px;
+	height:20px;
+	line-height:20px; 
+}
+	
+td.ethAlert {
+	text-align:left;
+	height:24px;
+	width: 100px;
+}

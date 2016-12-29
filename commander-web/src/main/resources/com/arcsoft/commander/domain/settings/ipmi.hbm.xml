@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-24 11:15:36 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="com.arcsoft.commander.domain.settings.IPMI" table="tbl_ipmis">
+  <id name="id" type="java.lang.String">
+   <column name="id" not-null="true" unique="true"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="ip" type="java.lang.String">
+   <column name="ip" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="user" type="java.lang.String">
+   <column name="user" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="password" type="java.lang.String">
+   <column name="password"/>
+  </property>
+ </class>
+</hibernate-mapping>

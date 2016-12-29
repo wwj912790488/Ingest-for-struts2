@@ -1,0 +1,23 @@
+                     ARCVIDEO MERGE NOTES
+
+(01) Use commander-validators.xml for commander validators.
+(02) xwork-conversion.properties
+(03) struts.xml for support multiple language resources files.
+(04) Use struts-arcvideo.xml for interceptor 'association' and commander operation log
+(05) Change config.properties
+(06) Merge limitation.properties
+(07) database upgrade
+(08) Spring configurations: spring_integration.xml (NOTE: task relation spring xml files must place before commander spring xml)
+(09) Web.xml contextConfigLocation/struts filter
+(10) implements NetworkSelectorAction
+(11) implements TaskEditSupport and sub interfaces
+(12) implements LiveProfileEditSupport and sub interfaces
+(13) implements FileDialogAction
+(14) implements PresetEditSupport
+(15) hibernateMappingResources and transactionManager point cut
+(16) Add CommanderTask extends Task
+(17) implements TaskFactory for CommanderTask
+(18) Custom XmlFileBuilder
+(19) Add TaskDetail.jsp / taskextension.js
+(20) Add ProfileDetail.jsp
+(21) Add PresetDetail.jsp

@@ -1,0 +1,37 @@
+<assembly>
+	<id>logging</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>com.arcsoft:arcvideo-logging-app</include>
+			</includes>
+			<unpack>true</unpack>
+			<unpackOptions>
+				<excludes>
+					<exclude>conf/logging.xml</exclude>
+					<exclude>bin/loggingd</exclude>
+				</excludes>
+			</unpackOptions>
+			<scope>provided</scope>
+		</dependencySet>
+	</dependencySets>
+	<fileSets>
+		<fileSet>
+			<directory>build/logging/</directory>
+			<excludes>
+				<exclude>bin/*</exclude>
+			</excludes>
+			<outputDirectory>/</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>build/logging/bin</directory>
+			<fileMode>0755</fileMode>
+			<outputDirectory>/bin</outputDirectory>
+		</fileSet>
+	</fileSets>
+</assembly>

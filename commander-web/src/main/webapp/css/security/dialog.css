@@ -1,0 +1,76 @@
+*{
+	font-size: 9pt;
+	font-style: normal;
+}
+
+.input_text{
+	width:214px;
+	height:25px;
+	line-height:25px;
+}
+
+.button_1{
+	width:96px;
+	height:28px;
+}
+
+.custom_height{
+	height:61px;
+}
+
+.td_label{
+	padding-right:15px;
+}
+
+.error{
+	color:red;
+	height:20px;
+	text-align:left;
+}
+
+.top_mov_20{
+	position: relative; 
+	top: 20px;
+}
+
+textarea{
+	resize: none;
+	width:214px;
+	height:64px;
+}
+
+.td_space{
+	width:40px;
+}
+
+.div_buttons{
+	margin:15px 0px 15px 0px;
+}
+
+table{
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border:0px;
+}
+
+.message_dialog_buttons {
+	text-align: center;
+	height: 61px;
+	background-color: white;
+}
+
+.input_text_2{
+	line-height:20px;
+	width:285px;
+	height:20px;
+}
+
+.comboBox{
+	width:106px;
+	height:20px
+}
+
+.td_center{
+	text-align:center;
+	vertical-align:middle;
+}

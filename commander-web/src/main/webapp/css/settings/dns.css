@@ -1,0 +1,33 @@
+*{
+	font-size: 9pt;
+	font-style: normal;
+}
+.dns_content{
+	margin:25px 0px 50px 0px;
+}
+
+table{
+	margin:auto;
+	border-collapse:collapse;
+}
+
+button{
+	width:85px;
+	height:23px;
+}
+
+td {
+	padding:0px 20px 0px 0px;
+}
+
+td input{
+	width:100px;
+}
+
+.dns_ip{
+	padding:0px 100px 0px 0px;
+}
+
+.td_error{
+	color:red;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN"
+	"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="matrix.port">
+		<field-validator type="required" short-circuit="true">
+			<message key="settings.err.invalid.port" />
+		</field-validator>
+	</field>
+	<field name="matrix.ip">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message key="settings.err.invalid.ip" />
+		</field-validator>
+		<field-validator type="ip">
+				<message key="settings.err.invalid.ip" />
+		</field-validator>
+	</field>
+</validators>
